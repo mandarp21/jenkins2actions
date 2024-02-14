@@ -1,0 +1,60 @@
+# Default values for backend-channeladaptor-web.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+---
+replicaCount: 1
+
+image:
+  repository: 059059582711.dkr.ecr.us-east-1.amazonaws.com/converse3/frontend-engineerportal
+  tag: latest
+  pullPolicy: Always
+
+container:
+  port: 3021
+
+env:
+
+envSecrets:
+
+  
+service:
+  # annotations: {}
+  type: LoadBalancer
+  port: 3021
+  loadBalancerSourceRanges:
+  - 0.0.0.0/0
+  externalIPs: []
+
+ingress:
+  create: false
+  # annotations: {}
+  # host:
+
+#ingress:
+#  create: true
+#  annotations:
+#    kubernetes.io/ingress.class: "nginx"
+#    # This should be the Nginx ELB Route 53 record set name
+#    external-dns.alpha.kubernetes.io/target: ingress.converse.dev.eks.liquidstudiolondon.com
+#  rules:
+#  - host: webchat.converse.dev.eks.liquidstudiolondon.com
+#    http:
+#      paths:
+#      - path: /
+#        backend:
+#          serviceName: frontend-mwc
+#          servicePort: 3000
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 256Mi
+  requests:
+    cpu: 20m
+    memory: 64Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
