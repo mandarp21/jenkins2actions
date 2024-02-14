@@ -1,0 +1,54 @@
+[
+  {
+    "botID": "8a787bde-81d5-4499-b05d-0c552041ed19",
+    "botName": "Edwin",
+    "botDescription": "The root level bot",
+    "botImage": "assets/img/Bot_Avatar.png",
+    "lastModified": "28-Mar-18 09:24",
+    "customerSatisfaction": "High",
+    "escalated": "28",
+    "intentsMatched": "99",
+    "conversationComplete": "36",
+    "totalVolume": "56,802",
+    "totalReviews": "5,630"
+  },
+  {
+    "botID": "8a787bde-81d5-4499-b05d-0c552041ed20",
+    "botName": "Philis",
+    "botDescription": "The root level bot",
+    "botImage": "assets/img/Bot_Avatar.png",
+    "lastModified": "28-Mar-18 09:24",
+    "customerSatisfaction": "Low",
+    "escalated": "8",
+    "intentsMatched": "78",
+    "conversationComplete": "45",
+    "totalVolume": "56,802",
+    "totalReviews": "5,630"
+  },
+  {
+    "botID": "8a787bde-81d5-4499-b05d-0c552041ed21",
+    "botName": "Michele",
+    "botDescription": "The root level bot",
+    "botImage": "assets/img/Bot_Avatar.png",
+    "lastModified": "28-June-18 09:24",
+    "customerSatisfaction": "High",
+    "escalated": "38",
+    "intentsMatched": "84",
+    "conversationComplete": "50",
+    "totalVolume": "56,802",
+    "totalReviews": "5,630"
+  },
+  {
+    "botID": "8a787bde-81d5-4499-b05d-0c552041ed22",
+    "botName": "Brian",
+    "botDescription": "The root level bot",
+    "botImage": "assets/img/Bot_Avatar.png",
+    "lastModified": "28-Apr-18 09:24",
+    "customerSatisfaction": "Medium",
+    "escalated": "8",
+    "intentsMatched": "68",
+    "conversationComplete": "64",
+    "totalVolume": "56,802",
+    "totalReviews": "5,630"
+  }
+]

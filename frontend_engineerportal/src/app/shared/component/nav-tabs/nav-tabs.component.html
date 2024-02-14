@@ -1,0 +1,9 @@
+<div>
+    <nav>
+        <ul class="nav-container">
+            <li routerLinkActive='active' *ngFor='let link of sideBarLinks; let i = index'>
+                <a routerLink="{{link.path}}"> {{link.tabName}} </a>
+            </li>
+        </ul>
+    </nav>
+</div>

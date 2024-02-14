@@ -1,0 +1,73 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.channels-component
+  position: fixed
+  width: 40px
+  height: 80px
+  left: 35px
+  bottom: 190px
+  background-color: #fff
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.12)
+  z-index: 1
+
+.channels-component.overlay-active
+  z-index: 3
+
+.channels-button
+  width: 40px
+  height: 40px
+  cursor: pointer
+  position: relative
+
+.channels-icon
+  width: 20px
+  height: 20px
+  margin: 0 auto
+  padding-top: 40px
+
+.channels-button.active
+  background-color: $converse-seagreen
+
+.inactive .channels-new
+  background: url('/assets/img/Icon_Add_Green.svg') center no-repeat
+  background-size: contain
+
+.active .channels-new
+  background: url('/assets/img/Icon_Add_White.svg') center no-repeat
+  background-size: contain
+
+.inactive .channels-copy
+  background: url('/assets/img/Icon_Copy_Green.svg') center no-repeat
+  background-size: contain
+
+.active .channels-copy
+  background: url('/assets/img/Icon_Copy_White.svg') center no-repeat
+  background-size: contain
+
+
+
+// ========================================
+//       TOOLTIP - appears to the right
+// ========================================
+
+.tooltip
+  visibility: hidden
+  width: 110px
+  background-color: $converse-white
+  position: absolute
+  top: 6px
+  padding: 2px 0
+  text-align: center
+  display: inline
+  color: $converse-lightgray
+  left: 55px
+
+.channels-button.inactive:hover .tooltip
+  visibility: visible
+  opacity: 1
+
+// hide when mouseover on the tooltip
+.channels-button .tooltip:hover
+  opacity: 0
+  visibility: hidden

@@ -1,0 +1,71 @@
+<div [formGroup]='sttAIForm' class="new-ai-info-root">
+  <div id='lblStt' class="lbl-cls">{{'Speech-To-Text provider (optional)'}}</div>
+  <div class="opt-cls">
+    <converse-drop-down id='ddlStt' placement="none" [tooltipKey]="tooltipKey" [activateToolTip]="toggleToolTip" [data]="sttArray" [placeholder]='sttName' (selchange)="onSelchange($event)"></converse-drop-down>
+    <input type="hidden" name="STTProvider" formControlName="STTProvider">
+  </div>
+  <div *ngIf="sttNameKey && sttAIForm.controls.sttConfig" formGroupName="sttConfig">
+    <ng-container *ngIf="sttNameKey === 'watson'">
+      <div class="form-group">
+        <label for="sttWatsonUsername">Username</label>
+        <span>*</span>
+        <input id='sttWatsonUsername' autocomplete="off" name="username" type="text" emptySpaceTrimDirective placeholder="Enter Username"
+          formControlName="username" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+         <label for="sttWatsonPassword">Password</label>
+         <span>*</span>
+        <input id='sttWatsonPassword' autocomplete="off" name="password" type="password" emptySpaceTrimDirective placeholder="Enter Password"
+          formControlName="password" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+    </ng-container>
+    <ng-container *ngIf="sttNameKey === 'bingspeech'">
+      <div class="form-group">
+        <label for="sttSubscriptionKey">Subscription Key</label>
+        <span>*</span>
+        <input id='sttSubscriptionKey' autocomplete="off" name="subscription_key" type="text" emptySpaceTrimDirective placeholder="Enter Subscription Key"
+          formControlName="subscription_key" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="sttBingDefaultLocale">Default Locale</label>
+        <span>*</span>
+        <input id='sttBingDefaultLocale' autocomplete="off" name="default_locale" type="text" emptySpaceTrimDirective placeholder="Enter Default Locale"
+          formControlName="default_locale" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+    </ng-container>
+    <ng-container *ngIf="sttNameKey === 'google'">
+      <div class="form-group">
+        <label for="sttGoogleProjectId">Project ID</label>
+        <span>*</span>
+        <input id='sttGoogleProjectId' autocomplete="off" type="text" emptySpaceTrimDirective placeholder="Enter Project ID" name="project_id"
+          formControlName="project_id" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="sttGooglePrivateKey">Private Key</label>
+        <span>*</span>
+        <input id='sttGooglePrivateKey' autocomplete="off" type="password" emptySpaceTrimDirective placeholder="Enter Private Key" name="private_key"
+          formControlName="private_key" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="sttGoogleClientEmail">Client Email</label>
+        <span>*</span>
+        <input id='sttGoogleClientEmail' autocomplete="off" type="text" emptySpaceTrimDirective placeholder="Enter Client Email" name="client_email"
+          formControlName="client_email" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="sttGoogleLanguage">Language</label>
+        <span>*</span>
+        <input id='sttGoogleLanguage' autocomplete="off" type="text" emptySpaceTrimDirective placeholder="Enter Language" name="language"
+          formControlName="language" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<nav [class.dialogue-designer]="isDialogueDesignerPage" [class.header]="!fixHeader" [class.fixed-header]="fixHeader"
+  [class.hide-header]="hideFixedHeader && !fixHeader">
+  <div class="header-container">
+    <a (click)="navigateHome()">
+      <img class="logo-cls" src="{{companylogo}}">
+    </a>
+    <div class="header-right">
+      <span>Welcome back, {{username}}</span>
+      <span id="btnLogout" (click)="logout()">Sign Out</span>
+    </div>
+  </div>
+</nav>

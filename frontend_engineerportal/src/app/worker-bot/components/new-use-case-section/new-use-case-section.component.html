@@ -1,0 +1,62 @@
+<div class='add-new-usecase-container' [ngClass]="[isAddButtonClicked ? 'add-bg-color' : 'noadd-bg-color']">
+  <div *ngIf='!isAddButtonClicked' class='add-text'>
+    <span>Add New Use Case</span>
+    <div class="btn-new-use-case" (click)='addNewUseCaseDialog()'></div>
+  </div>
+
+  <div *ngIf='isAddButtonClicked' class='add-new-use-case'>
+    <div class='title-use-case'>
+      New Use Case
+    </div>
+    <div class='form-group use-case-name'>
+      <label>Use Case Name</label>
+      <span>*</span>
+      <input type="text" id="txtNewUseCaseName" placeholder='Enter Use Case Name' value="{{useCaseDetails.useCaseName}}"
+        (input)="useCaseDetails.useCaseName = $event.target.value" (keyup)= "useCaseNameKeyUp()" maxlength="30"/>
+    </div>
+    <div class='form-group use-case-description'>
+      <label>Description</label>
+      <textarea placeholder='Enter Use Case description' [(ngModel)]='useCaseDetails.useCaseDescription' cols='50' rows='10' maxlength="60"></textarea>
+    </div>
+    <div class='use-case-Time-Feedback'>
+      <div class='avg-handling-time'>
+
+        <div class='form-group handling-time-container'>
+          <label>Average Human Handling Time</label>
+          <div class="newAvgHandlingTime">
+            <span>
+              <input [ngClass]="{'txt-handling-time': !daysError, 'txt-handling-time-error': daysError}" type='number' min="0" max="30" placeholder='Days' [(ngModel)]='averageHumanHandlingDays' />
+            </span>
+            <span>
+              <input [ngClass]="{'txt-handling-time': !hoursError, 'txt-handling-time-error': hoursError}" type='number' min="0" max="23" [(ngModel)]='averageHumanHandlingHours' placeholder='Hours' />
+            </span>
+            <span>
+              <input [ngClass]="{'txt-handling-time': !minsError, 'txt-handling-time-error': minsError}" type='number' min="0" max="59" [(ngModel)]='averageHumanHandlingMins' placeholder='Mins' />
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class='collect-feedback'>
+        <div class='form-group-label'>Collect Feedback</div>
+        <div class='toggle-switch-container'>
+          <label class="switch">
+            <input type="checkbox" [checked]="useCaseDetails.collectFeedback" (change)="useCaseDetails.collectFeedback = !useCaseDetails.collectFeedback">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="AHHTErrorMsg" class="ahhtErrorMsg">
+      Max range allowed is Days:30, Hours:23, Mins:59
+    <img class="close-img" src="assets/img/Tertiary_Button_Disapprove_Active.png" (click)='closeToaster()'></div>
+    <div class='use-case-Buttons'>
+      <div class='btn-cancel'>
+        <converse-button [val]="'Cancel'" [id]="'useCaseCancel'" (click)="closeAddChannel()"></converse-button>
+      </div>
+      <div class='btn-save'>
+        <converse-button [type]="'submit'" [val]="'Save'" [id]="'useCaseSave'" [isDisabled]="!useCaseDetails.useCaseName"
+          [boolGreen]="useCaseDetails.useCaseName" (click)='saveUseCase(useCaseEditDetails)'></converse-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Button_Check_Active</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Button_Check_Active" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Plus_Button">
+            <rect id="Button_BG" fill="#01CCAA" x="0" y="0" width="20" height="20" rx="2"></rect>
+            <g id="Icon_Tick_White" transform="translate(2.000000, 2.000000)" fill="#FEFFFE">
+                <path d="M5.54637947,12.1818073 L5.53553391,12.1926529 L2,8.65711899 L2.70710678,7.95001221 L5.54611473,10.7890202 L13.3351349,3 L14.0422417,3.70710678 L5.5569603,12.1923882 L5.54637947,12.1818073 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

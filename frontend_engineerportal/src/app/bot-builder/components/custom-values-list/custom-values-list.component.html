@@ -1,0 +1,57 @@
+<!-- Varibales that have been added -->
+<div class="items-section">
+  <div class="items-wrapper" *ngFor="let dataObj of selected; let i = index">
+    <div class="selected-item-wrapper" *ngIf="type === 'entity' || type === 'entity-condition'">
+      <div class="item-title">{{ dataObj.entityName }}</div>
+      <div class="item-details">{{ dataObj.entityValue || 'Any Value' }}</div>
+
+      <div class="round-btn btn-delete" (click)="removeSelected(i)"></div>
+    </div>
+
+    <div class="selected-item-wrapper" *ngIf="type === 'apiSuccess'">
+      <div class="item-title">{{ dataObj.title }}</div>
+      <div class="item-details">{{ dataObj.path }}</div>
+
+      <div class="round-btn btn-delete" (click)="removeSelected(i)"></div>
+    </div>
+
+    <div class="selected-item-wrapper" *ngIf="type === 'variables'">
+      <div class="item-title">{{ dataObj }}</div>
+
+      <div class="round-btn btn-delete" (click)="removeSelected(i)"></div>
+    </div>
+  </div>
+</div>
+
+<div class="input-fields-wrapper" [ngClass]="{ hidden: !inputOpen }">
+  <div class="input-fields-box">
+    <div *ngFor="let field of customValueTypes[type].fields" class="form-group">
+      <label>{{ field.title }}{{ field.required ? '*' : '' }}</label>
+      <converse-drop-down
+        *ngIf="field.type && field.type === 'dropdown'"
+        id="date-restriction-drop-down"
+        [data]="getDropdownData(field.name)"
+        (selchange)="changeSelectedItem($event, field.name)"
+        [placeholder]="field.dropdownOptionTitle || field.title"
+        [selected]="this[field.name]"
+        [hasEmptyOption]="!field.required"
+        emptyOptionName="Any Value"
+      ></converse-drop-down>
+      <div class="input-wrapper" *ngIf="!field.type || field.type === 'text'">
+        <input [id]="field.name" type="text" [placeholder]="field.placeholder || field.title || ''" [(ngModel)]="this[field.name]" />
+      </div>
+    </div>
+    <div class="round-btn btn-delete" (click)="closeInputFields()"></div>
+    <div class="round-btn btn-save" (click)="saveInput()"></div>
+  </div>
+</div>
+
+<div class="btn-wrapper">
+  <converse-button
+    [val]="customValueTypes[type].buttonTitle"
+    [boolGreen]="true"
+    [rounded]="true"
+    [ceFormSuccessError]="ceFormSuccessError"
+    (click)="addButtonClick()"
+  ></converse-button>
+</div>

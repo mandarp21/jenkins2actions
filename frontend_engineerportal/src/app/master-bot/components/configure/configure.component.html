@@ -1,0 +1,38 @@
+<converse-error-panel [message]='errorMessage' (closeErrorPanel)='closeErrorPanel($event)' *ngIf='errorOnSave'></converse-error-panel>
+<nav-bar [title]="title" [prevpage]="prevPage" (backclick)="back()"></nav-bar>
+
+<!-- <div id='btnFwdToPerformance' class='bot-performance' (click)='navigateToBotPerformance()'>
+  <span *ngIf="masterBot?.botName"> {{ masterBot.botName }}'s Performance</span>
+
+  <div id="btnBotPerformance"></div>
+
+</div> -->
+
+<div class="bot-performance-wrapper">
+  <span *ngIf="masterBot?.botName" (click)='navigateToBotPerformance()'> {{ masterBot.botName }}'s Performance</span>
+  <div id="btnBotPerformance" (click)='navigateToBotPerformance()'></div>
+</div>
+
+<form [formGroup]="masterBotForm">
+  <div class="content-cls">
+    <div class="editable" [ngClass]= "{'bot-avtar-box-sans-tt': !toolTipFlag , 'bot-avtar-box-cls' : toolTipFlag }">
+      <bot-info-form [wideBotInfoCard]="true" [botType]="botType" (toggleBotInfoToolTip)="toggleEditSectionToolTip($event)" [botStatusVisiblity]=true [botForm]="masterBotForm">
+      </bot-info-form>
+    </div>
+    <div class="bot-avtar-box-sans-tt">
+      <bot-ai-info [naturalLanguageProcessing]='NLPProvider' [speechToText]='STTProvider' [textToSpeech]='TTSProvider'></bot-ai-info>
+    </div>
+  </div>
+  <div class="submit-cls">
+    <div class="delete-cls">
+      <converse-button [val]="'Delete Bot'" [id]="'btnDeleteBot'" (click)="askToUser()" [boolGreen]="false"></converse-button>
+    </div>
+    <div class="cancel-cls">
+      <converse-button [val]="'Cancel'" [id]="'btnCancelConfMaster'" (click)="back()" [boolGreen]="false"></converse-button>
+    </div>
+    <div class="save-cls">
+      <converse-button [val]="'Save'"  [id]="'btnSaveConfMaster'" (click)="update()" [boolGreen]="masterBotForm.dirty && masterBotForm.valid" [isDisabled]="!masterBotForm.dirty || !masterBotForm.valid"></converse-button>
+    </div>
+  </div>
+</form>
+<popup-modal [opener]="askToDelete" (handleConfirmClickEvent)="handleConfirmEvent($event)"></popup-modal>

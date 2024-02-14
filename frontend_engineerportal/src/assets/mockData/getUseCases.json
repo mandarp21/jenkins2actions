@@ -1,0 +1,35 @@
+[
+  {
+  "useCaseId": "1",
+  "useCaseName": "Change Billing Address",
+  "useCaseDescription": "Use Case Loreum Ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod",
+  "useCaseStatus": "active",
+  "createdBy": "linh.t.nguyen",
+  "updatedBy": "linh.t.nguyen",
+  "createdOn": "28-Jan-18,09: 24,",
+  "updatedOn": "30-Jan-18,09: 24,",
+  "channels": ["IVR"]
+  },
+  {
+  "useCaseId": "2",
+  "useCaseName": "Change Shipping Address",
+  "useCaseDescription": "Use Case Loreum Ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod",
+  "useCaseStatus": "active",
+  "createdBy": "linh.t.nguyen",
+  "updatedBy": "linh.t.nguyen",
+  "createdOn": "28-Mar-18,09: 24,",
+  "updatedOn": "30-Mar-18,09: 24,",
+  "channels": ["Web", "SMS"]
+  },
+  {
+  "useCaseId": "3",
+  "useCaseName": "Update Payment Details",
+  "useCaseDescription": "Use Case Loreum Ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod",
+  "useCaseStatus": "active",
+  "createdBy": "linh.t.nguyen",
+  "updatedBy": "linh.t.nguyen",
+  "createdOn": "28-Apr-18,09: 24,",
+  "updatedOn": "30-Apr-18,09: 24,",
+  "channels": ["Alexa", "Email"]
+  }
+]

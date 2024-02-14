@@ -1,0 +1,34 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+// cta button group
+.cta-btn-group
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  margin-left: 5px
+  margin-top: 12px
+
+.cta-btn
+  padding: 10px
+  background: $converse-white
+  color: $converse-seagreen
+  border: 1px solid $converse-seagreen
+  min-width: 100px
+  border-radius: 2px
+  margin: 5px
+  font-size: 13px
+  @include boxshadowstyle
+
+  &:active, &:focus
+    border: 3px solid $converse-seagreen
+    outline: none
+
+.disabled-button
+  border-color: lighten(black, 25%)
+  color: lighten(black, 25%)
+  opacity: .5
+
+.feedback-btn
+  margin: 15px 15px 15px -21px
+  cursor: pointer

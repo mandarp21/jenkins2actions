@@ -1,0 +1,10 @@
+<div id="{{'drp-'+id}}" class="btn-group" dropdown>
+  <button id="{{'btn-basic-'+id}}" type="button" class="btn btn-txt-cls" aria-controls="dropdown-basic" [minDate]="minDateObj" [maxDate]="maxDateObj"
+          #dp="bsDatepicker" [(bsValue)]="dateObj" (bsValueChange)="onChange($event)" [bsConfig]="{ showWeekNumbers: false }" bsDatepicker>
+          {{dateObj|date:'dd MMMM yyyy'}}
+          <span class="caret-span-cls">
+                  <button id="{{'btn-child-'+id}}" class="btn caret-cls">
+                  </button>
+          </span>
+  </button>
+</div>

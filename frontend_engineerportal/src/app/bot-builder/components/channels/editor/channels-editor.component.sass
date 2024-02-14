@@ -1,0 +1,294 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.channels-editor
+  @include boxshadowstyle
+  width: 350px
+  position: fixed
+  z-index: 3
+  background: #fff
+  top: 125px
+  left: 100px
+  height: auto
+
+.channels-form-wrapper
+  padding: 25px
+
+.conditions-header
+  font-size: 24px
+  font-weight: 600
+  letter-spacing: -0.8pt
+
+.channel-type-radiobuttons
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  margin-top: 15px
+
+.input-label
+  width: 100%
+  font-size: 9px
+  line-height: 9px
+
+.channel-type
+  width: 45px
+  height: 45px
+  border: dashed 1px #CCCCCC
+  border-radius: 25px
+  margin: 5px 7px
+  cursor: pointer
+  position: relative
+
+.channel-type.disabled
+  cursor: default
+
+.channel-type.active
+  background: $converse-seagreen
+  border-color: rgba(0,0,0,0)
+
+.channel-icon
+  width: 100%
+  height: 100%
+  margin: -0.5px 0 0 -0.5px
+
+.disabled .channel-icon.web
+  background: url('/assets/img/Icon_Web_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.voice
+  background: url('/assets/img/Icon_Voice_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.sms
+  background: url('/assets/img/Icon_Sms_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.skype
+  background: url('/assets/img/Icon_Skype_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.facebook
+  background: url('/assets/img/Icon_Facebook_Grey.svg') center no-repeat
+  background-size: 28px 28px
+
+.disabled .channel-icon.email
+  background: url('/assets/img/Icon_Email_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.msteams
+  background: url('/assets/img/Icon_Teams_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.slack
+  background: url('/assets/img/Icon_Slack_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.whatsapp
+  background: url('/assets/img/Icon_WhatsApp_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.alexa
+  background: url('/assets/img/Icon_Alexa_Grey.svg') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.zendesk
+  background: url('/assets/img/Icon_zendesk.png') center no-repeat
+  background-size: 30px 30px
+
+.disabled .channel-icon.pinpoint
+  background: url('/assets/img/Icon_pinpoint.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.web
+  background: url('/assets/img/Icon_Web_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.voice
+  background: url('/assets/img/Icon_Voice_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.sms
+  background: url('/assets/img/Icon_Sms_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.skype
+  background: url('/assets/img/Icon_Skype_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.facebook
+  background: url('/assets/img/Icon_Facebook_Green.svg') center no-repeat
+  background-size: 28px 28px
+
+.channel-icon.email
+  background: url('/assets/img/Icon_Email_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.msteams
+  background: url('/assets/img/Icon_Teams_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.slack
+  background: url('/assets/img/Icon_Slack_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.whatsapp
+  background: url('/assets/img/Icon_WhatsApp_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.alexa
+  background: url('/assets/img/Icon_Alexa_Green.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.zendesk
+  background: url('/assets/img/Icon_zendesk.png') center no-repeat
+  background-size: 30px 30px
+
+.channel-icon.pinpoint
+  background: url('/assets/img/Icon_pinpoint.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.web
+  background: url('/assets/img/Icon_Web_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.voice
+  background: url('/assets/img/Icon_Voice_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.sms
+  background: url('/assets/img/Icon_Sms_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.skype
+  background: url('/assets/img/Icon_Skype_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.facebook
+  background: url('/assets/img/Icon_Facebook_White.svg') center no-repeat
+  background-size: 28px 28px
+
+.active .channel-icon.email
+  background: url('/assets/img/Icon_Email_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.msteams
+  background: url('/assets/img/Icon_Teams_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.slack
+  background: url('/assets/img/Icon_Slack_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.whatsapp
+  background: url('/assets/img/Icon_WhatsApp_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.alexa
+  background: url('/assets/img/Icon_Alexa_White.svg') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.zendesk
+  background: url('/assets/img/Icon_zendesk.png') center no-repeat
+  background-size: 30px 30px
+
+.active .channel-icon.pinpoint
+  background: url('/assets/img/Icon_pinpoint.svg') center no-repeat
+  background-size: 30px 30px
+
+.channel-name-input
+  outline: none
+
+.channels-input-container
+  margin-top: 10px
+
+.channels-button-wrapper
+  width: 125px
+  height: 40px
+  float: left
+  margin: 25px 12.5px
+
+.radio-btn-outer
+  width: 20px
+  height: 20px
+  border-radius: 20px
+  border: solid 1px #cccccc
+  float: left
+
+.radio-btn-inner
+  width: 0
+  height: 0
+  margin: 8px
+  border-radius: 10px
+  transition: width 0.2s, height 0.2s, margin 0.2s
+
+.active .radio-btn-inner
+  width: 12px
+  height: 12px
+  background: #01CCAA
+  margin: 3px
+
+.channels-copy-radio-wrapper
+  width: 146px
+  height: 20px
+  float: left
+  margin: 15px 0px 15px 0px
+  cursor: pointer
+
+.channels-copy-radio-wrapper > p
+  font-size: 12px
+  line-height: 12px
+  font-weight: 400
+  letter-spacing: -0.2pt
+  float: left
+  margin-left: 5px
+  margin-top: 4px
+  user-select: none
+
+  // ========================================
+//                TOOLTIP
+// ========================================
+
+.tooltip
+  visibility: hidden
+  width: auto
+  background-color: $converse-snowwhite
+  position: absolute
+  top: -35px
+  padding: 2px 8px
+  text-align: center
+  display: inline
+  color: $converse-lightgray
+  left: 50%
+  transform: translateX(-50%)
+
+.channel-type:hover .tooltip
+  visibility: visible
+  opacity: 1
+
+// hide when mouseover on the tooltip
+.channel-type .tooltip:hover
+  opacity: 0
+  visibility: hidden
+
+.channel-type .tooltip:after
+  border-left: solid transparent 10px
+  border-right: solid transparent 10px
+  border-top: solid $converse-snowwhite 10px
+  bottom: -10px
+  content: " "
+  height: 0
+  left: calc(100% / 2 - 10px)
+  position: absolute
+  width: 0
+
+.astrisk-msg
+  font-size: 12px
+  margin-top: 15px
+
+.astrisk
+  font-size: 12px
+
+.channel-type-error
+  font-size: 9px
+  color: $converse-hotpink
+  margin-top: 10px

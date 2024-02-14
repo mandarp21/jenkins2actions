@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Icon_Refresh_Black</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon_Refresh_Black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Arrow_R" transform="translate(9.000000, 4.000000)">
+            <g id="Arrow_Head" transform="translate(0.000000, 6.000000)" fill="#292F32">
+                <rect id="Rectangle-Copy-4" x="0" y="0" width="1" height="3"></rect>
+                <rect id="Rectangle-4-Copy" x="0" y="2" width="3" height="1"></rect>
+            </g>
+            <path d="M2.47908731,0 C-0.505287694,3 -1.48075156,5.98168945 3.47908731,8" id="Line" stroke="#292F32" stroke-linecap="square" transform="translate(1.739544, 4.000000) scale(-1, -1) translate(-1.739544, -4.000000) "></path>
+        </g>
+        <g id="Arrow_L" transform="translate(3.000000, 3.000000)">
+            <g id="Arrow_Head" transform="translate(2.500000, 1.500000) rotate(180.000000) translate(-2.500000, -1.500000) translate(1.000000, 0.000000)" fill="#292F32">
+                <rect id="Rectangle-Copy-4" x="0" y="0" width="1" height="3"></rect>
+                <rect id="Rectangle-4-Copy" x="0" y="2" width="3" height="1"></rect>
+            </g>
+            <path d="M2.97908731,1 C-0.00528769351,4 -0.980751561,6.98168945 3.97908731,9" id="Line" stroke="#292F32" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

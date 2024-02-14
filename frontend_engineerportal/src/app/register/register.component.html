@@ -1,0 +1,42 @@
+<div class="registration-container">
+  <div class="main">
+
+    <img class="converselogo" />
+
+    <form [formGroup]="registerForm" class="admin-registration-form" (ngSubmit)="onRegister()">
+      <div class="form-group email-field">
+        <input id='firstName' autocomplete="off" class="form-control" type="text" placeholder="First Name" formControlName="adminFirstName"
+          (focus)="onChange($event)" />
+      </div>
+      <div class="form-group email-field">
+        <input id='lastName' autocomplete="off" class="form-control" type="text" placeholder="Last Name" formControlName="adminLastName"
+          (focus)="onChange($event)" />
+      </div>
+
+      <div class="form-group email-field">
+        <input id='email' autocomplete="off" class="form-control" type="text" placeholder="Email" formControlName="adminEmail"
+          (focus)="onChange($event)" />
+      </div>
+
+      <div class="form-group password-field ">
+        <input id='password' class="form-control" autocomplete="off" type="password" placeholder="Password"
+          formControlName="adminPassword" (focus)="onChange($event)" />
+      </div>
+      <div class="error-cls">
+        {{errorString}}
+      </div>
+
+      <!-- <div class="registration-button ">
+        <converse-button class="button" [type]="'submit'" [boolGreen]="true" [activateColors]="true" [val]="'Register'"
+          [id]="'btnNext'"></converse-button>
+      </div> -->
+
+    </form>
+
+    <div class="links">
+      <a class="link-button" href="login">Sign In</a>
+    </div>
+
+  </div>
+
+</div>

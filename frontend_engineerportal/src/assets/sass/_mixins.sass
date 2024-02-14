@@ -1,0 +1,321 @@
+$tablet-width: 992px
+$mobile-width: 600px
+$small-desktop-width: 1367px
+
+/* Text styles */
+
+@mixin Converse-H1
+    font-family: $medium-font
+    font-size: 0.500em
+    font-weight: 500
+    font-style: normal
+    color: $converse-darkgray
+    letter-spacing: -0.013em
+    font-stretch: normal
+    line-height: 1.5
+
+@mixin Converse-H2
+    font-family: $medium-font
+    font-size: 12px
+    font-weight: 500
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.33
+    letter-spacing: -0.2px
+    color: $converse-darkgray
+
+@mixin Converse-H3
+    font-family: $medium-font
+    font-size: 12px
+    font-weight: 300
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.33
+    letter-spacing: -0.2px
+    color: $converse-white
+
+@mixin Converse-H4
+    font-family: $medium-font
+    font-size: 2.250em
+    font-weight: 600
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.2
+    letter-spacing: -0.075em
+    color: $converse-darkgray
+
+@mixin Converse-H5
+    font-family: $medium-font
+    font-size: 1.50em
+    font-weight: 300
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.17
+    letter-spacing: -0.050em
+    color: $converse-darkgray
+
+@mixin Converse-Title
+    font-family: $medium-font
+    font-size: 16px
+    font-weight: 500
+    font-style: normal
+    font-stretch: normal
+    line-height: 16px
+    letter-spacing: -0.5px
+    color: $converse-darkgray
+
+@mixin Converse-Title2
+    font-family: $medium-font
+    font-size: 24px
+    font-style: normal
+    font-stretch: normal
+    font-weight: 500
+    line-height: 24px
+    letter-spacing: -1.6px
+    color: $converse-darkgray
+
+@mixin Converse-Copy
+    font-family: $light-font
+    font-size: 12px
+    font-weight: 300
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.33
+    letter-spacing: -0.15px
+    color: $converse-darkgray
+
+@mixin Converse-Refresh
+    font-family: $medium-font
+    font-size: 0.625em
+    font-weight: 300
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.33
+    letter-spacing: -0.006em
+    color: $converse-seagreen
+
+@mixin Converse-Date
+    font-family: $medium-font
+    font-size: 0.500em
+    font-weight: 500
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.33
+    letter-spacing: -0.006em
+    color: $converse-seagreen
+
+@mixin dashchartzidx
+    z-index: 1
+
+@mixin dashrelativechart
+    position: relative
+
+@mixin borderstyle
+  border: solid 0.063em $converse-seagreen
+
+@mixin datepicker
+    width: 12.75%
+    height: 3em
+    border-radius: 0.125em
+    background-color: $converse-white
+    @include borderstyle
+
+@mixin buttonstyle
+  width: 31.33%
+  min-height: 12.500em
+  border-radius: 0.125em
+  background-color: $converse-white
+  @include boxshadowstyle
+
+@mixin refreshText
+  float: left
+  margin-top: 5%
+  padding-left: 1%
+
+@mixin refreshImg
+  float: left
+  margin-top: 5%
+  padding-left: 7%
+
+@mixin icon
+    min-width: 60px
+
+@mixin boxshadowstyle
+    box-shadow: 0 0.250em 0.500em 0 $converse-faintblack
+
+@mixin tableboxshadowstyle
+    box-shadow: 0 0.250em 0.250em 0 $converse-faintgray
+
+
+@mixin full-box-shadow-style
+  box-shadow: 0 0.250em 0.500em 0.250em $converse-faintblack
+
+
+@mixin sqrboxshadowstyle
+  box-shadow: 0 0.125em 0.125em 0 $converse-faintblack
+
+
+@mixin barboxshadow
+  box-shadow: 0 0.063em 0.063em 0  $converse-faintgray
+
+
+
+@mixin barChartStyle
+    border-radius: 0.125em
+    background-color: $converse-white
+    @include boxshadowstyle
+
+
+@mixin lblText
+  height: 0.750em
+  width: 15.000em
+  font-family: $medium-font
+  font-size: 0.5em
+  font-weight: 500
+  font-style: normal
+  font-stretch: normal
+  line-height: 1.5
+  letter-spacing: -0.013em
+  color: $converse-darkgray
+
+
+@mixin txtBox
+  border: none
+  border-top-style: none
+  border-right-style: none
+  border-bottom-style: solid
+  border-bottom-width: 0.01em
+  border-bottom-color: $converse-seagreen
+  border-left-style: none
+  font-style: normal
+  font-stretch: normal
+  line-height: 1.33
+  letter-spacing: 0.01em
+  color: $converse-seagreen
+  vertical-align: text-bottom
+
+@mixin txtBox-error
+  border: none
+  border-top-style: none
+  border-right-style: none
+  border-bottom-style: solid
+  border-bottom-width: 0.01em
+  border-bottom-color: $converse-hotpink
+  border-left-style: none
+  font-style: normal
+  font-stretch: normal
+  line-height: 1.33
+  letter-spacing: 0.01em
+  color: $converse-seagreen
+  vertical-align: text-bottom
+
+@mixin txt-box-focus
+  border: none
+  border-top-style: none
+  border-right-style: none
+  border-bottom-style: solid
+  border-bottom-width: 00.01em
+  border-bottom-color: $converse-seagreen
+  border-left-style: none
+
+@mixin lable-text
+  font-family: $medium-font
+  font-size: 1.15em
+  font-weight: 500
+  font-style: normal
+  font-stretch: normal
+  line-height: 1.33
+  letter-spacing: 0.01em
+  color: $converse-lightgray
+  vertical-align: text-bottom
+
+@mixin filtertext
+    font-family: "Graphik Regular"
+    font-weight: 500
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.17
+    letter-spacing: -0.050em
+    text-align: right
+    color: $converse-darkgray
+    font-size: 1.300em
+
+@media (max-width: 1290px)
+    @mixin filtertext
+      font-size: 1em
+
+@mixin small-desktop
+  @media (max-width: #{$small-desktop-width})
+    @content
+
+@mixin tablet
+  @media (min-width: #{$mobile-width + 1px}) and (max-width: #{$tablet-width})
+    @content
+
+@mixin mobile
+  @media (max-width: #{$mobile-width})
+    @content
+
+$page-max-width: 1456px
+$horizontal-padding: 40px
+$max-width-minus-padding: $page-max-width - ($horizontal-padding * 2)
+$horizontal-padding: 40px
+
+@mixin decideFullWidth
+  width: $max-width-minus-padding
+
+  @include small-desktop
+    width: 1150px
+
+
+@mixin decideFullWidthWithPadding
+  width: $max-width-minus-padding + ($horizontal-padding * 2)
+  padding-left: $horizontal-padding
+  padding-right: $horizontal-padding
+
+  @include small-desktop
+    width: 1150px + (30px)
+    padding-left: 15px
+    padding-right: 15px
+
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white)
+  overflow: hidden
+  position: relative
+  line-height: $lineHeight
+  max-height: $lineHeight * $lineCount
+  text-align: justify
+  margin-right: -1em
+  padding-right: 1em
+  &:before
+    content: '...'
+    position: absolute
+    right: 0
+    bottom: 0
+
+  &:after
+    content: ''
+    position: absolute
+    right: 0
+    width: 1em
+    height: 1em
+    margin-top: 0.2em
+    background: $bgColor
+
+@mixin background-section($mode)
+  @if $mode == 'info'
+    background-color: $converse-overlay-tooltip
+  @else
+    background-color: $converse-white
+
+@mixin info-icon($mode)
+  @if $mode == 'info'
+    background: $info-icon center no-repeat
+    width: 20px
+    height: 20px
+  @else
+    background: $close-icon center no-repeat
+    width: 25px
+    height: 25px
+  display: inline-block
+  cursor: pointer

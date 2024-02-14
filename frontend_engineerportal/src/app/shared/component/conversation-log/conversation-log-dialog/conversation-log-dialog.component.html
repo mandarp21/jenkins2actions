@@ -1,0 +1,35 @@
+<div class="dialog-container">
+  <div class="container-conversation-details">
+
+    <div class='section-child'>
+      <div class='title-details'>{{'Use Case'}}</div>
+      <div class='text-details'>{{conversationDetails.name}}</div>
+    </div>
+    <div class='section-child'>
+      <div class='title-details'>{{'Use Case Status'}}</div>
+      <div class='text-details' [ngClass]="{'is-escalated': conversationDetails.status=='Escalated',
+        'is-abandoned': conversationDetails.status=='Abandoned',
+        'is-completed': conversationDetails.status=='Completed'}">{{conversationDetails.status}}</div>
+    </div>
+    <div class='section-child'>
+      <div class='title-details'>{{'Date & Time'}}</div>
+      <div class='text-details'>{{conversationDetails.dateTime}}</div>
+    </div>
+    <div class='section-child'>
+      <div class='title-details'>{{'Session ID'}}</div>
+      <div class='text-details'>{{conversationDetails.sessionId}}</div>
+    </div>
+    <div class='close-container' (click)='closeDialog()'></div>
+  </div>
+  <div class="table-header-row">
+    <div class='title-details' *ngFor="let header of itemHeaders" [ngStyle]="{'width': header.width}">
+      {{ header.headerName }}
+    </div>
+  </div>
+  <div class="container-conversation-table">
+    <div class="table-row" *ngFor="let item of itemList">
+      <div class='table-cell' *ngFor="let header of itemHeaders" [ngStyle]="{'width': header.width}">
+        {{item[header.colname]}} </div>
+    </div>
+  </div>
+</div>

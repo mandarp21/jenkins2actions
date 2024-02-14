@@ -1,0 +1,15 @@
+<div class='use-case-container'>
+  <div *ngFor='let useCase of getUseCases'>
+    <converse-use-case-section [workerBotId]='botId' [useCaseDetails]='useCase' (saveEditEventEmitter)='saveNewUseCase($event)'
+      (removeEventEmitter)='removeUseCaseDetails($event)'></converse-use-case-section>
+  </div>
+  <div>
+    <converse-new-use-case-section [workerBotId]='botId' (saveEventEmitter)='saveNewUseCase($event)'></converse-new-use-case-section>
+  </div>
+</div>
+<div class="asterisk-msg">*Please complete required fields</div>
+<div class="import-export-cls">
+  <input type="file" #fileInput name="useCaseFile" id="useCaseFile" class="inputFile" (click)="fileInput.value = null" (change)="onFileChange($event)" accept="application/json"/>
+  <converse-button [boolWhite]="false" iconType="import" id="importUseCaseButton" val="Import Use Case" (click)="openFileBrowser($event)"></converse-button>
+  <converse-button [boolWhite]="false" iconType="export" id="exportUseCaseButton" val="Export All Use Cases" (click)="exportUseCases(getUseCases)"></converse-button>
+</div>

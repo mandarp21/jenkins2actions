@@ -1,0 +1,349 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.wrapper
+  width: 350px
+  margin: 0 auto
+
+.card-container
+  width: 350px
+  height: 96px
+  display: grid
+  grid-template-columns: max-content minmax(auto, 1fr) min-content
+  align-items: center
+  background-color: $converse-white
+  @include boxshadowstyle
+  position: relative
+
+.card-icon-container
+    position: relative
+    width: 50px
+
+.card-icon
+    width: 100%
+    margin-left: 20px
+    height: auto
+    border-radius: 50%
+    background-color: $converse-seagreen
+    padding: 5px
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.12)
+
+.card-details
+    margin: 0 12px 0 30px
+    overflow: hidden
+    white-space: nowrap
+
+.card-heading
+    @include Converse-Title
+    text-align: left
+    font-size: 10px
+
+.card-details .card-description
+  @include Converse-H3
+  white-space: normal
+  width: 100%
+  text-align: left
+  font-weight: 500
+  color: $converse-darkgray
+  text-overflow: ellipsis
+  font-size: 17px
+
+.card-actions
+    display: grid
+    grid-template-rows: repeat(3, minmax(auto, 1fr))
+    grid-gap: 6px
+    overflow: hidden
+
+.action-icon-container
+    cursor: pointer
+    display: grid
+    width: 36px
+    height: 28px
+    @include sqrboxshadowstyle
+
+.action-icon
+    width: 50%
+    align-self: center
+    justify-self: center
+
+.tooltips
+  position: absolute
+  right: -40px
+  height: 100px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  transform: translateX(10px)
+  z-index: -1
+
+.tooltips > div
+  width: 40px
+  height: 40px
+  background-color: $converse-white
+  border-radius: 50%
+  opacity: 0
+  box-shadow: 3px 2px 4px 0 rgba(0, 0, 0, 0.15)
+  cursor: pointer
+
+.tooltips .addTooltip
+  background: $converse-white url('/assets/img/Icon_Plus_Pos.png') center no-repeat
+  background-size: 20px auto
+
+.tooltips .commentTooltip
+  background: $converse-white url('/assets/img/Icon_Cmnts_Green.png') center no-repeat
+  background-size: 20px auto
+
+.tooltips .moveTooltip
+  background: $converse-white url('/assets/img/Icon_Move_Green.svg') center no-repeat
+  background-size: 20px auto
+
+.tooltips .linkTooltip
+  background: $converse-white url('/assets/img/Icon_Link_Green.svg') center no-repeat
+  background-size: 20px auto
+
+@keyframes fade-out
+  0%
+    opacity: 1
+    visibility: visible
+  100%
+    opacity: 0
+    visibility: hidden
+
+@keyframes fade-out-one
+  0%
+    opacity: 1
+    visibility: visible
+  100%
+    opacity: 0
+    visibility: hidden
+
+@keyframes fade-out-two
+  0%
+    opacity: 1
+    visibility: visible
+  15%
+    opacity: 1
+    visibility: visible
+  100%
+    opacity: 0
+    visibility: hidden
+
+@keyframes fade-out-three
+  0%
+    opacity: 1
+    visibility: visible
+  30%
+    opacity: 1
+    visibility: visible
+  100%
+    opacity: 0
+    visibility: hidden
+
+
+@keyframes fade-in-one
+  0%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+@keyframes fade-in-two
+  0%
+    opacity: 0
+    visibility: hidden
+  15%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+
+@keyframes fade-in-three
+  0%
+    opacity: 0
+    visibility: hidden
+  30%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+@keyframes fade-in-four
+  0%
+    opacity: 0
+    visibility: hidden
+  45%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+.showTooltip
+  opacity: 1
+  visibility: visible
+
+.hideTooltip
+  opacity: 0
+  visibility: hidden
+
+.tooltips.show > div:first-child
+  @extend .showTooltip
+  animation: fade-in-one .3s ease
+
+.tooltips.show > div:nth-child(2)
+  @extend .showTooltip
+  animation: fade-in-two .3s ease
+
+.tooltips.show > div:nth-child(3)
+  @extend .showTooltip
+  animation: fade-in-three .3s ease
+
+.tooltips.hide > div:first-child
+  @extend .hideTooltip
+  animation: fade-out-one .3s ease
+
+.tooltips.hide > div:nth-child(2)
+  @extend .hideTooltip
+  animation: fade-out-two .3s ease
+  transform: translateX(0)
+
+.tooltips.hide > div:nth-child(3)
+  @extend .hideTooltip
+  animation: fade-out-three .3s ease
+  transform: translateX(0)
+
+.tooltips.show
+  right: -40px
+  transition: right ease .5s
+  z-index: 2
+
+.tooltips.hide
+  right: 0px
+  transition: right ease .5s
+
+.move-action
+  width: 40px
+  height: 40px
+  background-color: $converse-white
+  border-radius: 50%
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04)
+  cursor: pointer
+  background: $converse-white url('/assets/img/Icon_Move_Green.svg') center no-repeat
+  background-size: 20px auto
+  margin: 0 auto 50px auto
+  position: relative
+
+.move-action:after
+  content: ''
+  position: absolute
+  bottom: -50px
+  left: 50%
+  border-left: $node-connection-line
+  width: 100%
+  height: 50px
+
+.bot-type-icon
+  top: -5px
+  left: 10px
+  position: absolute
+  width: 25px
+  height: 25px
+  border-radius: 50%
+  background-color: $converse-white
+  @include boxshadowstyle
+
+.bot-type-icon.msg
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Msg_Icon_Green.svg') center no-repeat
+  background-size: 15px 15px
+
+.bot-type-icon.options
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Rdo_Icon_Green.svg') center no-repeat
+  background-size: 15px 15px
+
+.bot-type-icon.variable
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/At_Icon_Green.svg') center no-repeat
+  background-size: 15px 15px
+
+.bot-type-icon.crsl
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Crsl_Icon_Green.svg') center no-repeat
+  background-size: 15px 15px
+
+.bot-type-icon.decision
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Icon_IntBranch_Green.svg') center no-repeat
+  background-size: 20px 20px
+
+.bot-type-icon.datepicker
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Icon_DateP_Green.svg') center no-repeat
+  background-size: 20px 20px
+
+.bot-type-icon.video
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Icon_IntBranch_Green.svg') center no-repeat
+  background-size: 15px 15px
+
+.bot-type-icon.dynamicButtons
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/DynamicBtn_Icon_Green.svg') center no-repeat
+  background-size: 24px
+
+.bot-type-icon.feedbackTiles
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Icon_FeedbackEmoji_Green.svg') center no-repeat
+  background-size: 15px 15px
+
+.bot-type-icon.feedbackReqMsg
+  @extend .bot-type-icon
+  background: $converse-white url('/assets/img/card-editor/Icon_FeedbackMsg_Green.svg') center no-repeat
+  background-size: 15px 15px
+
+.moveTooltip > .move-scope
+  width: 40px
+  height: 40px
+  z-index: -1
+  position: absolute
+  background-color: $converse-white
+  border-radius: 20px
+  box-shadow: 3px 2px 4px 0 rgba(0, 0, 0, 0.15)
+  transition: width ease .3s, opacity ease .3s, left ease .3s
+  font-size: 14px
+  font-weight: 500
+  line-height: 40px
+  text-align: center
+  user-select: none
+  color: #01CCAA
+  opacity: 0
+  left: 0px
+  bottom: 60px
+
+.tooltips.show .moveTooltip.active > .move-scope
+  width: 100px
+  opacity: 1
+  left: 60px
+
+.tooltips.show .moveTooltip.active > .move-scope.tree
+  bottom: 30px
+  transition: width ease .3s, opacity ease .3s, left ease .3s, bottom ease .3s .3s
+
+.tooltips.show .moveTooltip.active > .move-scope.node
+  bottom: 90px
+  transition: width ease .3s, opacity ease .3s, left ease .3s, bottom ease .3s .3s
+
+.tooltips.show .moveTooltip.active > .move-scope.tree-only
+  bottom: 60px
+  transition: width ease .3s, opacity ease .3s, left ease .3s
+
+.moveTooltip > .move-btn
+  width: 40px
+  height: 40px
+  border-radius: 20px
+  position: absolute

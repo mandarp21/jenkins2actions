@@ -1,0 +1,142 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.card-container
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+
+.first-node
+  margin-top: 7px
+
+.circle-border
+  padding: 4px
+  border: $node-connection-line
+  border-radius: 50%
+
+.card-icon
+  width: 50px
+  height: 50px
+  box-sizing: content-box
+  cursor: pointer
+  border-radius: 50%
+
+.multiple-card-container
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: 15px
+  opacity: 1
+  height: 80px
+  transition: opacity ease .3s, visibility 0s .3s,  height ease .3s
+
+.circle-wrapper
+  position: relative
+  padding: 10px
+  background-color: $converse-white
+  border-radius: 50%
+  @include boxshadowstyle
+
+.multiple-card-container .circle-border:first-child
+  margin-right: 5px
+
+.multiple-card-container .circle-border:last-child
+  margin-left: 5px
+
+
+.card-icon.add
+  background: $converse-seagreen url('/assets/img/Icon_Plus_WHT.png') center no-repeat
+  background-size: 20px 20px
+
+.card-icon.link
+  background: $converse-seagreen url('/assets/img/Icon_Link_White.svg') center no-repeat
+  background-size: 20px 20px
+
+.multiple-card-container .circle-border::before
+  content: ''
+  position: absolute
+  top: 0
+  border-left: $node-connection-line
+  width: 0
+  height: 15px
+
+.multiple-card-container::before
+  border-top: $node-connection-line
+  content: ''
+  position: absolute
+  top: 0
+  width: 90px
+
+.multiple-card-container.hide
+  opacity: 0
+  visibility: hidden
+  height: 0
+  transition: opacity ease .3s visibility 0s .3s height ease .3s
+
+.end-step-checkbox
+  width: 90px
+  height: 30px
+  color: #292F32
+  font-size: 14px
+  text-align: right
+  margin: 10px auto
+  line-height: 30px
+  position: relative
+  user-select: none
+  transition: margin-top ease .3s
+  cursor: pointer
+
+.end-step-checkbox.checked
+  margin-top: -12px
+
+.checkbox-img
+  width: 22px
+  height: 22px
+  background: url('/assets/img/Button_Check_Inactive.svg') center no-repeat
+  position: absolute
+  top: 4px
+
+.end-step-checkbox.checked .checkbox-img
+  background: url('/assets/img/Button_Check_Active.svg') center no-repeat
+
+.end-step-checkbox.checked:hover .checkbox-img
+  background: url('/assets/img/Button_Check_Active_Hover.svg') center no-repeat
+
+.end-step-checkbox:hover .checkbox-img
+  background: url('/assets/img/Button_Check_Inactive_Hover.svg') center no-repeat
+
+
+.external-ref-btn-wrapper
+  width: 225px
+  height: 74px
+  padding: 4px
+  border-radius: 35px
+  border: 1px dashed #ccc
+  position: absolute
+  right: -80px
+  top: 85px
+
+  visibility: none
+  opacity: 0
+  transform: scale(0.1)
+  transition: opacity ease .3s, transform ease .3s
+
+  &.show
+    visibility: visible
+    opacity: 1
+    transform: scale(1)
+
+.external-ref-btn-white-border
+  width: 100%
+  height: 100%
+  padding: 10px
+  border-radius: 30px
+  background: $converse-white
+  @include boxshadowstyle
+
+.external-ref-btn
+  width: 195px
+  height: 44px
+  border-radius: 25px
+  overflow: hidden

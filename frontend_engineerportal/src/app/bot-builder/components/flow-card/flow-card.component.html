@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div [hidden]="!unconnectedNode" class="move-action" (click)="handleClick('overlayMode', 'move-unconnected-node');"></div>
+
+  <div class="card-container" (click)="handleClick('moveToNode')" (clickOutside)="showTooltips = false">
+    <div class="card-icon-container">
+      <img src="{{ iconUrl }}" class="card-icon">
+      <div class="bot-type-icon" [ngClass]="botType" [hidden]="!botType"></div>
+    </div>
+    <div class="card-details">
+      <div class="card-heading">{{ title }}</div>
+      <div class="card-description"> {{ description|truncate:45 }}</div>
+    </div>
+    <div [hidden]="hideActionBar || unconnectedNode" class="card-actions">
+      <div class="action-icon-container" (click)="handleClick('edit')">
+        <img src="assets/img/Edit_Icon_Green.svg" class="action-icon">
+      </div>
+      <div class="action-icon-container" (click)="handleClick('more'); toggleTooltips()">
+        <img src="assets/img/More_Icon_Green.svg" class="action-icon">
+      </div>
+      <div class="action-icon-container" (click)="handleClick('delete')">
+        <img src="assets/img/Del_Icon_Grey.svg" class="action-icon">
+      </div>
+    </div>
+
+    <div class="tooltips" [ngClass]="[showTooltips ? 'show' : 'hide']">
+      <div class="moveTooltip" [ngClass]="{'active': linkActive}">
+        <div class="move-btn" (click)="linkActive = !linkActive"></div>
+        <div class="move-scope tree" [ngClass]="{'tree-only': isSplittingNode}" (click)="handleClick('overlayMode','move-tree'); showTooltips = false; linkActive = false">TREE</div>
+        <div class="move-scope node" *ngIf="!isSplittingNode" (click)="handleClick('overlayMode','move-node'); showTooltips = false; linkActive = false">NODE</div>
+      </div>
+      <div class="addTooltip" (click)="handleClick('addPlusCard'); showTooltips = false;"></div>
+      <!-- <div class="commentTooltip" (click)="showTooltips = false;"></div> -->
+    </div>
+  </div>
+</div>

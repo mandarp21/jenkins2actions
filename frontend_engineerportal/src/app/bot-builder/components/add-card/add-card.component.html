@@ -1,0 +1,27 @@
+<div class="card-container" *ngIf="!showLink" [ngClass]="{ 'first-node': firstNode }">
+  <div class="circle-border add">
+    <div class="circle-wrapper"><div class="card-icon add" (click)="handleClick('add')"></div></div>
+  </div>
+</div>
+
+<div class="multiple-card-container" *ngIf="showLink" [ngClass]="{ hide: endFlow }">
+  <div class="circle-border add">
+    <div class="circle-wrapper"><div class="card-icon add" (click)="handleClick('add')"></div></div>
+  </div>
+
+  <div class="circle-border link">
+    <div class="circle-wrapper">
+      <div class="card-icon link" (click)="handleClick('overlayMode', 'link')"></div>
+      <div class="external-ref-btn-wrapper" [ngClass]="{ show: linkActive }" *ngIf="parentType !== 'bot'">
+        <div class="external-ref-btn-white-border" (click)="handleClick('external-ref')">
+          <div class="external-ref-btn"><converse-button [boolGreen]="true" val="Link to Another Use Case"></converse-button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="end-step-checkbox" *ngIf="parentType === 'bot'" [ngClass]="{ checked: endFlow }" (click)="endFlowChange()">
+  <div class="checkbox-img"></div>
+  End Flow
+</div>

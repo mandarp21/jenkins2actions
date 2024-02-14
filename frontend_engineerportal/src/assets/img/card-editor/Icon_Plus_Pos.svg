@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Plus_Pos</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon_Plus_Pos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <path d="M14.5,8 L1.5,8" id="Line-Copy" stroke="#01CCAA"></path>
+        <path d="M8,1.5 L8,14.5" id="Line" stroke="#01CCAA"></path>
+    </g>
+</svg>

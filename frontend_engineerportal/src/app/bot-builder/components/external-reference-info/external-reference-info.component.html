@@ -1,0 +1,33 @@
+<div class="info-container" *ngIf="refComponent">
+  <div class="info-title">Reference to another use case</div>
+  <div class="ext-ref-info-container">
+    <div class="sub-title">Worker Bot:</div>
+    <div class="info-value">{{ refComponent.title }}</div>
+    <div class="info-id">{{ refComponent.workerBotId }}</div>
+  </div>
+
+  <div class="ext-ref-info-container">
+    <div class="sub-title">Use Case:</div>
+    <div class="info-value">{{ refComponent.description }}</div>
+    <div class="info-id">{{ refComponent.useCaseId }}</div>
+  </div>
+
+  <div class="ext-ref-info-container">
+    <div class="sub-title">Bot Response:</div>
+    <div class="info-value">{{ refComponent.nextStepName }}</div>
+    <div class="info-id">{{ refComponent.nextStep }}</div>
+  </div>
+
+  <div class="info-buttons-container">
+    <converse-button [boolGreen]="true" val="Go to Conversation Flow" (click)="handleClick(true)"></converse-button>
+    <converse-button val="Cancel" (click)="closeWindow()"></converse-button>
+
+    <div class="unsaved-confirmation-box" [ngClass]="{ show: confirmationVisible }">
+      <div class="unsaved-title">You have unsaved changes that will be lost if you leave this page</div>
+      <div class="info-buttons-container">
+        <converse-button [boolGreen]="true" val="Go Anyway" (click)="handleClick()">></converse-button>
+        <converse-button val="Cancel" (click)="confirmationVisible = false"></converse-button>
+      </div>
+    </div>
+  </div>
+</div>

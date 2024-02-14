@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="10px" viewBox="0 0 11 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Bttn_Icon_White</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Bttn_Icon_White" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M1.00055123,4 C1.00018419,4.0144874 1,4.02900195 1,4.04354283 C1,5.56430711 3.01471863,6.79713015 5.5,6.79713015 C7.98528137,6.79713015 10,5.56430711 10,4.04354283 C10,4.02900332 9.99981584,4.01449014 9.99944888,4.0000041 C10,5.28810987 10,6.03687588 10,6.24641268 C10,7.76717697 7.98528137,9 5.5,9 C3.01471863,9 1,7.76717697 1,6.24641268 C1,6.07353747 1,5.32477146 1,4.00011467 Z" id="Combined-Shape" fill="#FEFFFE"></path>
+        <ellipse id="Oval-2" fill="#FEFFFE" cx="5.5" cy="3.5" rx="4.5" ry="2.5"></ellipse>
+    </g>
+</svg>

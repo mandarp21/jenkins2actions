@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Emoji_Negative</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Module/Step/New/FeedbackEmoji" transform="translate(-26.000000, -655.000000)" fill-rule="nonzero" stroke="#01CCAA">
+            <g id="Message-Copy" transform="translate(24.000000, 536.000000)">
+                <g id="Icon_Emoji_Negative" transform="translate(3.000000, 120.000000)">
+                    <circle id="Oval-Copy-2" cx="16" cy="16" r="16"></circle>
+                    <path d="M22.9345518,24 C21.552503,21.604204 18.9645647,19.9916746 16,19.9916746 C13.0391531,19.9916746 10.4539885,21.6001621 9.07065349,23.9909902" id="Oval-Copy-4" stroke-linecap="round"></path>
+                    <circle id="Oval" cx="11" cy="12" r="2"></circle>
+                    <circle id="Oval" cx="21" cy="12" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

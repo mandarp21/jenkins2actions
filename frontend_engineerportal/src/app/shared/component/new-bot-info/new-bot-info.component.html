@@ -1,0 +1,72 @@
+<div [formGroup]="botForm" class="new-bot-info-root" [ngClass]="wideBotInfoCard ? 'wide' : 'narrow'">
+  <div id='titleBotInfo' class="title-cls">{{botType|titlecase}}{{' Bot Info'}}</div>
+  <div (click)="toggleToolTipBotInfo()" [ngClass]= "{'info-icon-section': !toolTipFlag , 'info-close-section' : toolTipFlag }"></div>
+  <div *ngIf="botForm.value?.botId" class="botId-cls">Bot Id: {{botForm.value?.botId}}</div>
+  <!-- <div *ngIf="!botImage" class="avatar-bg-cls">
+    <img src='assets/img/Bot_Icon.png'>
+  </div>
+
+  <div [ngClass]="{'valid-url': isValidUrl }" class="avatar-bg-cls" *ngIf="botImage">
+    <img [style.display]="isValidUrl ? 'block' : 'none'" [src]='botImage' (error)="botIconErrorHandler()">
+    <img [style.display]="isValidUrl ? 'none' : 'block'" src='assets/img/Bot_Icon.png'>
+  </div> -->
+  <div class="avatar-bg-cls">
+    <img [src]="botImage" onError="this.src='assets/img/Bot_Icon.png'"/>
+  </div>
+
+  <div [ngClass]="{'master-bot-content': wideBotInfoCard }" class="master-bot-content">
+    <div *ngIf="botType==='master' && formErrorImageURL=== false" class="bot-img-row-cls form-group">
+      <label class="lbl-cls" for="txtBotImageUrl">{{'Bot Image'}}</label>
+      <input id='txtBotImageUrl' autocomplete="off" type="url" placeholder="Enter Image URL" formControlName="botImage" (mouseleave)="mouseleaveImageURL()" [attr.disabled] = "toolTipFlag ? '' : null">
+    </div>
+    <div *ngIf="botType==='master' && formErrorImageURL=== true" class="bot-img-row-cls form-group-error">
+        <label class="lbl-cls" for="txtBotImageUrl">{{'Bot Image'}}</label>
+        <input id='txtBotImageUrl' autocomplete="off" type="url" [attr.disabled] = "toolTipFlag ? '' : null" placeholder="Enter Image URL" formControlName="botImage" (mouseleave)="mouseleaveImageURL()">
+        <div *ngIf="botImagePatternError" class="form-error-msg">Image URL should be a valid pattern.</div>
+        <div *ngIf="botImageSizeError" class="form-error-msg">Bot icon should not be more than 100*100.</div>
+      </div>
+
+    <div class="form-group">
+      <label class="lbl-cls" for="txtBotName">{{'Bot Name'}}</label>
+      <span>*</span>
+      <input id='txtBotName' autocomplete="off" type="text" placeholder="Enter Bot Name" [attr.disabled] = "toolTipFlag ? '' : null" emptySpaceTrimDirective formControlName="botName">
+    </div>
+
+    <div class="form-group">
+      <label class="lbl-cls" for="txtBotLanguage">{{'Bot Language'}}</label>
+      <input id='txtBotLanguage' autocomplete="off" type="text" [attr.disabled] = "toolTipFlag ? '' : null" placeholder="Enter Bot Language" formControlName="botLanguage">
+    </div>
+
+    <div *ngIf="botType==='master' && formErrorTelephone=== false" class="form-group">
+      <label class="lbl-cls" for="botTelephoneNumber">{{'Bot Telephone Number'}}</label>
+      <input id='botTelephoneNumber' autocomplete="off" type="text" [attr.disabled] = "toolTipFlag ? '' : null" placeholder="Enter Bot Telephone Number"
+        formControlName="botTelephoneNumber" (mouseleave)="mouseleaveTelephone()">
+    </div>
+
+    <div *ngIf="botType==='master' && formErrorTelephone=== true"  class="form-group-error">
+        <label class="lbl-cls" for="botTelephoneNumber">{{'Bot Telephone Number'}}</label>
+        <input id='botTelephoneNumber' autocomplete="off" type="text" [attr.disabled] = "toolTipFlag ? '' : null" placeholder="Enter Bot Telephone Number"
+          formControlName="botTelephoneNumber" (mouseleave)="mouseleaveTelephone()">
+          <div class="form-error-msg">Telephone number should be valid.</div>
+      </div>
+
+    <div class="form-group">
+      <label class="lbl-cls" for="txtBotDescription">{{'Bot Description'}}</label>
+      <span>*</span>
+      <textarea id='txtBotDescription' autocomplete="off" [attr.disabled] = "toolTipFlag ? '' : null" placeholder="Enter Bot Description" emptySpaceTrimDirective formControlName="botDescription"></textarea>
+    </div>
+
+    <div class="auth-config form-group">
+      <div>
+        <label class="lbl-cls" for="txtBotAuthentication">{{ 'Authentication' }}</label>
+        <converse-switch-button [disabled]='authButtonDisabled || toolTipFlag' placement="top" [toggleToolTip]="toolTipFlag" tooltipKey="MASTER_BOT_AUTHENTICATION" (handleChangeEvent)="setAutentication($event)"
+          [checked]='botForm.value?.botAuthentication'></converse-switch-button>
+      </div>
+      <div *ngIf="botStatusVisiblity">
+        <label class="lbl-cls" for="txtBotStatus">{{ 'Status' }}</label>
+        <converse-switch-button [disabled]='toolTipFlag' [toggleToolTip]="toolTipFlag" placement="right" tooltipKey="MASTER_BOT_STATUS" (handleChangeEvent)="setStatus($event)" [checked]='botForm.value?.botStatus'></converse-switch-button>
+      </div>
+    </div>
+    <div class="asterisk-msg">*Please complete required fields</div>
+  </div>
+</div>

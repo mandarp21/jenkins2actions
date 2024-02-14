@@ -1,0 +1,73 @@
+<!-- Chat modal for Demo page -->
+<!-- <ngx-smart-modal #modal [identifier]="'chatModal'" [ngClass]="[showChatModal ? 'show' : 'hide']"> -->
+<div class="chat-modal-container" [ngClass]="[showChatModal ? 'show' : 'hide']">
+  <div class="chat-modal">
+    <div class="chat-header">
+       <!-- <img class="header-refresh-btn" src="assets/img/Icon_Refresh_Black.svg" (click)="refresh()" />-->
+      <div class="header-wrapper">
+        <img class="chat-bot-icon" src="assets/img/Bot_Icon.png" />
+        <div class="chat-title">{{ masterBotName }}</div>
+      </div>
+      <img class="header-close-btn" src="assets/img/Cross_Black.svg" (click)="closeOverlay()" />
+    </div>
+
+    <div class="chat-body">
+      <!-- Chat container main display -->
+      <div id="chat-container" class="chat-container-display">
+        <div id="chat-bubble-wrapper"   ng-repeat="REPEEEAR" *ngFor="let content of chatConversation.content">
+          <div id="todays-date" [ngClass]="{ 'user-timestamp-pos': !content.agent }">
+            {{ content.timestamp | date: 'shortTime' }}
+          </div>
+
+          <div *ngFor="let message of content.messages" [ngClass]="[content.agent ? 'agent-msg' : 'user-msg']">
+            <p dynamic="message" ng-bind-html="trustAsHtml(message)">
+              {{ message }}
+            </p>
+          </div>
+          <img class="chat-bot-icon" src="assets/img/Bot_Icon.png" *ngIf="content.agent" />
+
+          <!-- Button component -->
+          <chat-quick-res-btns
+            (eventClick)="sendChatButtonClick($event)"
+            [buttons]="content.buttons"
+            *ngIf="content.buttons?.length > 0"
+          ></chat-quick-res-btns>
+
+          <!-- Carousel component -->
+          <chat-carousel
+            (eventClick)="sendChatButtonClick($event)"
+            *ngIf="content.carousel?.length > 0"
+            [carousel]="content.carousel"
+          ></chat-carousel>
+
+          <!-- Date Picker component -->
+          <chat-date-picker
+            *ngIf="content.datepicker"
+            [boolAllowFutureDates]="content.datepicker.allowFutureDates"
+            [boolAllowPastDates]="content.datepicker.allowPastDates"
+            (dateSelected)="sendChatButtonClick($event)"
+          ></chat-date-picker>
+        </div>
+        <!-- bubble loading indicator -->
+        <div id="typing-indicator" *ngIf="typingBubble">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-wrapper form-group">
+      <input
+        type="text"
+        [id]="'chat-input-field'"
+        [value]="testChatInputText"
+        class="form-control"
+        placeholder="Type your response"
+        (keyup)="keyUp($event.target.value, $event.keyCode)"
+      />
+      <div (click)="sendChatButtonClick($event.target.previousSibling.value)" class="chat-send-btn"></div>
+    </div>
+  </div>
+</div>
+<overlay-component [active]="showChatModal" (eventClick)="closeOverlay()"></overlay-component>

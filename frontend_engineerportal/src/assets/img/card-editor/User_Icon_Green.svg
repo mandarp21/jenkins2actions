@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>User_Icon_Green</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18,12.0655567 C27.9411255,12.0655567 36,8.70769234 36,4.56555671 C26,-2.93444329 27.9411255,1.06555671 18,1.06555671 C8.0588745,1.06555671 10,-2.93444329 0,4.56555671 C0,6.67701676 2.09407148,8.58468656 5.464076,9.9476751 C8.70514413,11.2585157 13.1263786,12.0655567 18,12.0655567 Z" id="path-1"></path>
+    </defs>
+    <g id="User_Icon_Green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Body" transform="translate(6.000000, 31.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Body---Base" fill="#01CCAA" xlink:href="#path-1"></use>
+            <rect id="Body---Shade" fill="#292F32" opacity="0.0399999991" mask="url(#mask-2)" x="18" y="-1" width="20" height="16"></rect>
+        </g>
+        <g id="Head" transform="translate(14.000000, 4.000000)">
+            <ellipse id="Head---Base" fill="#01CCAA" cx="10" cy="12" rx="10" ry="12"></ellipse>
+            <path d="M10,24 C15.5228475,24 20,18.627417 20,12 C20,5.372583 15.5228475,0 10,0 C6,0 6,24.0068359 10,24 Z" id="Head---Shade" fill-opacity="0.04" fill="#292F32"></path>
+        </g>
+    </g>
+</svg>

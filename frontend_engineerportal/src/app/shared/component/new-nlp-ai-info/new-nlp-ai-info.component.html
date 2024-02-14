@@ -1,0 +1,371 @@
+<div [formGroup]="nlpAIForm" class="new-ai-info-root">
+  <div id="lblNlp" class="lbl-cls">Natural Language Processing Provider<span>*</span></div>
+  <div class="opt-cls">
+    <converse-drop-down id="ddlNlp" placement="none" [tooltipKey]="tooltipKey" [activateToolTip]="toggleToolTip" [data]="nlpArray" [selected]="nlpName" (selchange)="onSelchange($event)"></converse-drop-down>
+    <input type="hidden" name="NLPProvider" formControlName="NLPProvider" required />
+  </div>
+  <div *ngIf="nlpNameKey && nlpAIForm.controls.nlpConfig" formGroupName="nlpConfig">
+    <ng-container *ngIf="nlpNameKey === 'watson'">
+      <div class="form-group">
+        <label for="watsonUsername">Username</label>
+        <span>*</span>
+        <input
+          id="watsonUsername"
+          autocomplete="off"
+          name="username"
+          type="text"
+          placeholder="Enter Username"
+          emptySpaceTrimDirective
+          formControlName="username"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="watsonPassword">Password</label>
+        <span>*</span>
+        <input
+          id="watsonPassword"
+          autocomplete="off"
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          emptySpaceTrimDirective
+          formControlName="password"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="watsonWorkspaceId">Workspace ID</label>
+        <span>*</span>
+        <input
+          id="watsonWorkspaceId"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Workspace ID"
+          name="workspace_id"
+          emptySpaceTrimDirective
+          formControlName="workspace_id"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+      <div class="form-group">
+        <div class="opt-cls">
+          <label for="watsonRegion">Region</label>
+          <span>*</span>
+          <converse-drop-down
+            id="watsonRegion"
+            [data]="watsonRegionArr"
+            [selected]="region"
+            (selchange)="onRegchange($event)"
+            [disabled]="toggleToolTip"
+            [activateToolTip]="toggleToolTip"
+          ></converse-drop-down>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="nlpNameKey === 'dialogflow_v2'" class="form-group">
+      <div class="form-group">
+        <label for="projectId">Project ID</label>
+        <span>*</span>
+        <input
+          id="projectId"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Project ID"
+          name="projectId"
+          emptySpaceTrimDirective
+          formControlName="projectId"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="dialogflowClientEmail">Client Email</label>
+        <span>*</span>
+        <input
+          id="dialogflowClientEmail"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Client Email"
+          name="client_email"
+          emptySpaceTrimDirective
+          formControlName="client_email"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="dialogflowPrivateKey">Private Key</label>
+        <span>*</span>
+        <input
+          id="dialogflowPrivateKey"
+          autocomplete="off"
+          type="password"
+          placeholder="Enter Private Key"
+          name="private_key"
+          emptySpaceTrimDirective
+          formControlName="private_key"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="dialogflowLanguage">Language</label>
+        <span>*</span>
+        <input
+          id="dialogflowLanguage"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Language"
+          name="language"
+          emptySpaceTrimDirective
+          formControlName="language"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+    </ng-container>
+    <ng-container *ngIf="nlpNameKey === 'luis'">
+      <div class="form-group">
+        <label for="luisAppId">App ID</label>
+        <span>*</span>
+        <input
+          id="luisAppId"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter App ID"
+          name="app_id"
+          emptySpaceTrimDirective
+          formControlName="app_id"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="luisSubscriptionKey">Subscription Key</label>
+        <span>*</span>
+        <input
+          id="luisSubscriptionKey"
+          autocomplete="off"
+          type="password"
+          placeholder="Enter Subscription Key"
+          name="api_subscription_key"
+          emptySpaceTrimDirective
+          formControlName="api_subscription_key"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="luisStarterKey">Starter Key</label>
+        <span>*</span>
+        <input
+          id="luisStarterKey"
+          autocomplete="off"
+          type="password"
+          placeholder="Enter Starter Key"
+          name="starter_key"
+          emptySpaceTrimDirective
+          formControlName="starter_key"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="luisVersionId">Version ID</label>
+        <span>*</span>
+        <input
+          id="luisVersionId"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Version ID"
+          name="version_id"
+          emptySpaceTrimDirective
+          formControlName="version_id"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="luisRegion">Region</label>
+        <span>*</span>
+        <converse-drop-down id="luisRegion" [disabled]="toggleToolTip" [data]="luisRegionArr" [activateToolTip]="toggleToolTip" [selected]="region" (selchange)="onRegchange($event)"></converse-drop-down>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="nlpNameKey === 'lex'">
+      <div class="form-group">
+        <label for="lexBotName">Bot Name</label>
+        <span>*</span>
+        <input
+          id="lexBotName"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Bot Name"
+          name="bot_name"
+          emptySpaceTrimDirective
+          formControlName="bot_name"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lexAlias">Alias</label>
+        <span>*</span>
+        <input
+          id="lexAlias"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Alias"
+          name="alias"
+          emptySpaceTrimDirective
+          formControlName="alias"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lexRegion">Region</label>
+        <span>*</span>
+        <input
+          id="lexRegion"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Region"
+          name="region"
+          emptySpaceTrimDirective
+          formControlName="region"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lexAccessKey">Access Key ID</label>
+        <span>*</span>
+        <input
+          id="lexAccessKey"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Access Key"
+          name="accessKeyId"
+          formControlName="accessKeyId"
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lexSecretAccessKey">Secret Access Key</label>
+        <span>*</span>
+        <input
+          id="lexSecretAccessKey"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Secret Access Key"
+          name="secretAccessKey"
+          formControlName="secretAccessKey"
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lexUserID">User ID</label>
+        <span>*</span>
+        <input id="lexUserID" autocomplete="off" type="text" placeholder="Enter UserID" name="userId" formControlName="userId" [attr.disabled]="toggleToolTip ? '' : null" />
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="nlpNameKey === 'rasa'">
+      <div class="form-group">
+        <label for="rasaProjectId">Project ID</label>
+        <span>*</span>
+        <input
+          id="rasaProjectId"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Project ID"
+          name="projectId"
+          emptySpaceTrimDirective
+          formControlName="projectId"
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="nlpNameKey === 'rhea'">
+      <div class="form-group">
+        <label for="rheaUsername">Username</label>
+        <input
+          id="rheaUsername"
+          autocomplete="off"
+          name="username"
+          type="text"
+          placeholder="Enter Username"
+          emptySpaceTrimDirective
+          formControlName="username"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="rheaPassword">Password</label>
+        <input
+          id="rheaPassword"
+          autocomplete="off"
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          emptySpaceTrimDirective
+          formControlName="password"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="rheaCorpusId">Corpus ID</label>
+        <input
+          id="rheaCorpusId"
+          autocomplete="off"
+          type="text"
+          placeholder="Enter Corpus ID"
+          name="corpusId"
+          emptySpaceTrimDirective
+          formControlName="corpusId"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        />
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="nlpNameKey === 'alexa'">
+      <div class="form-group">
+        <label for="alexaJsonInput">NLP Data</label>
+        <textarea
+          id="alexaJsonInput"
+          autocomplete="off"
+          name="alexaJsonInput"
+          type="text"
+          placeholder="Enter NLP Data JSON"
+          formControlName="alexaJsonInput"
+          required
+          [attr.disabled]="toggleToolTip ? '' : null"
+        ></textarea>
+      </div>
+    </ng-container>
+  </div>
+</div>

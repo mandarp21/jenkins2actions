@@ -1,0 +1,41 @@
+<div class='conversation-log-container'>
+  <!-- filter row with date picker filters-->
+  <div class="filter-div-cls">
+    <div id='fromLabel' class="from-txt-cls">{{'From'}}</div>
+    <div class="dt-pick-one-cls">
+      <converse-date-picker id='fromDate' type="fromDate" [date]="fromDate" [maxDate]="fromMaxDate" (dateChanged)="onDateChanged($event)"></converse-date-picker>
+    </div>
+    <div id='toLabel' class="to-txt-cls">{{'to'}}</div>
+    <div class="dt-pick-two-cls">
+      <converse-date-picker id='toDate' type="toDate" [date]="toDate" [minDate]="toMinDate" [maxDate]="toMaxDate"
+        (dateChanged)="onDateChanged($event)"></converse-date-picker>
+    </div>
+    <div class="go-btn-cls">
+      <converse-button [val]="'Go'" [id]="'btnGoLanding'" (click)="handleClick('Go')" [boolGreen]="true"></converse-button>
+
+    </div>
+  </div>
+  <!-- next row with data table-->
+  <div class="conversation-logs-main-wrapper">
+    <div class='conversation-log-table'>
+      <converse-data-table-new [conversationLog]="conversationLog" [itemheaders]='conversationHeaders'
+        [itemlist]='convFilteredList' [usecaselist]='useCaseList' [selectedRow]='selectedRow' (clickEventEmitter)='showConversationDetails($event)'
+        (updateLogsFilter)='updateLogsFilter($event)' (updateLogsSort)='updateLogsSort($event)'
+        (disablePageButtons)='disablePageButtons($event)'></converse-data-table-new>
+
+      <div class="btnPrevPage">
+        <converse-button [val]="'Previous'" [id]="'btnPrevPage'" [isDisabled]="disableButtonPrev"
+        (click)='pageChange("prev")' [boolGreen]="skip > 0 && !disableButtonPrev"></converse-button>
+      </div>
+      <div class="btnNextPage">
+        <converse-button [val]="'Next'" [id]="'btnNextPage'" [isDisabled]="convFilteredList?.length < limit || disableButtonNext"
+        (click)='pageChange("next")' [boolGreen]="!(convFilteredList?.length < limit) && !disableButtonNext"></converse-button>
+      </div>
+
+    </div>
+    <div class='conversation-log-details-dialog'>
+      <converse-conversation-log-dialog *ngIf='conversationDetails' [itemHeaders]='itemHeaders' [itemList]='itemList'
+        [conversationDetails]='conversationDetails' (closeClickEvent)='hideDetails()'></converse-conversation-log-dialog>
+    </div>
+  </div>
+</div>

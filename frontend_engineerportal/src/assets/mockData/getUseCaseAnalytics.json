@@ -1,0 +1,111 @@
+{
+    "automationData": {
+        "totalAutomationData": {
+            "totalUseCases": 11,
+            "totalAutomationRate": 9.09
+        },
+        "masterBotAutomationData": [
+            {
+                "masterBotId": "f2f246f0-9b2e-43af-b78a-5e2d602c78d2",
+                "masterBotUseCases": 10,
+                "masterBotAutomationRate": 8.55
+            },
+            {
+                "masterBotId": "49e820ee-b958-401c-a243-5de17d8ecf0f",
+                "masterBotUseCases": 5,
+                "masterBotAutomationRate": 4
+            },
+            {
+                "masterBotId": "d19d720c-3b8e-469f-af4a-e8ae2b7495ef",
+                "masterBotUseCases": 2,
+                "masterBotAutomationRate": 1
+            },
+            {
+                "masterBotId": "cda252a4-b820-43de-8f31-94423d3b62ca",
+                "masterBotUseCases": 8,
+                "masterBotAutomationRate": 6
+            }
+        ]
+    },
+    "escalationData": {
+        "totalEscalationData": {
+            "totalUseCases": 11,
+            "totalEscalationRate": 9.09
+        },
+        "masterBotEscalationData": [
+            {
+                "masterBotId": "f2f246f0-9b2e-43af-b78a-5e2d602c78d2",
+                "masterBotUseCases": 10,
+                "masterBotEscalationRate": 2
+            },
+            {
+                "masterBotId": "49e820ee-b958-401c-a243-5de17d8ecf0f",
+                "masterBotUseCases": 1,
+                "masterBotEscalationRate": 0
+            },
+            {
+                "masterBotId": "d19d720c-3b8e-469f-af4a-e8ae2b7495ef",
+                "masterBotUseCases": 10,
+                "masterBotEscalationRate": 3
+            },
+            {
+                "masterBotId": "cda252a4-b820-43de-8f31-94423d3b62ca",
+                "masterBotUseCases": 1,
+                "masterBotEscalationRate": 0
+            }
+        ]
+    },
+    "CustomerSatisfaction": {
+        "totalCustomerSatisfaction": {
+            "totalFeedbackRequested": 1000,
+            "totalVerySatisfied": 200,
+            "totalSatisfied": 300,
+            "totalUnsatisfied": 200,
+            "totalVeryUnsatisfied": 100,
+            "totalNoFeedback": 200,
+            "totalRating": 2.75
+        },
+        "masterBotCustomerSatisfaction": [
+            {
+                "masterBotId": "f2f246f0-9b2e-43af-b78a-5e2d602c78d2",
+                "masterBotFeedbackRequested": 1000,
+                "masterBotVerySatisfied": 200,
+                "masterBotSatisfied": 300,
+                "masterBotUnsatisfied": 200,
+                "masterBotVeryUnsatisfied": 100,
+                "masterBotNoFeedback": 200,
+                "masterBotRating": 1.75
+            },
+            {
+                "masterBotId": "49e820ee-b958-401c-a243-5de17d8ecf0f",
+                "masterBotFeedbackRequested": 1000,
+                "masterBotVerySatisfied": 200,
+                "masterBotSatisfied": 300,
+                "masterBotUnsatisfied": 200,
+                "masterBotVeryUnsatisfied": 100,
+                "masterBotNoFeedback": 200,
+                "masterBotRating": 4.75
+            },
+            {
+                "masterBotId": "d19d720c-3b8e-469f-af4a-e8ae2b7495ef",
+                "masterBotFeedbackRequested": 1000,
+                "masterBotVerySatisfied": 200,
+                "masterBotSatisfied": 300,
+                "masterBotUnsatisfied": 200,
+                "masterBotVeryUnsatisfied": 100,
+                "masterBotNoFeedback": 200,
+                "masterBotRating": 3.5
+            },
+            {
+                "masterBotId": "cda252a4-b820-43de-8f31-94423d3b62ca",
+                "masterBotFeedbackRequested": 1000,
+                "masterBotVerySatisfied": 200,
+                "masterBotSatisfied": 300,
+                "masterBotUnsatisfied": 200,
+                "masterBotVeryUnsatisfied": 100,
+                "masterBotNoFeedback": 200,
+                "masterBotRating": 2.5
+            }
+        ]
+    }
+}

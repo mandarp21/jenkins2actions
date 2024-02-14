@@ -1,0 +1,52 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+\:host
+  position: absolute
+  top: 0
+  left: 0
+
+// ========================================
+//                 GENERAL
+// ========================================
+
+.card-editor-wrapper
+  width: 350px
+  background-color: $converse-white
+  position: fixed
+  height: 100vh
+  z-index: 8
+  @include sqrboxshadowstyle
+  overflow-y: scroll
+
+.card-editor-wrapper.hide
+  opacity: 0
+  transform: translateX(-400px)
+
+.card-editor-wrapper.active.hide
+  transition: all .3s cubic-bezier(.17,.67,.83,.67)
+  transform: translateX(-400px)
+
+.card-editor-wrapper.show
+  transition: all .3s cubic-bezier(.11,.52,.7,1.02)
+  transform: translateX(0)
+
+.card-editor-container
+  margin-top: $top-header-height
+  padding: 20px 30px
+
+.card-editor-container span
+  color: $converse-darkgray
+  margin-bottom: 30px
+  @include Converse-Title
+  font-size: 24px
+  display: block
+
+.asterisk-msg
+  font-size: .7em
+  margin-top: 10px
+
+.errorCls
+  color: $converse-hotpink
+  font-size: .7em
+  margin-top: 5px

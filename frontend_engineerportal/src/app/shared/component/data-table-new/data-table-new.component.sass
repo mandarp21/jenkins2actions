@@ -1,0 +1,197 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.data-table-wrapper
+  width: 100%
+  background: $converse-white
+
+.table-header-row
+  width: 100%
+  height: 62px
+  padding-left: 20px
+  display: flex
+  justify-content: space-between
+
+.table-header-column, .data-table-cell
+  height: 100%
+  text-align: left
+
+.table-header-column
+  padding: 20px 10px
+  display: flex
+  position: relative
+  .header-title
+    @include Converse-H2
+
+.data-table-cell
+  &:not(.pre-selected-dropdown)
+    padding: 8px 10px
+  .table-cell-text
+    @include Converse-Copy
+
+.data-table-body
+  max-height: 500px
+  overflow-y: auto
+  position: relative
+
+.data-table-row
+  width: 100%
+  height: auto
+  padding-left: 20px
+  display: flex
+  justify-content: space-between
+
+  &:hover
+    background: rgba(0, 0, 0, 0.04)
+
+.data-table-cell
+  height: 100%
+  word-break: break-word
+
+.sort-btn-container
+  display: flex
+  margin-left: 5px
+  .sort-icon
+    background: transparent url('/assets/img/Caret_Grey.svg') center no-repeat
+    width: 10px
+    height: 10px
+    cursor: pointer
+    &.active
+      background: transparent url('/assets/img/Caret_Green.svg') center no-repeat
+    &.asc
+      margin: 5px 1px
+    &.desc
+      transform: rotate(180deg)
+      margin: 2px 1px
+
+.filter-btn
+  background: transparent url('/assets/img/Filter dropdown.png') center no-repeat
+  width: 12px
+  height: 12px
+  margin: 3px 5px
+  cursor: pointer
+
+.table-filter-dropdown
+  background: $converse-white
+  @include boxshadowstyle
+
+  position: absolute
+  z-index: 1
+  width: 100%
+  top: 100%
+  left: -10px
+  display: none
+
+  &.show
+    display: block
+
+.rotate-flip
+  transform: rotate(180deg)
+
+/* scrollbar styling */
+::-webkit-scrollbar
+  width: 4px
+
+::-webkit-scrollbar-track
+  border-radius: 2px
+  background: #f7f7f7
+
+::-webkit-scrollbar-thumb
+  background: #cccccc
+  border-radius: 2px
+
+.filter-option
+  width: 100%
+  height: 34px
+  cursor: pointer
+  display: flex
+  padding: 6px
+  user-select: none
+
+  .filter-title
+    @include Converse-Copy
+    font-size: 14px
+    margin-left: 5px
+    text-overflow: ellipsis
+    width: 80%
+    overflow: hidden
+    white-space: nowrap
+
+  .filter-checkbox
+    width: 22px
+    height: 22px
+    background: url('/assets/img/Button_Check_Inactive.svg') center no-repeat
+
+    &.checked
+      background: url('/assets/img/Button_Check_Active.svg') center no-repeat
+
+  &:hover .filter-checkbox
+    background: url('/assets/img/Button_Check_Inactive_Hover.svg') center no-repeat
+
+  &:hover .filter-checkbox.checked
+    background: url('/assets/img/Button_Check_Active_Hover.svg') center no-repeat
+
+.table-cell-button
+  width: 26px
+  height: 26px
+  cursor: pointer
+  margin: 0 auto
+  &.conversation-log
+    background: url('/assets/img/Conversation Log Icon.png') center no-repeat
+  &.approve
+    background: url('/assets/img/Tertiary_Button_Approve_Hover.svg') center no-repeat
+  &.delete
+    background: url('/assets/img/Tertiary_Button_Disapprove.svg') center no-repeat
+
+.overlay
+  position: fixed
+  width: 100%
+  height: 100%
+  background: #000000
+  opacity: 0.4
+  z-index: 10
+
+.filter-container
+  width: 400px
+  height: fit-content
+  background: $converse-white
+  @include boxshadowstyle
+  position: fixed
+  z-index: 11
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  margin: auto
+  display: flex
+  flex-direction: column
+  padding: 30px
+
+.filter-input-container
+  height: 35px
+
+.filter-intents-list
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  padding: 20px 0
+
+.filter-intent
+  color: $converse-seagreen
+  width: 170px
+  height: 35px
+  line-height: 37px
+  padding-left: 35px
+  background: url(/assets/img/Button_Check_Inactive.svg) left no-repeat
+  cursor: pointer
+
+  &.active
+    background: url(/assets/img/Button_Check_Active.svg) left no-repeat
+
+  &.hidden
+    display: none
+
+.button-container
+  height: 35px
+  width: 65px
+  margin-left: auto

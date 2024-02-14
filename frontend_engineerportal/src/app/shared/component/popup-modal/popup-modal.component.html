@@ -1,0 +1,20 @@
+<ngx-smart-modal [escapable]=false [dismissable]=false #modal [identifier]="'modal'">
+  <div class="box-padding-cls">
+      <ng-template [ngIf]="operation==='delete'">
+        <h1 class="title-cls">Do You Want To Delete this {{ type | titlecase}}?</h1>
+        <p class="content-cls">Once the {{type | lowercase}} has been deleted we will not be able to see it again.</p>
+      </ng-template>
+      <ng-template [ngIf]="operation==='session-warning'">
+        <h1 class="title-cls">Do you want to continue your session?</h1>
+        <p class="content-cls">Your session is expiring soon. Click extend to continue session.</p>
+      </ng-template>
+      <div class="submit-cls">
+        <div class="cancel-cls">
+          <converse-button [val]="rejectBtnTxt" [id]="'btnCancelBotDelete'" (click)="deleteConfirmed(false)" [boolGreen]="false"></converse-button>
+        </div>
+        <div class="confirm-cls">
+          <converse-button [val]="confirmBtnTxt" [id]="'btnConfirmBotDelete'" (click)="deleteConfirmed(true)" [boolGreen]="true"></converse-button>
+        </div>
+      </div>
+  </div>
+</ngx-smart-modal>

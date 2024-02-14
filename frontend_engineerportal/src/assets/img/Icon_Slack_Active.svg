@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Slack_Active</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-21.8%" y="-21.8%" width="143.5%" height="143.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Slack/Active" transform="translate(5.000000, 3.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Icon_Slack_Active" filter="url(#filter-1)">
+                <g id="Red" transform="translate(0.000000, 33.000000)">
+                    <path d="M17,6 C17,2.6862915 19.6862915,0 23,0 C26.3137085,0 29,2.6862915 29,6 L29,23 C29,26.3137085 26.3137085,29 23,29 C19.6862915,29 17,26.3137085 17,23 L17,6 Z" id="Combined-Shape-Copy"></path>
+                    <path d="M6,12 C9.3137085,12 12,9.3137085 12,6 C12,4.92303258 12,2.92303258 12,0 C9.13217158,0 7.13217158,0 6,0 C2.6862915,0 0,2.6862915 0,6 C0,9.3137085 2.6862915,12 6,12 Z" id="Oval"></path>
+                </g>
+                <g id="Blue" transform="translate(14.500000, 14.500000) rotate(90.000000) translate(-14.500000, -14.500000) ">
+                    <path d="M17,6 C17,2.6862915 19.6862915,0 23,0 C26.3137085,0 29,2.6862915 29,6 L29,23 C29,26.3137085 26.3137085,29 23,29 C19.6862915,29 17,26.3137085 17,23 L17,6 Z" id="Combined-Shape-Copy"></path>
+                    <path d="M6,12 C9.3137085,12 12,9.3137085 12,6 C12,4.92303258 12,2.92303258 12,0 C9.13217158,0 7.13217158,0 6,0 C2.6862915,0 0,2.6862915 0,6 C0,9.3137085 2.6862915,12 6,12 Z" id="Oval"></path>
+                </g>
+                <g id="Green" transform="translate(47.500000, 14.500000) rotate(180.000000) translate(-47.500000, -14.500000) translate(33.000000, 0.000000)">
+                    <path d="M17,6 C17,2.6862915 19.6862915,0 23,0 C26.3137085,0 29,2.6862915 29,6 L29,23 C29,26.3137085 26.3137085,29 23,29 C19.6862915,29 17,26.3137085 17,23 L17,6 Z" id="Combined-Shape-Copy"></path>
+                    <path d="M6,12 C9.3137085,12 12,9.3137085 12,6 C12,4.92303258 12,2.92303258 12,0 C9.13217158,0 7.13217158,0 6,0 C2.6862915,0 0,2.6862915 0,6 C0,9.3137085 2.6862915,12 6,12 Z" id="Oval"></path>
+                </g>
+                <g id="Yellow" transform="translate(47.500000, 47.500000) rotate(270.000000) translate(-47.500000, -47.500000) translate(33.000000, 33.000000)">
+                    <path d="M17,6 C17,2.6862915 19.6862915,0 23,0 C26.3137085,0 29,2.6862915 29,6 L29,23 C29,26.3137085 26.3137085,29 23,29 C19.6862915,29 17,26.3137085 17,23 L17,6 Z" id="Combined-Shape-Copy"></path>
+                    <path d="M6,12 C9.3137085,12 12,9.3137085 12,6 C12,4.92303258 12,2.92303258 12,0 C9.13217158,0 7.13217158,0 6,0 C2.6862915,0 0,2.6862915 0,6 C0,9.3137085 2.6862915,12 6,12 Z" id="Oval"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

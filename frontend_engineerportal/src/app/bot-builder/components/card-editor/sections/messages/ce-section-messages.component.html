@@ -1,0 +1,11 @@
+<div class="message-input-container form-group">
+  <label>Message</label>
+  <div class="message-input" *ngFor="let message of messages; let i = index">
+    <input-autocomplete [id]="'messages-input-' + i" [message]="message" [placeholder]="'What should the response say?'"
+      (inputChange)="changeMessages(i, $event)">
+    </input-autocomplete>
+  </div>
+</div>
+<div class="btn-wrapper-round">
+  <converse-button [val]="'Add Message'" [id]="'addMessage'" [boolGreen]="true" [rounded]="true" (click)="messages.push('')"></converse-button>
+</div>

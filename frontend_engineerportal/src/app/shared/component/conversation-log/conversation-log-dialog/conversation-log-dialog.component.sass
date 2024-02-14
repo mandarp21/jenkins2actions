@@ -1,0 +1,70 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.dialog-container
+    background-color: $converse-white
+    @include boxshadowstyle
+
+.container-conversation-details
+  display: flex
+  justify-content: space-between
+  width: 100%
+  padding: 0 0 12px 16px
+  border-bottom: 2px solid #cecece
+  margin-bottom: 20px
+
+.section-child
+  padding: 18px 8px 10px 8px
+
+.close-container
+  margin: 16px
+  width: 28px
+  height: 28px
+  cursor: pointer
+  background: url('/assets/img/Tertiary_Button_Disapprove.svg') center no-repeat
+
+.pagination-close-container
+  margin-top: -4%
+  float: right
+  img
+    border-radius: 50%
+
+.container-conversation-table
+  max-height: 430px
+  overflow-y: scroll
+
+.table-header-row, .table-row
+  display: flex
+  min-height: 22px
+  justify-content: space-between
+  padding-left: 24px
+  margin-bottom: 16px
+
+.title-details
+  @include Converse-H2
+
+
+.table-cell, .text-details
+  @include Converse-Copy
+
+/* scrollbar styling */
+::-webkit-scrollbar
+  width: 4px
+
+::-webkit-scrollbar-track
+  border-radius: 2px
+  background: #f7f7f7
+
+::-webkit-scrollbar-thumb
+  background: #cccccc
+  border-radius: 2px
+
+.is-escalated
+  color: $converse-lightorange
+
+.is-abandoned
+  color: $converse-fusia
+
+.is-completed
+  color: $converse-darkgray
+

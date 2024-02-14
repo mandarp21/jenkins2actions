@@ -1,0 +1,36 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+  
+
+.box-padding-cls
+  padding: 1em 1em 1em 1em 
+  
+.cancel-cls
+  width: 40%
+  height: 2.500em
+  border-radius: 0.125em
+  background-color: $converse-lightgray
+  @include sqrboxshadowstyle
+  justify-content: flex-start
+
+.submit-cls
+  display: flex
+  justify-content: space-between
+
+.confirm-cls
+  width: 40%
+  height: 2.500em
+  border-radius: 0.125em
+  @include sqrboxshadowstyle
+  justify-content: flex-end
+
+.title-cls
+  @include Converse-Title2
+  
+
+.content-cls
+  @include Converse-Copy
+  word-wrap: break-word
+  padding-top: 2em
+  padding-bottom: 2em
+

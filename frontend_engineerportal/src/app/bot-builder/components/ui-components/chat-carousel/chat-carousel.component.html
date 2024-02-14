@@ -1,0 +1,11 @@
+<div class="chat-carousel">
+  <div class="chat-card-wrapper" *ngFor="let slide of carousel">
+    <div class="chat-card">
+      <div class="chat-icon" *ngIf="slide.url && slide.url.length>0" [ngStyle]="{'background-image': 'url(' + slide.url + ')'}"></div>
+      <a class="chat-option">
+        {{slide.title}}
+      </a>
+      <button class="carousel-btn" type="button" (click)="carouselSend(slide.title)">Select</button>
+    </div>
+  </div>
+</div>

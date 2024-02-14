@@ -1,0 +1,140 @@
+{
+  "name": "engineering-portal",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "build-dev": "ng build --configuration=dev --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "build-dev2": "ng build --configuration=dev2 --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "build-test": "ng build --configuration=test --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "build-sit": "ng build --configuration=sit --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "build-prod": "ng build --configuration=production --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "build-sbx": "ng build --configuration=sbx --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "build-stage": "ng build --configuration=stage --aot=false --build-optimizer=false --base-href /frontend-engineeringportal --deploy-url /",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^6.0.2",
+    "@angular/common": "^6.0.2",
+    "@angular/compiler": "^6.0.2",
+    "@angular/core": "^6.0.2",
+    "@angular/forms": "^6.0.2",
+    "@angular/http": "^6.0.2",
+    "@angular/platform-browser": "^6.0.2",
+    "@angular/platform-browser-dynamic": "^6.0.2",
+    "@angular/router": "^6.0.2",
+    "@ng-idle/core": "^6.0.0-beta.3",
+    "@ng-idle/keepalive": "^6.0.0-beta.3",
+    "@types/socket.io": "^1.4.38",
+    "@types/socket.io-client": "^1.4.32",
+    "bootstrap": "^4.1.1",
+    "classlist.js": "^1.1.20150312",
+    "core-js": "^2.5.4",
+    "file-saver": "^2.0.1",
+    "jest-zone-patch": "0.0.8",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "ng-click-outside": "^4.0.0",
+    "ng2-panzoom": "^1.0.2",
+    "ngx-bootstrap": "^3.0.0",
+    "ngx-cookie-service": "^1.0.10",
+    "ngx-file-drop": "^4.0.6",
+    "ngx-filesaver": "^2.2.1",
+    "ngx-mydatepicker": "^2.4.9",
+    "ngx-smart-modal": "^7.0.3",
+    "ngx-toastr": "^9.0.2",
+    "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.1",
+    "socket.io": "^2.1.1",
+    "typescript": "^2.7.2",
+    "zone.js": "^0.8.26",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.6.3",
+    "@angular/cli": "~6.0.3",
+    "@angular/compiler-cli": "^6.0.2",
+    "@angular/language-service": "^6.0.2",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "^22.2.3",
+    "@types/node": "~8.9.4",
+    "bourbon": "^5.0.0",
+    "codelyzer": "~4.2.1",
+    "csslint": "^1.0.5",
+    "eslint": "^4.19.1",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cache": "^0.4.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^1.1.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-newer": "^1.2.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.0",
+    "htmlhint": "^0.9.13",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^23.1.0",
+    "jest-preset-angular": "^5.2.2",
+    "karma": "~1.7.1",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~1.4.2",
+    "karma-jasmine": "~1.1.1",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "lesshint": "^5.1.0",
+    "node-neat": "^2.0.0-beta.0",
+    "node-sass": "^4.9.0",
+    "prettier": "^1.14.2",
+    "psi": "^3.1.0",
+    "run-sequence": "^2.2.1",
+    "ts-node": "~5.0.1",
+    "tslint": "~5.9.1"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts",
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "src/tsconfig.spec.json"
+      },
+      "__TRANSFORM_HTML__": true
+    },
+    "transform": {
+      "^.+\\.(ts|js|html)$": "<rootDir>/node_modules/jest-preset-angular/preprocessor.js",
+      "<rootDir>/node_modules/ngx-bootstrap/datepicker": "<rootDir>/node_modules/jest-preset-angular/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|js)?(x)",
+      "**/+(*.)+(spec).+(ts|js)?(x)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "html"
+    ],
+    "moduleNameMapper": {
+      "app/(.*)": "<rootDir>/src/app/$1",
+      "assets/(.*)": "<rootDir>/src/assets/$1",
+      "environments/(.*)": "<rootDir>/src/environments/$1"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx)"
+    ],
+    "testURL": "http://localhost/"
+  }
+}

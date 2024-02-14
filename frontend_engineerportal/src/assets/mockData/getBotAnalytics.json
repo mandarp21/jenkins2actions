@@ -1,0 +1,13 @@
+{
+  "botID": "8a787bde-81d5-4499-b05d-0c552041ed19",
+  "botName": "Root",
+  "botDescription": "The root level bot",
+  "botImage": "assets/img/Bot_Avatar.png",
+  "lastModified": "28-Mar-18 09:24",
+  "customerSatisfaction": "1.95",
+  "escalated": "49%",
+  "intentsMatched": "53%",
+  "conversationComplete": "17%",
+  "totalVolume": "56,802",
+  "totalReviews": "5,630"
+}

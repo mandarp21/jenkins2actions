@@ -1,0 +1,22 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.use-case-container
+  display: flex
+  justify-content: flex-start
+  flex-flow: wrap
+  @include decideFullWidth
+
+.asterisk-msg
+  font-size: .7em
+
+.import-export-cls
+  background-color: $converse-snowwhite
+  display: flex
+  justify-content: flex-end
+  margin: 30px 0
+  height: 35px
+  @include decideFullWidth
+
+.inputFile
+  display: none

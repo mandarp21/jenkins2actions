@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Button_Check_Inactive</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Button_Check_Inactive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Button_BG" stroke="#CCCCCC" x="0.5" y="0.5" width="19" height="19" rx="2"></rect>
+        <g id="Icon_Tick_Grey" transform="translate(2.000000, 2.000000)" fill="#CCCCCC">
+            <path d="M5.54637947,12.1818073 L5.53553391,12.1926529 L2,8.65711899 L2.70710678,7.95001221 L5.54611473,10.7890202 L13.3351349,3 L14.0422417,3.70710678 L5.5569603,12.1923882 L5.54637947,12.1818073 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

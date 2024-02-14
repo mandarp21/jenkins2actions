@@ -1,0 +1,10 @@
+{
+ 
+ "botName": "Edwin",
+ "botDescription": "The root level bot",
+ "botURL": "www.mockedboturls.com",
+ "botType": "Master",
+ "nlp": "IBM Watson Assistant",
+ "stt":"Microsoft LUIS",
+ "tts":"Google DialogFlow"
+}

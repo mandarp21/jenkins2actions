@@ -1,0 +1,70 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.rating-root
+  width: 100%
+  height: 100%
+  position: relative
+
+.rating
+  display: flex
+  flex-flow: row
+  color: $converse-gray
+
+.rating-container
+  width: 100%
+  background-color: $converse-snowwhite
+  margin-right: 2px
+
+
+.no-rate
+  padding: 0.2em
+  background-color: $converse-snowwhite
+
+.rate-one, .rate-two, .rate-three, .rate-four, .rate-five
+  padding: 0.2em
+  background-color: $converse-seagreen
+
+.rating-top
+    display: flex
+    position: absolute
+    padding-top: 2.5%
+    justify-content: flex-begin
+    unicode-bidi: bidi-override
+    direction: ltr
+    left: 32%
+    color: $converse-seagreen
+    zoom: 60%
+    z-index: 1
+    overflow: hidden
+    span
+      display: flex
+
+.tooltiptext
+  visibility: hidden
+  width: 350px
+  color: #fff
+  text-align: center
+  border-radius: 6px
+  position: absolute
+  z-index: 1
+  top: -10px
+  right: 110%
+  background-color: $converse-white
+  @include full-box-shadow-style
+  opacity: 0
+  transition: all .1s ease-in
+
+.rating:hover .tooltiptext
+  visibility: visible
+  opacity: 1
+
+.tooltiptext::after
+  content: ""
+  position: absolute
+  top: 5%
+  left: 100%
+  margin-top: -5px
+  border-width: 15px
+  border-style: solid
+  border-color: transparent transparent transparent $converse-dullwhite

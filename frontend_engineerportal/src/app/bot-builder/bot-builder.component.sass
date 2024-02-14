@@ -1,0 +1,40 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.page-headings-row
+  width: 100%
+  display: flex
+  flex-direction: column
+  margin-top: 30px
+
+.page-wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+
+.back-navigate
+    height: 1em
+    margin-left: 3.4%
+
+.arrow-cls
+    width: 0.5em
+    height: 0.281em
+    transform: rotate(90deg)
+
+.back-txt-cls
+    @include Converse-H3
+    color: $converse-darkgray
+    margin-left: 0.375em
+    cursor: pointer
+
+.pageTitleCls
+    height: 1.750em
+    margin-left: 3.33%
+    margin-top: 0.16em
+    @include Converse-Title2
+
+
+.external-ref-btn
+  position: fixed
+  z-index: 5

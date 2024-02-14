@@ -1,0 +1,18 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+input[type="text"]
+  height: 100%
+  width: 100%
+  @include txtBox
+  padding-left: 0.21875em
+  padding-right: 0.21875em
+  outline: none
+  
+  &.search-icon
+    background: transparent url('/assets/img/Icon_Search_Green.png') right no-repeat
+    padding-right: 25px
+
+::placeholder
+  color: $converse-seagreen !important
+

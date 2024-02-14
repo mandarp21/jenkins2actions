@@ -1,0 +1,91 @@
+<div class="rating-root" (mouseover)="onMouseHover()">
+  <div class="rating">
+    <div class='rating-container'>
+      <div [ngStyle]="{'width': barOne}" [ngClass]="[barOne === '0%' ? 'no-rate' : 'rate-one' ]"></div>
+    </div>
+    <div class='rating-container'>
+      <div [ngStyle]="{'width': barTwo}" [ngClass]="[barTwo === '0%' ? 'no-rate' : 'rate-two' ]"></div>
+    </div>
+    <div class='rating-container'>
+      <div [ngStyle]="{'width': barThree}" [ngClass]="[barThree === '0%' ? 'no-rate' : 'rate-three' ]"></div>
+    </div>
+    <div class='rating-container'>
+      <div [ngStyle]="{'width': barFour}" [ngClass]="[barFour === '0%' ? 'no-rate' : 'rate-four' ]"></div>
+    </div>
+    <div class="tooltiptext">
+      <converse-bar-chart [bardata]="chartdata"></converse-bar-chart>
+    </div>
+    <!-- <span><svg>
+        <defs>
+            <linearGradient id="half">
+                <stop offset="0%" stop-opacity="1" stop-color="#01CCAA" />
+                <stop [attr.offset] = "percent"  stop-opacity="1" stop-color="#01CCAA" />
+                <stop [attr.offset] ="percent2" stop-opacity="0" stop-color="#01CCAA" />
+                <stop offset="100%" stop-opacity="0" stop-color="#01CCAA" />
+            </linearGradient>
+        </defs>
+      <path [attr.fill]="fill[0]" d="
+      M 15.000 22.500
+L 23.817 27.135
+L 22.133 17.318
+L 29.266 10.365
+L 19.408 8.932
+L 15.000 0.000
+L 10.592 8.932
+L 0.734 10.365
+L 7.867 17.318
+L 6.183 27.135
+L 15.000 22.500
+      " stroke="#01CCAA" stroke-width="1"/><path [attr.fill]="fill[1]" d="
+      M 55.000 22.500
+      L 63.817 27.135
+      L 62.133 17.318
+      L 69.266 10.365
+      L 59.408 8.932
+      L 55.000 0.000
+      L 50.592 8.932
+      L 40.734 10.365
+      L 47.867 17.318
+      L 46.183 27.135
+      L 55.000 22.500
+      " stroke="#01CCAA" stroke-width="1"/><path [attr.fill]="fill[2]" d="
+      M 95.000 22.500
+      L 103.817 27.135
+      L 102.133 17.318
+      L 109.266 10.365
+      L 99.408 8.932
+      L 95.000 0.000
+      L 90.592 8.932
+      L 80.734 10.365
+      L 87.867 17.318
+      L 86.183 27.135
+      L 95.000 22.500
+      " stroke="#01CCAA" stroke-width="1"/>
+   <path  [attr.fill]="fill[3]" d="
+   M 135.000 22.500
+   L 143.817 27.135
+   L 142.133 17.318
+   L 149.266 10.365
+   L 139.408 8.932
+   L 135.000 0.000
+   L 130.592 8.932
+   L 120.734 10.365
+   L 127.867 17.318
+   L 126.183 27.135
+   L 135.000 22.500
+      " stroke="#01CCAA" stroke-width="1"/><path  [attr.fill]="fill[4]" d="
+      M 175.000 22.500
+L 183.817 27.135
+L 182.133 17.318
+L 189.266 10.365
+L 179.408 8.932
+L 175.000 0.000
+L 170.592 8.932
+L 160.734 10.365
+L 167.867 17.318
+L 166.183 27.135
+L 175.000 22.500
+      " stroke="#01CCAA" stroke-width="1" /></svg></span>  -->
+  </div>
+
+  <div>

@@ -1,0 +1,35 @@
+<div>
+  <div class='error-panel-container'>
+    <converse-error-panel [message]='errorMessage' (closeErrorPanel)='closeErrorPanel($event)' *ngIf='errorOnSave'></converse-error-panel>
+  </div>
+  <form [formGroup]="workerBotForm" autocomplete="off">
+    <div class="content-cls">
+      <div [ngClass]= "{'bot-avtar-box-sans-overlay': !toggleToolTipWBotInfo , 'bot-avtar-box-cls' : toggleToolTipWBotInfo }">
+        <bot-info-form (toggleBotInfoToolTip)= "toggleToolTipBotInfo($event)" [botType]="botType" [botStatusVisiblity]=true [botForm]="workerBotForm"> </bot-info-form>
+      </div>
+      <div [ngClass]= "{'ai-box-cls-sans-overlay': !toggleToolTipWorkerAI , 'ai-box-cls-overlay' : toggleToolTipWorkerAI }">
+        <div class="title-cls"> {{'AI Services'}}</div>
+        <div [ngClass]= "{'info-icon-section': !toggleToolTipWorkerAI , 'info-close-section' : toggleToolTipWorkerAI }" (click)="toggleToolTipWorkerAI = !toggleToolTipWorkerAI"></div>
+        <div class="ai-info-container">
+          <converse-nlp-ai-info [toggleToolTip]="toggleToolTipWorkerAI" tooltipKey="WORKER_NLP_AI" [nlpAIForm]="workerBotForm" [nlpProvider]='workerBot.NLPProvider' [nlpConfig]="workerBot.nlpConfig"></converse-nlp-ai-info>
+          <converse-stt-ai-info [toggleToolTip]="toggleToolTipWorkerAI" tooltipKey="WORKER_STT_AI" [sttAIForm]="workerBotForm" [sttProvider]='workerBot.STTProvider' [sttConfig]="workerBot.sttConfig"></converse-stt-ai-info>
+          <converse-tts-ai-info [toggleToolTip]="toggleToolTipWorkerAI" tooltipKey="WORKER_TTS_AI" [ttsAIForm]="workerBotForm" [ttsProvider]='workerBot.TTSProvider' [ttsConfig]="workerBot.ttsConfig"></converse-tts-ai-info>
+        </div>
+        <div class="asterisk-msg">*Please complete required fields</div>
+      </div>
+    </div>
+  </form>
+</div>
+<converse-configure-associated-intents (intentListEmitter)='buildIntentList($event)' [intentsList]="nlpIntentsList"></converse-configure-associated-intents>
+<div class="submit-cls">
+  <div class="delete-cls">
+    <converse-button [val]="'Delete Bot'" [id]="'btnDeleteBot'" (click)="askToUser()" [boolGreen]="false"></converse-button>
+  </div>
+  <div class="cancelCls">
+    <converse-button [val]="'Cancel'" [id]="'btnCancelConfWorker'" (click)="back()" [boolGreen]="false"></converse-button>
+  </div>
+  <div class="saveCls">
+    <converse-button [val]="'Save'" [boolGreen]="workerBotForm.valid && workerBotForm.dirty" [id]="'btnSaveConfWorker'" (click)="update()" [isDisabled]="!workerBotForm.valid || !workerBotForm.dirty || isFormSubmitted"></converse-button>
+  </div>
+</div>
+<popup-modal [opener]="askToDelete" (handleConfirmClickEvent)="handleConfirmEvent($event)"></popup-modal>

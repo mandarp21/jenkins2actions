@@ -1,0 +1,103 @@
+<div class="data-table-wrapper">
+  <div class=" table-header-row" (clickOutside)="this.openFilterDropdown = null; this.toggleDropdown = false">
+    <div
+      *ngFor="let header of itemheaders"
+      class="table-header-column"
+      [ngStyle]="{ width: header.width || '10%' }"
+      (click)="this.openFilterDropdown = header.filter ? this.openFilterDropdown : null"
+    >
+      <span class="header-title">{{ header.headerName }}</span>
+      <div *ngIf="!header.noSort" class="sort-btn-container">
+        <div class="sort-icon asc" [ngClass]="{ active: sort[header.colname] === 'asc' }" (click)="handleSort(header, 'asc')"></div>
+        <div class="sort-icon desc" [ngClass]="{ active: sort[header.colname] === 'desc' }" (click)="handleSort(header, 'desc')"></div>
+      </div>
+
+      <div
+        *ngIf="filter[header.colname] && filter[header.colname].options.length > 1"
+        class="filter-btn"
+        (click)="toggleFilterDropdown(header)"
+        [ngClass]="{ 'rotate-flip': toggleDropdown }"
+      ></div>
+      <div
+        *ngIf="filter[header.colname] && filter[header.colname].options.length > 1"
+        class="table-filter-dropdown"
+        [ngClass]="{ show: openFilterDropdown === header.colname }"
+      >
+        <div class="filter-option" (click)="toggleSelectAll(header.colname)">
+          <div class="filter-checkbox" [ngClass]="{ checked: isShowAllChecked(header.colname) }"></div>
+          <span class="filter-title">Show All</span>
+        </div>
+        <div
+          *ngFor="let filterOption of filter[header.colname].options"
+          class="filter-option"
+          (click)="toggleFilterSelection(header.colname, filterOption)"
+        >
+          <div class="filter-checkbox" [ngClass]="{ checked: filter[header.colname].selected.indexOf(filterOption) !== -1 }"></div>
+          <span class="filter-title">{{ filterOption | titlecase }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="data-table-body" (scroll)="onScroll($event)">
+    <div
+      *ngFor="let item of visibleItemlist; let i = index"
+      class="data-table-row"
+      [ngStyle]="{ background: selectedRow == i ? 'rgba(0, 0, 0, 0.04)' : '' }"
+      (click)="handleDataRowClick(item.sessionId, i, item.useCaseLogId)"
+    >
+      <div *ngFor="let header of itemheaders" [class]="'data-table-cell ' + header.type" [ngStyle]="{ width: header.width || '10%' }">
+        <span *ngIf="header.type === undefined || header.type === 'text'" class="table-cell-text">{{ item[header.colname] }}</span>
+        <div
+          *ngIf="header.type === 'button'"
+          [class]="'table-cell-button ' + header.buttonIcon"
+          (click)="handleCustomAction(header.action, item[header.actionValue])"
+        ></div>
+        <span *ngIf="header.type === 'text-decimal'" class="table-cell-text">{{ item[header.colname] | number: '1.2-2' }}</span>
+
+        <converse-drop-down
+          *ngIf="header.type === 'pre-selected-dropdown'"
+          [data]="header.options"
+          [selected]="item[header.colname]"
+          (selchange)="handleCustomAction(header.action, { selected: $event.key, item: item, header: header })"
+        ></converse-drop-down>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="openFilterBox" (click)="openFilterBox = null"></div>
+<div class="filter-container" *ngIf="openFilterBox">
+  <div class="filter-input-container">
+    <converse-textbox
+      class="search-field"
+      id="filterBoxInput"
+      placeholder="Filter"
+      (handleKeyUp)="intentsFilterValue = $event.target.value"
+      (input)="intentsFilterValue = $event.target.value"
+      searchIcon="true"
+    ></converse-textbox>
+  </div>
+  <div class="filter-intents-list">
+    <div
+      class="filter-intent"
+      [ngClass]="{ active: isShowAllChecked(openFilterBox.colname) }"
+      (click)="toggleSelectAll(openFilterBox.colname)"
+    >
+      Select All
+    </div>
+    <div
+      class="filter-intent"
+      *ngFor="let filterOption of filter[openFilterBox.colname].options"
+      [ngClass]="{
+        active: filter[openFilterBox.colname].selected.indexOf(filterOption) !== -1,
+        hidden: filterOption.toLowerCase().indexOf(intentsFilterValue.toLowerCase()) === -1
+      }"
+      (click)="toggleFilterSelection(openFilterBox.colname, filterOption)"
+    >
+      {{ filterOption }}
+    </div>
+  </div>
+  <div class="button-container">
+    <converse-button val="Close" (click)="openFilterBox = null"></converse-button>
+  </div>
+</div>

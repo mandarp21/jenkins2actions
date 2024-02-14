@@ -1,0 +1,528 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+// ========================================
+//                 GENERAL
+// ========================================
+
+.owner-section .radio-buttons, .type-section .radio-buttons
+  display: flex
+  justify-content: flex-start
+  flex-wrap: wrap
+
+.owner-section label, .type-section label
+  font-size: .7em
+
+.user-detail section
+  margin-top: 10px
+
+.bot-detail.show, .user-detail.show
+  display: block
+
+.bot-detail.hide, .user-detail.hide
+  display: none
+
+.button-section
+  justify-content: space-between
+  display: flex
+  width: 100%
+  margin-top: 20px
+
+.button-section converse-button
+  width: 110px
+  height: 40px
+
+// ========================================
+//        RADIO BUTTON STYLES
+// ========================================
+
+.radio-btn-container
+  width: 48px
+  height: 48px
+  display: flex
+  align-items: center
+  justify-content: center
+  border: 1px dashed $converse-lightgray
+  border-radius: 50%
+  cursor: pointer
+  padding: 7px
+  margin-right: 10px
+
+.radio-styling
+  width: 100%
+  height: 100%
+  background-size: contain
+  padding: 5px
+
+label
+  position: relative
+
+label > input
+  visibility: hidden
+  position: absolute
+
+.radio-btn-container.active
+  background-color: $converse-seagreen
+  transition: background .3s ease
+  border: 1px solid $converse-seagreen
+
+
+// CHECKBOXES
+
+.checkbox-btn-container
+  @extend .radio-btn-container
+  border: 1px solid $converse-seagreen
+
+// ========================================
+//                ICONS
+// ========================================
+
+
+.variable-icon
+  background: url('/assets/img/card-editor/At_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .variable-icon
+  background: url('/assets/img/card-editor/At_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .variable-icon
+  background: url('/assets/img/card-editor/At_Icon_White.svg') center no-repeat
+  background-size: contain
+
+.bot-icon
+  background: url('/assets/img/card-editor/Bot_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .bot-icon,
+.radio-btn-container.disabled .bot-icon
+  background: url('/assets/img/card-editor/Bot_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.user-icon
+  background: url('/assets/img/card-editor/User_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .user-icon,
+.radio-btn-container.disabled .user-icon
+  background: url('/assets/img/card-editor/User_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.msg-icon
+  background: url('/assets/img/card-editor/Msg_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .msg-icon
+  background: url('/assets/img/card-editor/Msg_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .msg-icon
+  background: url('/assets/img/card-editor/Msg_Icon_White.svg') center no-repeat
+  background-size: contain
+
+.crsl-icon
+  background: url('/assets/img/card-editor/Crsl_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .crsl-icon
+  background: url('/assets/img/card-editor/Crsl_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .crsl-icon
+  background: url('/assets/img/card-editor/Crsl_Icon_White.svg') center no-repeat
+  background-size: contain
+
+.img-icon
+  background: url('/assets/img/card-editor/Img_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .img-icon
+  background: url('/assets/img/card-editor/Img_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .img-icon
+  background: url('/assets/img/card-editor/Img_Icon_White.svg') center no-repeat
+  background-size: contain
+
+.local-icon
+  background: url('/assets/img/card-editor/Local_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .local-icon
+  background: url('/assets/img/card-editor/Local_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .local-icon
+  background: url('/assets/img/card-editor/Local_Icon_White.svg') center no-repeat
+  background-size: contain
+
+.email-icon
+  background: url('/assets/img/card-editor/At_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .email-icon
+  background: url('/assets/img/card-editor/At_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .email-icon
+  background: url('/assets/img/card-editor/At_Icon_White.svg') center no-repeat
+  background-size: contain
+
+.options-icon
+  background: url('/assets/img/card-editor/Rdo_Icon_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .options-icon
+  background: url('/assets/img/card-editor/Rdo_Icon_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .options-icon
+  background: url('/assets/img/card-editor/Rdo_Icon_White.svg') center no-repeat
+  background-size: contain
+
+.decision-icon
+  background: url('/assets/img/card-editor/Icon_IntBranch_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .decision-icon
+  background: url('/assets/img/card-editor/Icon_IntBranch_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .decision-icon
+  background: url('/assets/img/card-editor/Icon_IntBranch_White.svg') center no-repeat
+  background-size: contain
+
+.datepicker-icon
+  background: url('/assets/img/card-editor/Icon_DateP_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .datepicker-icon
+  background: url('/assets/img/card-editor/Icon_DateP_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .datepicker-icon
+  background: url('/assets/img/card-editor/Icon_DateP_White.svg') center no-repeat
+  background-size: contain
+
+.dynamicButtons-icon
+  background: url('/assets/img/card-editor/DynamicBtn_Icon_Green.svg') center no-repeat
+  background-size: 46px
+
+.radio-btn-container.disabled .dynamicButtons-icon
+  background: url('/assets/img/card-editor/DynamicBtn_Icon_Grey.svg') center no-repeat
+  background-size: 46px
+
+.radio-btn-container.active .dynamicButtons-icon
+  background: url('/assets/img/card-editor/DynamicBtn_Icon_White.svg') center no-repeat
+  background-size: 46px
+
+.feedbackTiles-icon
+  background: url('/assets/img/card-editor/Icon_FeedbackEmoji_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .feedbackTiles-icon
+  background: url('/assets/img/card-editor/Icon_FeedbackEmoji_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .feedbackTiles-icon
+  background: url('/assets/img/card-editor/Icon_FeedbackEmoji_White.svg') center no-repeat
+  background-size: contain
+
+.feedbackReqMsg-icon
+  background: url('/assets/img/card-editor/Icon_FeedbackMsg_Green.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.disabled .feedbackReqMsg-icon
+  background: url('/assets/img/card-editor/Icon_FeedbackMsg_Grey.svg') center no-repeat
+  background-size: contain
+
+.radio-btn-container.active .feedbackReqMsg-icon
+  background: url('/assets/img/card-editor/Icon_FeedbackMsg_White.svg') center no-repeat
+  background-size: contain
+
+// ========================================
+//                TOOLTIP
+// ========================================
+
+.tooltip
+  visibility: hidden
+  width: calc(100% + 25px)
+  background-color: $converse-snowwhite
+  position: absolute
+  bottom: 110%
+  padding: 4px 0
+  text-align: center
+  display: inline
+  color: $converse-lightgray
+  left: -18px
+  top: unset
+
+label:hover .tooltip
+  visibility: visible
+  opacity: 1
+
+// hide when mouseover on the tooltip
+label .tooltip:hover
+  opacity: 0
+  visibility: hidden
+
+label .tooltip:after
+  border-left: solid transparent 10px
+  border-right: solid transparent 10px
+  border-top: solid $converse-snowwhite 10px
+  bottom: -10px
+  content: " "
+  height: 0
+  left: calc(100% / 2 - 10px)
+  position: absolute
+  width: 0
+
+
+.card-editor-form.variables .variables
+  width: 100%
+  height: 300px
+  border: $node-connection-line
+  margin-top: 30px
+  position: relative
+  overflow-y: scroll
+
+.variable
+  position: relative
+  width: 80%
+  height: 50px
+  background-color: $converse-white
+  border-top-left-radius: 30px
+  border-bottom-left-radius: 30px
+  @include boxshadowstyle
+  display: flex
+  align-items: center
+  padding: 0 10px
+  margin: 15px auto
+  justify-content: space-around
+
+.variable .name-wrapper
+  border: 1px solid $converse-seagreen
+  border-radius: 30px
+  height: 30px
+  padding: 10px
+  display: flex
+  align-items: center
+  justify-content: center
+  width: calc(100% - 40px)
+  font-size: .7em
+  color: $converse-seagreen
+
+.variable-type-icon
+  width: 30px
+  height: 30px
+  border: 1px solid $converse-lightgray
+
+.string-icon
+  @extend .variable-type-icon
+  background: url('/assets/img/card-editor/String_Icon_Grey.svg') center no-repeat
+  background-size: 20px 20px
+
+.boolean-icon
+  @extend .variable-type-icon
+  background: url('/assets/img/card-editor/Boolean_Icon_Grey.svg') center no-repeat
+  background-size: 20px 20px
+
+.number-icon
+  @extend .variable-type-icon
+  background: url('/assets/img/card-editor/Number_Icon_Grey.svg') center no-repeat
+  background-size: 20px 20px
+
+
+// ERROR HANDLING
+
+.error input
+  background-color: red
+
+.error ::-webkit-input-placeholder
+  color: red
+
+.error ::placeholder
+  color: red
+
+
+.new-avatar-bg-cls
+  position: relative
+  display: flex
+  justify-content: center
+  padding: 20px 0
+  flex-direction: column
+  span
+    width: 60px
+    height: 20px
+    overflow-wrap: break-word
+    font-size: 8px
+
+
+.preview-icon-cls
+  border-radius: 10%
+  width: 60px
+  height: 60px
+  margin: 0 auto
+
+
+.crsl-preview-cls
+  display: flex
+  flex-direction: row
+  div
+    padding-right: 10px
+
+.close-icon-cls
+  width: 10px !important
+  height: 10px !important
+  margin-left: 50px
+
+.crsl-container
+  margin-top: 15px
+
+.drop-zone
+    margin: auto
+    height: 100px
+    border: 2px dashed $converse-lightgray
+
+    .content
+      color: $converse-seagreen
+
+.type-section-specific
+  margin-top: 15px
+
+\:host ::ng-deep div.form-group
+  height: auto
+
+\:host ::ng-deep div.form-group-error
+  height: auto
+
+.step-description.form-group
+  height: 80px
+
+.regex-config.form-group
+  height: 80px
+  margin-top: 15px
+
+// ========================================
+//                 API SUCCESS SECTION
+// ========================================
+
+.btn-wrapper-variables
+  margin-top: 15px
+  width: 124px
+
+.btn-delete
+  position: absolute
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  border: 1px solid #ccc
+  right: 0
+  background: $converse-white url('/assets/img/Cross_Grey.svg') center no-repeat
+  background-size: 12px 12px
+  transition: background-color .2s ease
+  cursor: pointer
+
+.btn-delete:hover
+  background-color: #444
+
+.variables-wrapper
+  display: flex
+  flex-direction: row
+
+.variables-section
+  margin-top: 30px
+  margin-bottom: 30px
+
+.variables-output-wrapper
+  width: 90%
+
+.variable-path
+  overflow-wrap: break-word
+  margin-bottom: 15px
+
+.variable-title
+  font-weight: bold
+  text-decoration: underline
+
+.variable-type-section.hidden
+  display: none
+
+.error-msg
+  color: $converse-hotpink
+  font-size: .7em
+  margin-top: 5px
+.valuecontainer
+    border: 1px solid #01CCAA
+    padding: 10px
+    margin-bottom: 10px
+
+.valuecontainer .head
+  font-size: 11px
+
+.valuecontainer .head a
+    font-size: 12px
+    float: right
+    font-weight: bold
+
+.fieldhead
+  width: 100%
+
+.fieldhead a
+  font-size: 12px
+  float: right
+  font-weight: bold
+
+.form-error
+  width: 100%
+  height: 35px
+  padding: 5px
+  background-color: $converse-hotpink
+  color: $converse-white
+
+.close-img
+  height: 20px
+  padding-left: 112px
+  margin-top: 3px
+
+.removable-input-wrapper
+  position: relative
+
+.removable-input
+  margin-top: 10px
+
+.remove-btn
+  width: 40px
+  height: 40px
+  position: absolute
+  top: 10px
+  right: 0
+  background: url('/assets/img/Cross_Green.svg') center no-repeat
+  background-size: 14px
+  cursor: pointer
+
+.form-group input.checkbox-hidden
+  display: none
+
+.checkbox-div
+  width: 50px
+  height: 25px
+  background-color: #cecece
+  padding: 1px
+  transition: background-color .1s linear
+
+.checkbox-slider
+  width: 23px
+  height: 23px
+  background: #ffffff
+  margin-left: 0
+  transition: margin-left .1s linear
+
+.checkbox-div.active
+  background-color: $converse-seagreen
+
+  .checkbox-slider
+    margin-left: 25px
+
+.input-wrapper
+  height: 45px

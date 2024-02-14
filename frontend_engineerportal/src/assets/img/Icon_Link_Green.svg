@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Link_Green</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 6 0 6 6 2 6 2 10 0 10"></polygon>
+        <polygon id="path-3" points="0 0 6 0 6 10 4 10 4 6 0 6"></polygon>
+    </defs>
+    <g id="Icon_Link_Green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Linked" transform="translate(7.985281, 7.985281) rotate(45.000000) translate(-7.985281, -7.985281) translate(3.985281, -0.014719)">
+            <g id="Link_L">
+                <g id="Loop">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Rectangle"></g>
+                    <path d="M5.5,9.5 L5.5,2 C5.5,1.17157288 4.82842712,0.5 4,0.5 L2,0.5 C1.17157288,0.5 0.5,1.17157288 0.5,2 L0.5,8 C0.5,8.82842712 1.17157288,9.5 2,9.5 L5.5,9.5 Z" id="Rectangle-13" stroke="#01CCAA" mask="url(#mask-2)"></path>
+                </g>
+                <rect id="Rectangle-2" fill="#01CCAA" x="3" y="9" width="3" height="1"></rect>
+                <rect id="Rectangle-3" fill="#01CCAA" x="5" y="8" width="1" height="1"></rect>
+            </g>
+            <g id="Link_R" transform="translate(2.000000, 6.000000)">
+                <g id="Loop">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Rectangle-4" transform="translate(3.000000, 5.000000) scale(1, -1) translate(-3.000000, -5.000000) "></g>
+                    <path d="M0.5,0.5 L0.5,8 C0.5,8.82842712 1.17157288,9.5 2,9.5 L4,9.5 C4.82842712,9.5 5.5,8.82842712 5.5,8 L5.5,2 C5.5,1.17157288 4.82842712,0.5 4,0.5 L0.5,0.5 Z" id="Rectangle-13-Copy" stroke="#01CCAA" mask="url(#mask-4)"></path>
+                </g>
+                <rect id="Rectangle-5" fill="#01CCAA" x="0" y="0" width="4" height="1"></rect>
+                <rect id="Rectangle-6" fill="#01CCAA" x="0" y="3" width="1" height="1"></rect>
+                <rect id="Rectangle-6-Copy" fill="#01CCAA" x="0" y="1" width="1" height="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

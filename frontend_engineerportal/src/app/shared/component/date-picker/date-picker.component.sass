@@ -1,0 +1,51 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+
+.btn
+ padding: 1em 2.5em 1em 0em  !important
+ 
+    
+.btn-txt-cls
+  width: 80%
+  position: relative
+  font-size: 0.700em !important
+
+/**
+ * @internal
+ * specifies the font and position of data button text
+ */
+.btn-group>.btn:first-child
+  width: 100%
+  @include Converse-Date
+  border-radius: 0%
+  text-align: center
+  background-color: $converse-white
+
+
+.btn-group
+  width: 100%
+  border: solid 0.063em $converse-seagreen !important
+
+
+.caret-span-cls
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    border-left: solid 0.063em $converse-seagreen !important
+
+.caret-cls 
+  background-color: $converse-white  
+  border-radius: 0%
+  background:transparent url('/assets/img/Caret_Neg.png') no-repeat
+  background-position: center 0.5em
+  box-shadow: none
+  height: 2em
+  border: none
+  margin-top: 0.438em
+  padding: 1em 2.5em 1em 0em  !important
+
+.btn-group > .btn:first-child 
+    padding-left: 2.25em !important
+    text-align: left

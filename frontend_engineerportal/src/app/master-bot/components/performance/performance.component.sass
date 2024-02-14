@@ -1,0 +1,123 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+@mixin master-cls
+  height: 35px
+  margin-right: 5px
+
+.title-div-cls
+  height: auto
+
+.filter-div-cls
+  margin-top: $vertical-spacing-from-nav
+  display: flex
+  align-items: center
+
+.from-txt-cls
+  @include Converse-H5
+  font-size: 16px
+
+
+.dt-pick-one-cls, .dt-pick-two-cls
+  margin: 0 12px
+  width: 200px
+  height: 40px
+
+.to-txt-cls
+  @include Converse-H5
+  font-size: 16px
+
+.go-btn-cls
+  @include Converse-H5
+  width: 40px
+  height: 40px
+  font-size: 16px
+
+.analytics-cls
+  display: flex
+  margin-top: $vertical-spacing
+  justify-content: space-between
+  @include decideFullWidth
+
+.master-title-cls
+  margin-top: $vertical-spacing
+  @include decideFullWidth
+  display: flex
+  justify-content: space-between
+
+.master-span-cls
+  @include Converse-Title2
+  display: inline-block
+
+.add-master-cls
+  width: 150px
+  @include master-cls
+
+.add-master-cls-import-export
+  width: 200px
+  display: contents
+  @include master-cls
+
+.data-tbl-cls
+  margin-top: 24px
+
+.variables-cls
+  margin-top: $vertical-spacing
+  display: flex
+  justify-content: flex-start
+  flex-flow: wrap
+  @include decideFullWidth
+
+.variables-cls .variable-section
+  margin: 0 12px 12px 0
+
+  @include small-desktop
+    margin: 0 8px 12px 0
+
+.variables-cls .variable-section:nth-child(4n)
+  margin-right: 0
+
+.variable-title-cls
+  margin-top: $vertical-spacing
+  display: flex
+  justify-content: space-between
+
+.section-api
+  @include decideFullWidth
+
+.txt-container
+  margin-left: 750px
+
+.section-api .form-group
+  height: 30px
+  margin: 0
+
+  input
+    background-color: transparent
+    padding: 8px 10px
+    width: 180px
+
+.search-variable-wrapper
+  position: relative
+  margin-right: 25px
+
+.search-variable-wrapper .search-icon
+  position: absolute
+  top: 5px
+  right: 0
+
+.api-actions
+  display: flex
+  justify-content: center
+
+.api-variable-title-cls
+  display: flex
+  justify-content: space-between
+  margin-top: 35px
+
+.info-icon-title
+  @include info-icon('info')
+  margin: 0px 10px
+
+.inputFile
+  display: none

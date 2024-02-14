@@ -1,0 +1,196 @@
+[{
+	"details": {
+		"conversationId": "069f3eshhj0sdksshjiqp-987cba654",
+		"customerIntent": "PhoneUpgrade",
+		"conversationStatus": "Escalated",
+		"dateTime": "24-Jan-18, 09:24 AM"
+	},
+	"list": [{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		}
+	]
+},
+{
+	"details": {
+		"conversationId": "169f3eshhj0sdksshjiqp-987cba654",
+		"customerIntent": "PhoneUpgrade",
+		"conversationStatus": "Abandoned",
+		"dateTime": "24-Mar-18, 09:24 AM"
+	},
+	"list": [{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		}
+	]
+},
+{
+	"details": {
+		"conversationId": "269f3eshhj0sdksshjiqp-987cba654",
+		"customerIntent": "Account Balance",
+		"conversationStatus": "Completed",
+		"dateTime": "24-Jun-18, 09:24 AM"
+	},
+	"list": [{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		}
+	]
+},
+{
+	"details": {
+		"conversationId": "369f3eshhj0sdksshjiqp-987cba654",
+		"customerIntent": "PhoneUpgrade",
+		"conversationStatus": "Escalated",
+		"dateTime": "24-Mar-18, 09:24 AM"
+	},
+	"list": [{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		},
+		{
+			"sender": "Edwin",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+			"time": "01:28 PM"
+		}
+	]
+}]

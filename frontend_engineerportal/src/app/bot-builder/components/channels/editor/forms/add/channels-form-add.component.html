@@ -1,0 +1,30 @@
+<div class="channels-form-wrapper">
+  <div class="conditions-header">Add Channel</div>
+  <div class="channel-type-radiobuttons">
+    <label class="input-label">Select Channel<span class="astrisk">*</span></label>
+    <div *ngFor="let channelType of channelTypes" class="channel-type" [ngClass]="{'active': selectedChannelType === channelType.id, 'disabled': doesChannelExist(channelType.id)}"
+      (click)="changeChannelType(channelType.id)">
+      <div class="channel-icon" [ngClass]="channelType.id"></div>
+      <div class="tooltip">{{ channelType.tooltip }}</div>
+    </div>
+  </div>
+  <div *ngIf="addChannelError" class="channel-type-error">Please select channel type</div>
+  <div class="channels-input-container">
+    <label class="input-label">Content</label>
+    <converse-drop-down [data]="contentOptions" [placeholder]="'Select Content Option'" (selchange)="onSelectContentOption($event)"></converse-drop-down>
+  </div>
+
+  <div class="channels-input-container" *ngIf="selectedContentOption && selectedContentOption.key === 'copy-flow'">
+    <label class="input-label">Content source</label>
+    <converse-drop-down [data]="contentChannels" [placeholder]="'Select Content Source'" (selchange)="onSelectContentSource($event)"></converse-drop-down>
+  </div>
+  <div class="astrisk-msg">*Please complete required fields</div>
+  <div class="channels-input-container buttons">
+    <div class="channels-button-wrapper">
+      <converse-button [val]="'Cancel'" (click)="handleCancel()"></converse-button>
+    </div>
+    <div class="channels-button-wrapper">
+      <converse-button [val]="'Save'" [boolGreen]="true" (click)="handleSave()"></converse-button>
+    </div>
+  </div>
+</div>

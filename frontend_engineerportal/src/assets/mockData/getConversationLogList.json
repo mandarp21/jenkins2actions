@@ -1,0 +1,30 @@
+[
+  {
+    "conversationId": "0:69f3eshhj0sdksshjiqp-987cba654",
+    "channel":"Web",
+    "conversationStatus": "Escalated",
+    "userIntents": "PhoneUpgrade",
+    "dateTime": "24-Jan-18, 09:24 AM"
+  },
+  {
+    "conversationId": "1:69f3eshhj0sdksshjiqp-987cba654",
+    "channel":"Facebook",
+    "conversationStatus": "Abandoned",
+    "userIntents": "PhoneUpgrade",
+    "dateTime": "24-Feb-18, 09:24 AM"
+  },
+  {
+    "conversationId": "2:69f3eshhj0sdksshjiqp-987cba654",
+    "channel":"SMS",
+    "conversationStatus": "Completed",
+    "userIntents": "Account Balance",
+    "dateTime": "24-Mar-18, 09:24 AM"
+  },
+  {
+    "conversationId": "3:69f3eshhj0sdksshjiqp-987cba654",
+    "channel":"Web",
+    "conversationStatus": "Escalated",
+    "userIntents": "PhoneUpgrade",
+    "dateTime": "24-Apr-18, 09:24 AM"
+  }
+]

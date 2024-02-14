@@ -1,0 +1,58 @@
+<div class='train-nlp-container'>
+  <div [ngClass]= "{'new-utterance-table': !toggleAddUtteranceToolTip , 'new-utterance-table-tt' : toggleAddUtteranceToolTip }">
+    <div class="module-title">Add New Utterances</div>
+    <div [ngClass]= "{'info-icon-section': !toggleAddUtteranceToolTip , 'info-close-section' : toggleAddUtteranceToolTip }" (click)="toggleAddUtteranceToolTip = !toggleAddUtteranceToolTip"></div>
+    <converse-data-table [toggleToolTipTable]="toggleAddUtteranceToolTip" [itemheaders]='utteranceHeaders' [itemlist]='utteranceList' (nlpTrainerEventEmitter)='addUtteranceEventListener($event)'></converse-data-table>
+  </div>
+  <div class='current-nlp-table'>
+    <div class="module-title">Reclassify Utterances
+      <div class="search-container">
+        <div class="txt-container">
+          <converse-textbox
+            class="search-field"
+            [val]="filterText"
+            [id]="'txtFilterText'"
+            [placeholder]="placeTxt"
+            (input)="filterText = $event.target.value"
+            (handleKeyUp)="showFilter($event)"
+          ></converse-textbox>
+        </div>
+        <div class="search-icon">
+          <img src="assets/img/Icon_Search_Green.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="current-nlp-entry">
+      <converse-data-table-new
+        *ngIf="reclassifyUtteranceHeaders"
+        [itemheaders]="reclassifyUtteranceHeaders"
+        [itemlist]="reclasifyList"
+        (customAction)="tableActionHandler($event)"
+      >
+      </converse-data-table-new>
+    </div>
+    <div class="overlay" *ngIf="isDetailsShown" (click)="hideDetails()"></div>
+    <div class="conversation-log-details-dialog">
+      <converse-conversation-log-dialog
+        *ngIf="isDetailsShown"
+        [ngClass]="{ 'train-nlp-conversation-log': paginationFlag }"
+        [itemHeaders]="itemHeaders"
+        [itemList]="itemList"
+        [conversationDetails]="conversationDetails"
+        [paginationFlag]="paginationFlag"
+        (closeClickEvent)="hideDetails()"
+      ></converse-conversation-log-dialog>
+    </div>
+    <div class="conversation-log-filter-dialog">
+      <converse-filter-dialog
+        *ngIf="isFiltersShown"
+        [ngClass]="{ 'train-nlp-filter-box': paginationFlag }"
+        [placeTxt]="placeTxt"
+        [itemList]="filteredList"
+        [selectedList]="selectedItems"
+        (closeClickEvent)="hideFilter()"
+      ></converse-filter-dialog>
+    </div>
+  </div>
+</div>

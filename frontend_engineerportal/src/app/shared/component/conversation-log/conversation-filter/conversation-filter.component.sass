@@ -1,0 +1,64 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+\:host 
+  flex: 1 1 100%
+  display: flex !important
+  flex-flow: column
+  width: 430px
+  height: 410px
+  background-color: $converse-white
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.2)
+
+.btn-bar-cls
+  display: flex !important
+  justify-content: space-between
+  flex-flow: row
+  padding-top: 0px
+  padding-left: 76px
+  width: 350px
+  converse-button
+    width: 124px
+    height: 40px
+
+.search-container
+  padding-top: 18px
+  padding-left: 43px
+  width: 282px
+  height: 40px
+  display: flex
+  
+.txt-container
+  width: 100%
+  padding-left: 15%
+
+.items-container
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  width: 282px
+  height: 320px
+  padding-top: 36px
+  padding-left: 46px
+
+.lst-item
+  flex: 1
+  padding: 1% 20% 10% 0%
+  min-width: 100%
+  max-width: 25%
+  cursor: pointer
+
+.item-text
+  @include Converse-H2
+  color: $converse-seagreen
+  padding-left: 8%
+
+.search-icon
+  position: absolute
+  margin-left: 50%
+  img
+    width: 15px
+    padding-bottom: 5px
+ 
+::placeholder
+  color: $converse-seagreen !important

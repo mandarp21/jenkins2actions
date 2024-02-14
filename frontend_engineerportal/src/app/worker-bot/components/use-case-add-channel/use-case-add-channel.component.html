@@ -1,0 +1,11 @@
+<div class='add-channel-container'>
+  <div class='title-channel'> Channel </div>
+  <div class='add-section'>
+    <converse-drop-down id='ddlChannel' [data]="channelarray" [placeholder]='channelname' (selchange)="addChannel($event)"></converse-drop-down>
+  </div>
+  <div *ngIf='channels && channels.length'>
+    <div class='remove-section'>
+      <!-- <tag-input [(ngModel)]='channels' [maxItems]='8' [hideForm]='true' [modelAsStrings]='true' (onRemove)='removeChannel($event)'></tag-input> -->
+    </div>
+  </div>
+</div>

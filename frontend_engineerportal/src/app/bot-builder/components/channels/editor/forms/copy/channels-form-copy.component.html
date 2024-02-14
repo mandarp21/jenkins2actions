@@ -1,0 +1,47 @@
+<div class="channels-form-wrapper">
+  <div class="conditions-header">Copy Channel</div>
+
+  <div class="channels-input-container">
+    <div class="channels-copy-radio-wrapper" [ngClass]="{'active': isCopyFrom}" (click)="changeCopyFrom(true)">
+      <div class="radio-btn-outer">
+        <div class="radio-btn-inner"></div>
+      </div>
+      <p>Copy From</p>
+    </div>
+    <div class="channels-copy-radio-wrapper" [ngClass]="{'active': !isCopyFrom}" (click)="changeCopyFrom(false)">
+      <div class="radio-btn-outer">
+        <div class="radio-btn-inner"></div>
+      </div>
+      <p>Copy To</p>
+    </div>
+  </div>
+
+  <div class="channels-input-container">
+    <label class="input-label">Content {{contentName}}<span class="astrisk">*</span></label>
+    <converse-drop-down [data]="contentChannels" [selected]="selectedContentSource ? selectedContentSource.colName : null"
+      [placeholder]= [contentPlaceholder] [copyChannelError]="copyChannelError" (selchange)="onSelectContentSource($event)"></converse-drop-down>
+  </div>
+
+  <div class="channel-type-radiobuttons" *ngIf="selectedContentSource && selectedContentSource.key === 'new-channel'">
+    <label class="input-label">Select Channel</label>
+    <div *ngFor="let channelType of channelTypes" class="channel-type" [ngClass]="{'active': selectedChannelType === channelType, 'disabled': doesChannelExist(channelType)}"
+      (click)="changeChannelType(channelType)">
+      <div class="channel-icon" [ngClass]="channelType"></div>
+      <div class="tooltip">{{ channelType|titlecase }}</div>
+    </div>
+  </div>
+
+  <div class="channels-input-container">
+    <label class="input-label">Content</label>
+    <converse-drop-down [data]="contentOptions" [placeholder]="'Select Content Option'" (selchange)="onSelectContentOption($event)"></converse-drop-down>
+  </div>
+  <div class="astrisk-msg">*Please complete required fields</div>
+  <div class="channels-input-container buttons">
+    <div class="channels-button-wrapper">
+      <converse-button [val]="'Cancel'" (click)="handleCancel()"></converse-button>
+    </div>
+    <div class="channels-button-wrapper">
+      <converse-button [val]="'Save'" [boolGreen]="isSaveEnabled()" [isDisabled]="!isSaveEnabled()" (click)="handleSave()"></converse-button>
+    </div>
+  </div>
+</div>

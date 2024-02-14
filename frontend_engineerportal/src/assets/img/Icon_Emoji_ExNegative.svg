@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Emoji_ExNegative</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Module/Step/New/FeedbackEmoji" transform="translate(-26.000000, -703.000000)" fill-rule="nonzero" stroke="#01CCAA">
+            <g id="Message-Copy" transform="translate(24.000000, 536.000000)">
+                <g id="Icon_Emoji_ExNegative" transform="translate(3.000000, 168.000000)">
+                    <circle id="Oval-Copy-3" cx="16" cy="16" r="16"></circle>
+                    <path d="M22.8638983,24.0083254 C21.4818495,21.6125295 18.8939112,20 15.9293465,20 C12.9684996,20 10.3833351,21.6084876 9,23.9993156" id="Oval-Copy-4" stroke-linecap="round"></path>
+                    <path d="M14,15 C14,13.3431458 12.6568542,12 11,12 C9.34314575,12 8,13.3431458 8,15" id="Oval-Copy-5" stroke-linecap="round" transform="translate(11.000000, 13.500000) scale(1, -1) translate(-11.000000, -13.500000) "></path>
+                    <path d="M24,15 C24,13.3431458 22.6568542,12 21,12 C19.3431458,12 18,13.3431458 18,15" id="Oval-Copy-6" stroke-linecap="round" transform="translate(21.000000, 13.500000) scale(1, -1) translate(-21.000000, -13.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

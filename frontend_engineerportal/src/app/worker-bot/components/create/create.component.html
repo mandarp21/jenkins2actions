@@ -1,0 +1,37 @@
+<div class="create-bot-root">
+  <converse-error-panel [message]='errorMessage' (closeErrorPanel)='closeErrorPanel($event)' *ngIf='errorOnSave'></converse-error-panel>
+  <div class="navBarCls">
+    <nav-bar [title]="title" [prevpage]="prevPage" (backclick)="back()"></nav-bar>
+  </div>
+  <form [formGroup]="workerBotForm">
+    <div class="content-cls">
+      <div [ngClass]= "{'bot-avtar-box-sans-overlay': !toggleToolTipBotInfo , 'bot-avtar-box-cls' : toggleToolTipBotInfo }">
+        <bot-info-form (toggleBotInfoToolTip)= "activateTTBotInfo($event)" [botType]="botType" [botForm]="workerBotForm">
+        </bot-info-form>
+      </div>
+      <div [ngClass]= "{'ai-box-cls-sans-overlay': !toggleToolTipAISection , 'ai-box-cls-overlay' : toggleToolTipAISection }">
+        <div class="title-cls"> {{'AI Services'}}</div>
+        <div [ngClass]= "{'info-icon-section': !toggleToolTipAISection , 'info-close-section' : toggleToolTipAISection }" (click)="toggleToolTipAISection = !toggleToolTipAISection"></div>
+        <div class="ai-info-container">
+          <converse-nlp-ai-info [toggleToolTip]="toggleToolTipAISection" tooltipKey="WORKER_NLP_AI" [nlpAIForm]="workerBotForm"></converse-nlp-ai-info>
+          <converse-stt-ai-info [toggleToolTip]="toggleToolTipAISection" tooltipKey="WORKER_STT_AI" [sttAIForm]="workerBotForm"></converse-stt-ai-info>
+          <converse-tts-ai-info [toggleToolTip]="toggleToolTipAISection" tooltipKey="WORKER_TTS_AI" [ttsAIForm]="workerBotForm"></converse-tts-ai-info>
+        </div>
+        <div class="asterisk-msg">*Please complete required fields</div>
+      </div>
+    </div>
+    <div class="submit-cls">
+      <div class="cancel-cls">
+        <converse-button [val]="'Cancel'" [id]="'btnCancelCreateWorker'" (click)="back()" [boolGreen]="false"></converse-button>
+      </div>
+      <div *ngIf="!savebuttonDisable" class="save-cls">
+        <converse-button [val]="'Save'" [id]="'btnSaveCreateWorker'" [isDisabled]="!workerBotForm.valid" (click)="save()"
+          [boolGreen]="workerBotForm.dirty && workerBotForm.valid"></converse-button>
+      </div>
+      <div *ngIf="savebuttonDisable" class="save-cls">
+        <converse-button [val]="'Save'" [id]="'btnSaveCreateMaster'" [isDisabled]="true"
+          [boolGreen]="false"></converse-button>
+      </div>
+    </div>
+  </form>
+</div>

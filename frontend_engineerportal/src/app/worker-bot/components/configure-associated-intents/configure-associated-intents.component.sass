@@ -1,0 +1,50 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.associated-intents-container
+  @include boxshadowstyle
+  background-color: $converse-white
+  margin-bottom: 40px
+  padding: 40px 30px
+  @include decideFullWidth
+  margin-top: 12px
+
+.title-container
+  display: flex
+
+.title-intent
+  display: inline-block
+  flex: 1
+
+.intents-items-container
+  display: flex
+  flex-wrap: wrap
+
+.intent-item
+  cursor: pointer
+  margin: 10px 24px
+  width: 240px
+  user-select: none
+
+  img
+    float: left
+    display: inline-block
+
+  .item-text
+    padding-left: 6px
+    float: left
+    display: inline-block
+    width: 210px
+    overflow-x: hidden
+    text-overflow: ellipsis
+
+.sort-dropdown-wrapper
+  width: 240px
+
+.info-icon-title
+  @include info-icon('info')
+  margin: 10px 10px 0px 10px
+
+.intent-label
+  @include Converse-Title
+  display: inline-block

@@ -1,0 +1,27 @@
+<div>
+  <div *ngIf="itemList.length>10" class="search-container">
+    <div class="txt-container">
+      <converse-textbox [val]="filterTxt" [id]="'txtFilterText'" [placeholder]="placeTxt" (input)="filterTxt = $event.target.value" (handleKeyUp)="filterItems($event)"></converse-textbox>
+    </div>
+    <div class="search-icon">
+      <img src="assets/img/Icon_Search_Green.png">
+    </div>
+
+  </div>
+  <div class='items-container'>
+    <div class='lst-item' *ngFor='let item of filteredList | slice:0:10' (click)='itemSelection(item)'>
+      <div *ngIf='item.selected'>
+        <img src='assets/img/Tertiary_Button_Approve_Hover.svg'>
+        <span class="item-text">{{item.value}}</span>
+      </div>
+      <div *ngIf='!item.selected'>
+        <img src='assets/img/Tertiary_Button_Approve_Active.svg'>
+        <span class="item-text">{{item.value}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="btn-bar-cls">
+    <converse-button [val]="'Reset'" [boolGreen]="'true'" [id]="'btn-reset'" (click)="resetDialog()"></converse-button>
+    <converse-button [val]="'Done'" [boolGreen]="'true'" [id]="'btn-done'" (click)="closeDialog()"></converse-button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div *ngIf="isLoggedIn$ | async; else login" class="pageCls container-fluid" #dashboard>
+  <popup-modal
+    operation="session-warning"
+    rejectBtnTxt="Logout"
+    confirmBtnTxt="Extend"
+    [opener]="confirmToExtendSession"
+    (handleConfirmClickEvent)="handleConfirmEvent($event)">
+  </popup-modal>
+  <top-menu (eventClick)="logout()" [companylogo]="converselogo" [avatarlogo]="" [username]="usrName"></top-menu>
+  <top-menu (eventClick)="logout()" [fixHeader]="fixHeader" [hideFixedHeader]="true" [companylogo]="converselogo" [avatarlogo]="" [username]="usrName"></top-menu>
+  <div class="dash-root">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>

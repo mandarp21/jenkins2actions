@@ -1,0 +1,30 @@
+{
+    "intentsMatchedData": {
+        "totalIntentsMatchedData": {
+            "totalIntents": 11,
+            "totalIntentsMatched": 7.09
+        },
+        "masterBotIntentsMatchedData": [
+            {
+                "masterBotId": "f2f246f0-9b2e-43af-b78a-5e2d602c78d2",
+                "masterIntents": 10,
+                "masterBotIntentsMatched": 9.45
+            },
+            {
+                "masterBotId": "49e820ee-b958-401c-a243-5de17d8ecf0f",
+                "masterBotIntents": 8,
+                "masterBotIntentsMatched": 6
+            },
+            {
+                "masterBotId": "d19d720c-3b8e-469f-af4a-e8ae2b7495ef",
+                "masterBotIntents": 13,
+                "masterBotIntentsMatched": 7
+            },
+            {
+                "masterBotId": "cda252a4-b820-43de-8f31-94423d3b62ca",
+                "masterBotIntents": 25,
+                "masterBotIntentsMatched": 19
+            }
+        ]
+    }
+}

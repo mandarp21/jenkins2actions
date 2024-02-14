@@ -1,0 +1,59 @@
+<form [formGroup]="conditionForm" autocomplete="off" (ngSubmit)="handleSave(conditionForm.value)">
+  <div class="form-group">
+    <label for="conditionDescription">{{ conditionType === 'options' ? 'Button Title' : 'Condition Description' }}</label>
+    <div class="input-wrapper">
+      <input-autocomplete
+      [message]="conditionDescription"
+        placeholder="e.g. User's Payment is Valid?"
+      (inputChange)="changeConditionDescription($event)"
+    >
+    </input-autocomplete>
+     
+    </div>
+  </div>
+
+  <div *ngIf="conditionType === 'variable'">
+    <div class="form-group">
+      <label for="conditionStatement">Condition Statement</label>
+      <input-autocomplete
+        type="textarea"
+        [message]="conditionStatement"
+        placeholder="e.g. sampleVariable === 'sampleValue' && anotherVariable !== 'sampleValue'"
+        (inputChange)="changeConditionStatement($event)"
+      >
+      </input-autocomplete>
+    </div>
+  </div>
+
+  <section
+    class="intents-entities"
+    *ngIf="conditionType === 'options' || conditionType === 'decision' || conditionType === 'crsl' || conditionType === 'dynamicButtons'"
+  >
+    <div class="form-group">
+      <label>Intent</label>
+      <converse-drop-down
+        id="intents-drop-down"
+        [hasEmptyOption]="true"
+        [data]="intentOptions"
+        [placeholder]="'Select Intent'"
+        [selected]="intent"
+        (selchange)="onSelChangeUser('intent', $event)"
+      ></converse-drop-down>
+    </div>
+
+    <div class="form-group">
+      <label>Entities</label>
+      <custom-values-list
+        type="entity-condition"
+        [data]="entityOptions"
+        [selected]="entities || []"
+        (valueChange)="onSelChangeUser('entities', $event)"
+      ></custom-values-list>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <converse-button [val]="'Cancel'" [id]="'cancel'" (click)="handleCancel()"></converse-button>
+    <converse-button [type]="'submit'" [val]="'Save'" id="save" [boolGreen]="true"></converse-button>
+  </section>
+</form>

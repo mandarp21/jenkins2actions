@@ -1,0 +1,14 @@
+<div class="bar-chart-wrapper" id='{{_chartid}}'>
+  <div id="{{'lbl1-'+_chartid}}" class="title-cls">{{'Customer Satisfaction'}}</div>
+  <div class="breakdown-cls">{{'Breakdown'}}</div>
+  <div id="{{'lst-'+_chartid}}" class="cust-sat-box" *ngFor="let item of bardata">
+    <div id="{{'title-'+_chartid}}" class="cust-sat-title">{{ item?.title }}</div>
+    <div id="{{'prog-div-'+_chartid}}" class="cust-sat-progress">
+      <!-- <progress id="{{'progress-'+_chartid}}" class="prog-cls" [max]="_total" [value]="item?.count"></progress> -->
+      
+      <div [ngStyle]="{'width': (item?.count)+'%'}" class="prog-cls"></div>
+    </div>
+    <div id="{{'cnt-'+_chartid}}" *ngIf="_total" class="cust-sat-count">{{ item?.count }}</div>
+    
+  </div>
+</div>

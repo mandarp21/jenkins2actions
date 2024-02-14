@@ -1,0 +1,63 @@
+<div class="info-section">
+  <nav-bar [title]="useCaseName | titlecase" [prevpage]="prevPageTitle" (backclick)="navigateToWorkerBotConfig()"></nav-bar>
+  <div
+    class="channels-dropdown-parent"
+    (click)="handleChannelsDropdownClick()"
+    (clickOutside)="channelsDropdownActive = false"
+    [ngClass]="{ enabled: channelsDropdownEnabled }"
+  >
+    <u>{{ getActiveChannel() | titlecase }}</u>
+  </div>
+  <ul class="channels-dropdown-list" [ngClass]="{ active: channelsDropdownActive }">
+    <li
+      [routerLink]="['/conversation/view', conversation.conversationFlowId]"
+      *ngFor="let conversation of conversationFlows"
+      (click)="channelsDropdownActive = false"
+      [hidden]="conversation.channel === getActiveChannel()"
+    >
+      {{ conversation.channel | titlecase }}
+    </li>
+  </ul>
+</div>
+
+<section class="button-section">
+  <div class="button-wrapper">
+    <converse-button
+      (click)="testConversation()"
+      [boolGreen]="false"
+      [type]="'submit'"
+      [val]="'Test'"
+      [id]="'testConversationDesign'"
+      [isDisabled]="false"
+    ></converse-button>
+  </div>
+  <div class="button-wrapper">
+    <converse-button
+      (click)="saveConversation()"
+      [boolGreen]="true"
+      [type]="'submit'"
+      [val]="'Save'"
+      [id]="'saveConversationDesign'"
+      [isDisabled]="false"
+    ></converse-button>
+  </div>
+</section>
+
+<div class="flow-container"><ng-container *ngComponentOutlet="dynamicComponent; ngModuleFactory: dynamicModule"></ng-container></div>
+
+<!-- Disabled until we bring back undo / redo functionality -->
+<!--
+  <div class="redo-undo-buttons">
+    <div class="undo-btn" (click)="redoOrUndo('undo')">
+      <div class="icon"></div>
+      <div class="tooltip">Undo</div>
+    </div>
+    <div class="redo-btn" (click)="redoOrUndo('redo')">
+      <div class="icon"></div>
+      <div class="tooltip">Redo</div>
+    </div>
+  </div>
+-->
+
+<external-reference-info></external-reference-info>
+<test-chat (eventClick)="showChatModal = false" [showChatModal]="showChatModal"></test-chat>

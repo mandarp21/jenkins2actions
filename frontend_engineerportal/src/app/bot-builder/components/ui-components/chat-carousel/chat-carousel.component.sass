@@ -1,0 +1,65 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+// card carousel
+.chat-carousel
+  display: flex
+  overflow-x: scroll
+  margin-top: 16px
+  height: 250px
+
+.chat-card-wrapper:first-child .chat-card
+  border-top-left-radius: 16px
+  border-bottom-left-radius: 16px
+
+.chat-card-wrapper:last-child .chat-card
+  border-top-right-radius: 16px
+  border-bottom-right-radius: 16px
+
+.chat-card
+  height: 230px
+  width: 160px
+  margin-right: 12px
+  background: $converse-white
+  border: thin solid $converse-lightgray
+  display: flex
+  flex-direction: column
+  @include boxshadowstyle
+
+  .chat-icon
+    height: 100px
+    width: 100px
+    margin-top: 24px
+    align-self: center
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+
+  .chat-option
+    padding: 10px 0
+    display: flex
+    justify-content: center
+    font-family: grey
+    font-weight: bold
+    font-family: $regular-font
+
+    &:hover,&:focus
+      text-decoration: none
+
+  .carousel-btn
+    padding: 8px
+    background: $converse-seagreen
+    color: $converse-white
+    min-width: 100px
+    border-radius: 18px
+    margin-top: 18px
+    font-size: 12px
+    @include boxshadowstyle
+    border: none
+    width: 20px
+    align-self: center
+    cursor: pointer
+
+    &:active, &:focus
+      border: 3px solid $converse-seagreen
+      outline: none

@@ -1,0 +1,28 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.date-value-display
+  width: 180px
+  height: 40px
+  margin: 15px 0
+  background-color: white
+  color: $converse-seagreen
+  padding: 10px 0
+  text-align: center
+  cursor: pointer
+  @include boxshadowstyle
+
+.submit-date-btn-wrapper
+  width: 70px
+  height: 40px
+  margin-left: 15px
+
+.chat-date-picker
+  position: relative
+  display: flex
+  flex-direction: row
+  align-items: center
+
+ngx-my-date-picker
+  transform: translateX(-180px)
+  z-index: 1

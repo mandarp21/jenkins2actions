@@ -1,0 +1,15 @@
+<div class="channels-component" [ngClass]="{'overlay-active': overlay}">
+  <div class="channels-button" [ngClass]="[selectedAction === 'channels-new' ? 'active' : 'inactive']" (click)="handleClick('channels-new')">
+    <div class="channels-icon channels-new">
+    </div>
+    <div class="tooltip">Add Channel</div>
+  </div>
+  <div class="channels-button" [ngClass]="[selectedAction === 'channels-copy' ? 'active' : 'inactive']" (click)="handleClick('channels-copy')">
+    <div class="channels-icon channels-copy">
+    </div>
+    <div class="tooltip">Copy Channel</div>
+  </div>
+</div>
+<overlay-component [active]="overlay" (eventClick)="closeOverlay()"></overlay-component>
+<channels-editor [channelsAvailable]="channelsAvailable" [currentChannelName]="currentChannelName" [copyChannelError]="copyChannelError" [addChannelError]="addChannelError" *ngIf="selectedAction" [type]="selectedAction" ngClass="[selectedAction ? 'show' : 'hide']"
+  (editorAction)="handleEditorButton($event)"></channels-editor>

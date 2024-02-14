@@ -1,0 +1,96 @@
+<div class="data-table-wrapper">
+  <table id='tblBotManagement' [ngClass]= "{'dat-table-cls': !toggleToolTipTable , 'dat-table-cls-tt' : toggleToolTipTable }">
+    <thead>
+      <tr>
+        <th *ngFor="let header of itemheaders" width="{{header.width}}" [ngStyle]="{'word-wrap':header.colname === 'intentOptions' ? 'normal' : 'break-word'}">
+          <div class='table-header'>
+            <div class='table-head' [ngStyle]="{'max-width':header.colname === 'intentOptions' ? '9.5em' : '7.5em'}">{{
+              header.headerName }}
+              <div class='arrow-img' *ngIf="header.headerName!=='' && !header.noSort">
+                <img src="assets/img/grey_down.png" *ngIf="colName!==header.colname || sortOrder!=='desc'" (click)="sortCol(header.colname,'desc')">
+                <img src="assets/img/grey_up.png" *ngIf="colName!==header.colname || sortOrder!=='asc'" (click)="sortCol(header.colname,'asc')">
+                <img src="assets/img/green_down.png" *ngIf="colName===header.colname && sortOrder==='desc'" (click)="sortCol(header.colname,'desc')">
+                <img src="assets/img/green_up.png" *ngIf="colName===header.colname && sortOrder==='asc'" (click)="sortCol(header.colname,'asc')">
+              </div>
+              <div *ngIf="header.headerName!=='' && header.filter" class="filter-img">
+                <img src="assets/img/Filter dropdown.png" *ngIf="header.colname!==colName" (click)="showFilter(header.colname)">
+                <img src="assets/img/Filter dropdown.png" class="filter-on-img" *ngIf="header.colname===colName && filterOn"
+                  (click)="showFilter(header.colname)">
+
+                <img src="assets/img/Filter dropdown.png" *ngIf="header.colname===colName && !filterOn" (click)="showFilter(header.colname)">
+              </div>
+              <div *ngIf="header.linkFilter && header.headerName!==''" class="filter-img">
+                <span class="intent-filter" (click)="showFilter(header.colname)">Intent Filter</span>
+
+              </div>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table-items">
+
+      <tr *ngFor="let item of itemlist | slice:0:displayCount; let i = index" [ngStyle]="{'background-color':i == selectedIndex &&  conversationLog ? '#f7f7f7' : ''}"
+        class="accordion-toggle" data-toggle="collapse" (click)='onConvClick(item, i)'>
+
+        <td *ngFor="let header of itemheaders" width="{{header.width}}">
+          <span class="bot-logo-cls" *ngIf="header.type==='img'">
+            <img src="{{ item[header.colname]}}">
+          </span>
+          <span *ngIf="header.type==='label'">{{ item[header.colname]}}</span>
+          <span *ngIf="header.type==='label-decimal'">{{item[header.colname] | number : '1.2-2'}}</span>
+          <div class='add-utterances' *ngIf="header.type==='text'">
+            <input id='txtUtteranceName' [attr.disabled]="toggleToolTipTable ? '' : null"  #utterance class="txt-cls" autocomplete="off" type="text" placeholder="Text Entry Copy"
+              value="{{item[header.colname]}}" (blur)='updateNLPItem(utterance.value, i, header.colname)'>
+            <img src='assets/img/Conversation Log Icon.png' (click)="showNlpLogs(item)">
+          </div>
+          <div class='add-utterances' *ngIf="header.type==='text-no'">
+            <input id='txtUtteranceName' [attr.disabled]="toggleToolTipTable ? '' : null" #utterance class="txt-cls" autocomplete="off" type="text" placeholder="Text Entry Copy"
+              value="{{item[header.colname]}}" (blur)='updateNLPItem(utterance.value, i, header.colname)'>
+          </div>
+          <span class='approve-img' *ngIf="header.type==='approve'">
+            <img *ngIf="toggleToolTipTable" [activateToolTip]="toggleToolTipTable" placement="none" converse-tooltip="ADD_UTTERANCE" src='assets/img/Tertiary_Button_Approve_Hover.svg'>
+            <img *ngIf="!toggleToolTipTable" src='assets/img/Tertiary_Button_Approve_Hover.svg' (click)='emitUtteranceEvent(i, header.type)'>
+          </span>
+          <span class='disapprove-img' *ngIf="header.type==='delete'">
+            <img src='assets/img/Tertiary_Button_Disapprove.svg' *ngIf="!toggleToolTipTable" (click)='emitUtteranceEvent(i, header.type)'>
+            <img src='assets/img/Tertiary_Button_Disapprove.svg' *ngIf="toggleToolTipTable">
+          </span>
+          <span *ngIf="header.type==='pre-selected-dropdown'">
+            <converse-drop-down [activateToolTip]="toggleToolTipTable" [disabled]="toggleToolTipTable" id='ddlIntents' [data]="item[header.colname]" [selected]="item['selectedOption']"
+              (selchange)="updateNLPItem($event, i, header.colname)"></converse-drop-down>
+          </span>
+          <span class="date-cls" *ngIf="header.type==='date'">{{ item[header.colname]}}</span>
+          <span class="green-cls button-pointer" *ngIf="header.type==='greenlabel'" (click)='onRowClick(item[header.id])'>{{
+            item[header.colname]}}
+          </span>
+          <span *ngIf="header.type==='percent' && item[header.colname]">{{ item[header.colname]}}%</span>
+          <span class='info-img' *ngIf="header.type==='icon'" (click)='onConvClick(item)'>
+            <img src='assets/img/masterbotInfoButton.png'> </span>
+          <span *ngIf="header.type==='rating'" class="rating-span">
+            <span class='rating-txt'>{{ item[header.colname]}}</span>
+            <span class='rating-bar'>
+              <converse-rating class="rating-col-class" [ratingtext]="item[header.colname]" [chartdata]="item['barChartData']"
+                (mousehovered)="onMouseHover(item)"></converse-rating>
+              <!-- <span class="tooltiptext">
+                      <converse-bar-chart></converse-bar-chart>
+                    </span> -->
+            </span>
+          </span>
+          <span *ngIf="header.type==='status'" [ngClass]="{'is-escalated': item[header.colname]=='Escalated',
+              'is-abandoned':   item[header.colname]=='Abandoned',
+              'is-completed':  item[header.colname]=='Completed'}">{{
+            item[header.colname]}}
+          </span>
+          <span class="date-cls" *ngIf="!header.type">{{ item[header.colname]}}</span>
+        </td>
+      </tr>
+      <div *ngIf='paginationFlag' class="loadMore-cls">
+        <converse-button [type]="'submit'" [boolGreen]="true" [val]="'Load More'" [id]="'loadMore'" (click)='loadMore()'></converse-button>
+      </div>
+      <div *ngIf='showLessFlag' class="loadMore-cls">
+        <converse-button [type]="'submit'" [boolGreen]="true" [val]="'Show Less'" [id]="'showLess'" (click)='showLess()'></converse-button>
+      </div>
+    </tbody>
+  </table>
+</div>

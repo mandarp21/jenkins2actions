@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="10px" viewBox="0 0 11 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Api_Icon_Green</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Api_Icon_Green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Plug" transform="translate(0.500000, 3.000000)" stroke="#01CCAA">
+            <path d="M3.12132034,4 C4.29289322,4 4.29289322,0 3.12132034,0 C1.94974747,0 1,0.8954305 1,2 C1,3.1045695 1.94974747,4 3.12132034,4 Z" id="Oval-4" fill="#01CCAA"></path>
+            <path d="M4,1 L5,1" id="Line-5" stroke-linecap="round"></path>
+            <path d="M4,3 L5,3" id="Line-5-Copy" stroke-linecap="round"></path>
+            <path d="M1,2 L0,2" id="Line-6" stroke-linecap="round"></path>
+        </g>
+        <g id="Socket" transform="translate(6.500000, 3.000000)" stroke="#01CCAA">
+            <path d="M2.12132034,4 C3.29289322,4 3.29289322,0 2.12132034,0 C0.949747468,0 0,0.8954305 0,2 C0,3.1045695 0.949747468,4 2.12132034,4 Z" id="Oval-4-Copy" fill="#01CCAA" transform="translate(1.500000, 2.000000) scale(-1, 1) translate(-1.500000, -2.000000) "></path>
+            <path d="M0.878679656,4 C2.05025253,4 2.05025253,0 0.878679656,0 C-0.292893219,0 -0.292893219,4 0.878679656,4 Z" id="Oval-4-Copy-2" fill="#FEFFFE" transform="translate(0.878680, 2.000000) scale(-1, 1) translate(-0.878680, -2.000000) "></path>
+            <path d="M4,2 L3,2" id="Line-6-Copy" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>

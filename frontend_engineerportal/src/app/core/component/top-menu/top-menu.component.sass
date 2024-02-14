@@ -1,0 +1,115 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+
+/**
+ * @internal
+ * This sass class setting the header color and position.
+ */
+.header
+  overflow: hidden
+  background-color: $converse-darkgray
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: $top-header-height
+  z-index: 10
+  position: fixed
+  top: 0
+  padding: 0
+  transition: all .3s ease
+
+/**
+ * @internal
+ * This sass class is used for hiding the header.
+ */
+.hide-header
+  display: none
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+/**
+ * @internal
+ * This sass class is used for showing a fixed header.
+ */
+.fixed-header
+  @extend .header
+  position: fixed
+  z-index: 10
+  top: 0
+  animation: fade-in .3s ease
+
+/**
+ * @internal
+ * This sass class setting the style for converse logo on left side.
+ */
+.header img.logo-cls
+  height: 45px
+  width: auto
+  // margin-left: 42px
+
+/**
+ * @internal
+ * This sass class setting the style for right alignment of the content on right side.
+ */
+.header-right
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  color: white
+  font-family: $light-font
+  font-size: 12px
+
+.header-right span:first-child
+  margin-right: 15px
+
+/**
+ * @internal
+ * This sass class setting the dimensions on avatar image. This image is hidden for now
+ */
+.avtar-cls
+  width: 3.750em
+  height: 3.750em
+  visibility: hidden
+
+/**
+ * @internal
+ * This media query sets the style for image and right alignment.
+ */
+@media screen and (max-width: 500px)
+  .header img
+    float: none
+    display: block
+    text-align: left
+
+  .header-right
+    float: none
+
+/**
+ * @internal
+ * This sass class sets the style of logout text.
+ */
+#btnLogout
+  color: $converse-seagreen
+  cursor: pointer
+
+.header-container
+  width: 100%
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  @include decideFullWidthWithPadding
+
+nav a
+  cursor: pointer
+
+.dialogue-designer .header-container
+  margin: 0
+  width: 100%
+  padding: 0 35px

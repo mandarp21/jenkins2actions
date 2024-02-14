@@ -1,0 +1,23 @@
+<div class="eval-condition-container" [ngClass]="{ 'show-icon': !title }" (click)="handleClick('moveToNode')">
+  <div class="card-condition-wrapper" [hidden]="!title">
+    <div class="eval-icon" [ngClass]="'icon-' + conditionType"></div>
+    <span class="card-condition"> {{ title }} </span>
+  </div>
+
+  <div class="empty-condition" [hidden]="title">
+    <img *ngIf="conditionType === 'variable'" src="assets/img/card-editor/At_Icon_Green.svg" />
+    <img *ngIf="conditionType === 'options'" src="assets/img/card-editor/Rdo_Icon_Green.svg" />
+    <img *ngIf="conditionType === 'decision'" src="assets/img/card-editor/Icon_IntBranch_Green.svg" />
+    <img *ngIf="conditionType === 'crsl'" src="assets/img/card-editor/Crsl_Icon_Green.svg" />
+    <img *ngIf="conditionType === 'feedbackTiles'" src="assets/img/card-editor/Icon_FeedbackEmoji_Green.svg" />
+    <img *ngIf="conditionType === 'feedbackReqMsg'" src="assets/img/card-editor/Icon_FeedbackMsg_Green.svg" />
+    <img *ngIf="conditionType === 'dynamicButtons'" src="assets/img/card-editor/DynamicBtn_Icon_Green.svg" />
+  </div>
+
+  <div class="card-actions">
+    <div class="action-icon-container" (click)="handleClick('editCondition')">
+      <img src="assets/img/Edit_Icon_Green.svg" class="action-icon" />
+    </div>
+    <div class="action-icon-container" (click)="handleClick('delete')"><img src="assets/img/Del_Icon_Grey.svg" class="action-icon" /></div>
+  </div>
+</div>

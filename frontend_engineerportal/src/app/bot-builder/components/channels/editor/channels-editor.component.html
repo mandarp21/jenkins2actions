@@ -1,0 +1,5 @@
+<div class="channels-editor form-group">
+  <channels-form-add [contentChannels]="channelsAvailable" [addChannelError]="addChannelError" *ngIf="type === 'channels-new'" (editorAction)="handleAction($event)"></channels-form-add>
+  <channels-form-copy [contentChannels]="channelsAvailable" [currentChannelName]="currentChannelName" [copyChannelError]="copyChannelError" *ngIf="type === 'channels-copy'" (editorAction)="handleAction($event)">
+  </channels-form-copy>
+</div>

@@ -1,0 +1,61 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+@mixin bot-container
+  width: 345px
+  height: 620px
+  margin-right: 12px
+  @include boxshadowstyle
+
+.bot-performance-wrapper
+  display: flex
+  justify-content: flex-end
+  align-items: center
+
+  span, div
+    cursor: pointer
+
+#btnBotPerformance
+  width: 28px
+  height: 28px
+  background: $converse-seagreen url(/assets/img/Caret_WHT.svg) center no-repeat
+  transform: rotate(90deg)
+  margin-left: 10px
+  background-size: 12px 12px
+  border-radius: 2px
+
+.content-cls
+  height: 620px
+  margin-top: 8px
+  display: flex
+
+.bot-avtar-box-cls
+  @include bot-container
+  background-color: $converse-overlay-tooltip
+  @include boxshadowstyle
+
+.bot-avtar-box-cls.editable
+  width: 600px
+
+.bot-avtar-box-sans-tt.editable
+  width: 600px
+
+.submit-cls
+  margin: 30px 0
+  display: flex
+  justify-content: flex-end
+  @include decideFullWidth
+
+  & > div
+    width: 85px
+    height: 40px
+    @include sqrboxshadowstyle
+    margin-left: 8px
+
+  .delete-cls
+    width: 100px
+
+.bot-avtar-box-sans-tt
+  @include bot-container
+  background-color: $converse-white
+  @include boxshadowstyle

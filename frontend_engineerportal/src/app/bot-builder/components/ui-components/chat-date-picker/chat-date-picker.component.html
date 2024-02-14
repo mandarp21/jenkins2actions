@@ -1,0 +1,8 @@
+<div class="chat-date-picker">
+  <div class="date-value-display" ngx-mydatepicker name="mydate" [(ngModel)]="model" [options]="myOptions" #dp="ngx-mydatepicker"
+    (click)="dp.toggleCalendar()">{{ model | customDate: model }}</div>
+
+  <div class="submit-date-btn-wrapper">
+    <converse-button [boolGreen]="true" [val]="'Submit'" (click)="submitDate()"></converse-button>
+  </div>
+</div>

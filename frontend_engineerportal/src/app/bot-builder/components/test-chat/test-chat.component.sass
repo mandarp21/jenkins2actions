@@ -1,0 +1,255 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+\:host
+  width: 100%
+  height: 100%
+  position: relative
+
+$transition-time: 0s
+
+// ========================================
+//                MODAL
+// ========================================
+
+.show
+  visibility: visible
+
+.chat-modal
+  width: 398px
+  height: 630px
+  border-radius: 3px
+  display: flex
+  flex-direction: column
+  position: fixed
+  right: 30px
+  bottom: 22px
+  z-index: 3
+
+.chat-modal-container.hide
+  animation: fade-out $transition-time ease
+  opacity: 0
+
+.hide
+  visibility: hidden
+
+.chat-header
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  background-color: white
+  height: 90px
+
+.chat-title
+  font-size: 18px
+  align-self: center
+  margin-left: 7px
+
+.header-wrapper
+  align-self: center
+  display: flex
+  justify-content: center
+  width: 100%
+
+.chat-bot-icon
+  background-color: $converse-orange
+  padding: 3px
+  width: 27px
+  height: 30px
+  border-radius: 23px
+  width: 27px
+  height: 27px
+  border-radius: 50%
+
+.chat-body
+  background-color: #f7f7f7
+  height: 100%
+  box-shadow: inset 0px 7px 9px -7px $converse-lightgray
+  overflow-y: auto
+
+.chat-input-wrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  background-color: white
+  height: 110px
+  align-items: center
+
+#chat-input-field
+  width: 85%
+  height: 28px
+  margin-left: 10px
+  border-top: none
+  border-right: none
+  border-left: none
+  border-color: $converse-seagreen
+  border-radius: 4px
+  font-size: 14px
+  color: $converse-seagreen
+
+  &:focus
+    box-shadow: none
+
+.chat-send-btn
+  margin-right: 10px
+  width: 28px
+  height: 28px
+  border-radius: 2px
+  background: $converse-seagreen url('/assets/img/Caret_WHT.svg') center no-repeat
+  transform: rotate(90deg)
+  cursor: pointer
+  padding: 18px
+
+// ========================================
+//                CHAT BODY
+// ========================================
+
+.chat-container-display
+  padding: 20px
+
+#chat-bubble-wrapper
+  display: flex
+  flex-direction: column
+
+  .agent-msg, .user-msg
+      padding: 10px
+      margin-bottom: 25px
+      font-family: $regular-font
+      font-size: 13px
+      border-radius: 2px
+      box-shadow: 0 4px 4px -4px $converse-gray
+
+      p
+        margin: 0
+        padding-left: 10px
+        padding-right: 10px
+        // white-space: -moz-pre-wrap; /* Mozilla */
+        // white-space: -hp-pre-wrap; /* HP printers */
+        // white-space: -o-pre-wrap; /* Opera 7 */
+        // white-space: -pre-wrap; /* Opera 4-6 */
+        // white-space: pre-wrap; /* CSS 2.1 */
+        // white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+        // word-break: break-all; /* IE */
+
+  .agent-msg
+    background: $converse-gray
+    color: $converse-white
+    text-align: left
+    align-self: flex-start
+    position: relative
+    border-bottom-left-radius: 0
+    width: 80%
+
+    &::after
+      content: ''
+      position: absolute
+      margin-top: 10px
+      margin-left: -10px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 12px 20px 0 0
+      border-color: $converse-gray transparent transparent transparent
+
+  .user-msg
+    background: $converse-seagreen
+    text-align: right
+    float: right
+    align-self: flex-end
+    position: relative
+    border-bottom-right-radius: 0
+    color: $converse-white
+
+    &::after
+      content: ''
+      position: absolute
+      margin-top: 10px
+      margin-left: -5px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 15px 12px 0
+      border-color: transparent $converse-seagreen transparent transparent
+
+  #todays-date
+    color: $converse-gray
+    font-family: $regular-font
+    font-size: 12px
+
+  .user-timestamp-pos
+    align-self: flex-end
+
+#typing-indicator
+  will-change: transform
+  width: auto
+  padding-right: 9px
+  padding-left: 9px
+  padding-top: 12px
+  padding-bottom: 12px
+  display: table
+  background: gray
+  margin-top: 10px
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.13)
+  border-radius: 2px
+
+  span
+    height: 6px
+    width: 6px
+    float: left
+    margin: 0 3px
+    background-color: white
+    border-radius: 50%
+    @for $i from 1 through 3
+      &:nth-of-type(#{$i})
+        animation: 1s blink infinite ($i * .2222s)
+
+.test-bot-img
+  background: url('/assets/img/Icon_Add_Green.svg')
+
+.header-close-btn
+  align-self: center
+  margin-right: 26px
+  cursor: pointer
+
+header-refresh-btn
+  align-self: center
+  margin-left: 26px
+  cursor: pointer
+// ========================================
+//                ANIMATIONS
+// ========================================
+
+@keyframes fade-out-to-left
+  0%
+    opacity: 1
+    transform: translateY(0px)
+  100%
+    opacity: 0
+    transform: translateY(-400px)
+
+@keyframes fade-in-from-left
+  0%
+    opacity: 0
+    transform: translateY(-400px)
+  100%
+    opacity: 1
+    transform: translateY(0px)
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes fade-out
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes blink
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+

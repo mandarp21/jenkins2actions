@@ -1,0 +1,256 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+$height-connector: 50px
+
+//*******************************************
+//            Tree
+//*******************************************
+body
+  position: relative
+
+#svg
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+#line
+  stroke-width: 1px
+  stroke: #ccc
+  stroke-dasharray: 3
+
+.tree
+  transition: all .3s ease
+  padding-top: 85px
+  position: relative
+  width: 100vw
+  display: flex
+  justify-content: center
+
+.tree *
+  margin: 0
+  padding: 0
+
+.tree ul:first-child
+  padding-top: 0
+
+.tree li:first-child
+  margin-bottom: 10px
+
+.tree ul
+  padding-top: $height-connector
+  position: relative
+  opacity: 1
+  display: flex
+
+.tree li
+  float: left
+  text-align: center
+  list-style-type: none
+  position: relative
+  // padding: $height-connector 20px 0 20px
+  padding: $height-connector 10px 0 10px
+  transition: all 0.5s
+  width: 100%
+
+// ::before and ::after to draw the connectors
+.tree li::before,
+.tree li::after
+  content: ''
+  position: absolute
+  top: 0
+  right: 50%
+  border-top: $node-connection-line
+  width: 50%
+  height: $height-connector
+
+.tree li::after
+  right: auto
+  left: 50%
+  border-left: $node-connection-line
+
+// Remove left-right connectors from elements without any siblings
+.tree li:only-child::after,
+.tree li:only-child::before
+  display: none
+
+// Remove space from the top of single children
+.tree li:only-child
+  padding-top: 0
+  float: none
+
+// Remove left connector from first child and right connector from last child*/
+.tree li:first-child::before,
+.tree li:last-child::after
+  border: 0 none
+
+// Adding back the vertical connector to the last nodes
+.tree li:last-child::before
+  border-right: $node-connection-line
+  border-radius: 0 5px 0 0
+
+.tree li:first-child::after
+  border-radius: 5px 0 0 0
+
+// Add downward connectors from parents
+.tree ul ul::before
+  content: ''
+  position: absolute
+  top: 0
+  left: 50%
+  border-left: $node-connection-line
+  width: 0
+  height: $height-connector
+
+.tree li a
+  text-decoration: none
+  color: #666
+  font-size: 11px
+  display: inline-block
+  border-radius: 5px
+  transition: all 0.5s
+
+.dashed-border
+  border: $node-connection-line
+  padding: 5px
+
+.tree li a:first-child
+  padding-left: 0
+
+.tree li a:last-child
+  padding-right: 0
+
+.graph-parent > li::before,
+.graph-parent > li::after
+  transform: translateY(97px)
+  z-index: -2
+  border-left: none !important
+  border-right: none !important
+
+
+// Time for some hover effects
+// We will apply the hover effect the the lineage of the element also
+// .tree li a:hover,
+// .tree li a:hover + ul li a
+//   background: #c8e4f8
+//   color: #000
+//   border: 1px dashed #94a0b4
+
+/*Connector styles on hover*/
+.tree li a:hover + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:hover + ul::before,
+.tree li a:hover + ul ul::before
+  border-color: #94a0b4
+  border-width: 2px
+
+.highlight
+  z-index: 5
+  position: relative
+  cursor: pointer
+
+.highlight.node-reference-card .card-container
+  background-color: #FEFFFE
+
+.highlight.node-reference-card .action-icon-container
+  display: none
+
+.highlight-add .circle-border.add .circle-wrapper
+  z-index: 5
+  position: relative
+
+.highlight-link .circle-border.link .circle-wrapper
+  z-index: 5
+  position: relative
+
+.variables-toggle-section
+  position: fixed
+  right: -45px
+  top: 146px
+  height: 40px
+  width: 130px
+  transform: rotate(-90deg)
+  background-color: $converse-seagreen
+  text-align: center
+  line-height: 40px
+  color: $converse-white
+  cursor: pointer
+  z-index: 1
+
+.redo-undo-buttons
+  @include boxshadowstyle
+  position: fixed
+  width: 40px
+  height: 80px
+  left: 35px
+  bottom: 290px
+  background: #fff
+
+.redo-btn, .undo-btn
+  width: 40px
+  height: 40px
+  cursor: pointer
+  position: relative
+
+.redo-btn:active, .undo-btn:active
+  background-color: $converse-seagreen
+
+.redo-btn:active > .icon
+  background: url(/assets/img/Redo_Icon_White.svg) center no-repeat
+  background-size: contain
+
+.undo-btn:active > .icon
+  background: url(/assets/img/Undo_Icon_White.svg) center no-repeat
+  background-size: contain
+
+.redo-undo-buttons .icon
+  width: 20px
+  height: 20px
+  margin: 0 auto
+  padding-top: 40px
+
+.undo-btn > .icon
+  background: url(/assets/img/Undo_Icon_Green.svg) center no-repeat
+  background-size: contain
+
+.redo-btn > .icon
+  background: url(/assets/img/Redo_Icon_Green.svg) center no-repeat
+  background-size: contain
+
+
+// ========================================
+//       TOOLTIP - appears to the right
+// ========================================
+
+.tooltip
+  visibility: hidden
+  width: 90px
+  background-color: $converse-white
+  position: absolute
+  top: 6px
+  padding: 2px 0
+  text-align: center
+  display: inline
+  color: $converse-lightgray
+  left: 55px
+
+.undo-btn:hover .tooltip, .redo-btn:hover .tooltip
+  visibility: visible
+  opacity: 1
+
+// hide when mouseover on the tooltip
+.undo-btn .tooltip:hover, .redo-btn .tooltip:hover
+  opacity: 0
+  visibility: hidden
+
+.external-ref-btn
+  position: fixed
+  z-index: 5
+
+ul.graph-parent
+  position: absolute
+
+.pan-zoom-frame:active
+  cursor: grab

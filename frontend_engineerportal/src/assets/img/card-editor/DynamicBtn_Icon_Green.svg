@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Icon_DynamicMsg_Green</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon_DynamicMsg_Green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4.00048998,7.46046718 C4.00016373,7.47362039 4,7.48679824 4,7.5 C4,8.88071187 5.790861,10 8,10 C10.209139,10 12,8.88071187 12,7.5 C12,7.48679949 11.9998363,7.47362287 11.9995101,7.4604709 C12,8.62995059 12,9.30976016 12,9.5 C12,10.8807119 10.209139,12 8,12 C5.790861,12 4,10.8807119 4,9.5 C4,9.34304546 4,8.66323589 4,7.46057129 Z" id="Combined-Shape" fill="#01CCAA"></path>
+        <path d="M11.3822595,6 C10.9881232,5.17039818 9.64664857,4.5 8,4.5 C6.35335143,4.5 5.01187679,5.17039818 4.61774055,6 L11.3822595,6 Z" id="-g-Oval-2" stroke="#01CCAA"></path>
+        <path d="M11.3822595,6 C10.9881232,5.17039818 9.64664857,4.5 8,4.5 C6.35335143,4.5 5.01187679,5.17039818 4.61774055,6 L11.3822595,6 Z" id="-g-Oval-2-Copy" stroke="#01CCAA"></path>
+        <circle id="Oval" fill="#01CCAA" cx="5.5" cy="7.5" r="1"></circle>
+        <circle id="Oval-Copy" fill="#01CCAA" cx="8" cy="8.5" r="1"></circle>
+        <circle id="Oval-Copy-2" fill="#01CCAA" cx="10.5" cy="7.5" r="1"></circle>
+    </g>
+</svg>

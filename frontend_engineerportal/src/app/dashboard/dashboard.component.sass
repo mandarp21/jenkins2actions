@@ -1,0 +1,56 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.title-div-cls
+  padding-top: 30px
+
+.title-cls
+  @include Converse-Title2
+
+.filter-div-cls
+  margin-top: $vertical-spacing-from-nav
+  display: flex
+  align-items: center
+
+.from-txt-cls
+  @include Converse-H5
+  font-size: 16px
+
+
+.dt-pick-one-cls, .dt-pick-two-cls
+  margin: 0 12px
+  width: 200px
+  height: 40px
+
+.to-txt-cls
+  @include Converse-H5
+  font-size: 16px
+
+.go-btn-cls
+  @include Converse-H5
+  width: 40px
+  height: 40px
+  font-size: 16px
+
+.analytics-cls
+  display: flex
+  margin-top: $vertical-spacing
+  justify-content: space-between
+  @include decideFullWidth
+
+.master-title-cls, .api-variables-title-cls
+  margin-top: $vertical-spacing
+  @include decideFullWidth
+  display: flex
+  justify-content: space-between
+  @include decideFullWidth
+
+.master-span-cls, .api-span-cls
+  @include Converse-Title2
+
+.add-master-cls, .add-variable-cls
+  width: 150px
+  height: 35px
+
+.data-tbl-cls
+  margin-top: 24px

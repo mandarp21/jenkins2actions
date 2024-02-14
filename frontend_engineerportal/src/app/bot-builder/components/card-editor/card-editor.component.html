@@ -1,0 +1,16 @@
+<div class="card-editor-wrapper" [ngClass]="{ show: show, hide: !show, active: show !== undefined }">
+  <div class="card-editor-container">
+    <span>{{ header }}</span>
+
+    <ce-form-normal class="card-editor-form" *ngIf="formType === 'normal'" (eventOutput)="handleEvent($event, 'normal')"></ce-form-normal>
+
+    <ce-form-condition
+      class="card-editor-form"
+      *ngIf="formType === 'condition'"
+      (eventOutput)="handleEvent($event, 'condition')"
+    ></ce-form-condition>
+    <ce-form-variable *ngIf="formType === 'variables'" (eventOutput)="handleEvent($event, 'variable')" [resetVariables]="resetVariables"></ce-form-variable>
+    <ce-form-reference *ngIf="formType === 'reference'" (eventOutput)="handleEvent($event, 'reference')"></ce-form-reference>
+    <div class="asterisk-msg">*Please complete required fields</div>
+  </div>
+</div>

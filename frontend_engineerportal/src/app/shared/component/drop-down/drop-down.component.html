@@ -1,0 +1,23 @@
+<div
+  class="dropdown-container"
+  [activateToolTip]="activateToolTip && !disabled"
+  [placement]="placement"
+  [converse-tooltip]="tooltipKey"
+  [attr.disabled]="disabled ? '' : null"
+>
+  <div
+    class="dropdown-title"
+    (click)="activateToolTip ? $event.stopPropagation() : showDropdown ? closeDropdown() : openDropdown()"
+    [ngClass]="{ 'dropdown-container-error': ceFormVariableTypeError || ceFormMethodError || ceFormValueType || copyChannelError }"
+  >
+    {{ selected || placeholder }}
+  </div>
+  <div class="dropdown-caret" (click)="activateToolTip ? $event.stopPropagation() : showDropdown ? closeDropdown() : openDropdown()"></div>
+  <div *ngIf="showDropdown" class="dropdown-options-container" [ngClass]="{ show: showDropdown }">
+    <div *ngIf="hasEmptyOption" class="dropdown-option" (click)="onSelChange({ key: 0 })">{{ emptyOptionName || placeholder }}</div>
+    <div *ngFor="let item of data" class="dropdown-option" (click)="onSelChange(item)">
+      <span *ngIf="item.label">{{ item.label }}</span
+      >{{ item.colName || item.key }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="autocomplete-input-wrapper" (clickOutside)="onChange()">
+  <div class="inputs-container">
+    <input
+      *ngIf="!type || type === 'input'"
+      class="autocomplete-input"
+      [id]="id"
+      [(ngModel)]="message"
+      [value]="message"
+      type="text"
+      [placeholder]="placeholder || ''"
+      (input)="onInput($event.target.value)"
+    />
+
+    <textarea
+      *ngIf="type === 'textarea'"
+      class="autocomplete-input"
+      [id]="id"
+      [(ngModel)]="message"
+      [value]="message"
+      type="text"
+      [placeholder]="placeholder || ''"
+      (input)="onInput($event.target.value)"
+    ></textarea>
+  </div>
+
+  <!-- List all available API Calls-->
+  <ul class="autocomplete-variables-list">
+    <li class="autocomplete-variables-item" *ngFor="let variable of visibleVariables" (click)="onVariableSelect(variable)">
+      <span> {{ variableTypes[variable] || '' }} </span> {{ variable }}
+    </li>
+  </ul>
+
+  <!-- List all available API variables within chosen API call-->
+  <ul class="autocomplete-variables-list">
+    <li
+      class="autocomplete-variables-item"
+      *ngFor="let variable of visibleVariableDetails"
+      (click)="onVariableSelectSecondOption(variable)"
+    >
+      {{ variable }}
+    </li>
+  </ul>
+</div>

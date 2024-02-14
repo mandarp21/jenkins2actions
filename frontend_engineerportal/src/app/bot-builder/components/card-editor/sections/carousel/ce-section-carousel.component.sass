@@ -1,0 +1,106 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.carousel-gallery
+  width: 100%
+  position: relative
+  display: flex
+  align-items: center
+  flex-direction: column
+
+.carousel-image-wrapper
+  padding: 5px
+  border: 1px solid #ccc
+  width: 70%
+  height: 63px
+  margin-bottom: 20px
+  border-radius: 5px
+  position: relative
+  @include boxshadowstyle
+
+
+.carousel-image-wrapper:last-child
+  margin: 0
+
+.carousel-image-wrapper span
+  position: absolute
+  margin: 0
+  overflow: hidden
+  width: 130px
+  height: 60px
+  padding-left: 8px
+  font-size: 14px
+  line-height: 20px
+  align-items: center
+  margin-top: -5px
+
+.carousel-image
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  background-color: #ccc
+  position: relative
+  width: 50px
+  height: 50px
+  transition: all .2s ease
+  border-radius: 5px
+  position: relative
+  float: left
+
+.carousel-image:hover
+  transform: scale(2)
+  z-index: 5
+
+.preview-icon-cls
+  border-radius: 10%
+  width: 60px
+  height: 60px
+  margin: 0 auto
+
+.close-icon-cls
+  width: 10px !important
+  height: 10px !important
+  margin-left: 50px
+
+.crsl-container
+  margin-top: 15px
+
+.drop-zone
+  margin: auto
+  height: 100px
+  border: 2px dashed $converse-lightgray
+
+  .content
+    color: $converse-seagreen
+
+.img-data-input
+  margin-bottom: 10px
+  &:last-of-type
+    margin-bottom: 20px
+
+.btn-wrapper-img
+  width: 120px
+  height: 35px
+
+.carousel-input-wrapper
+  height: 55px
+  position: relative
+
+.btn-delete
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  border: 1px solid #ccc
+  position: absolute
+  top: -15px
+  right: -15px
+  background: $converse-white url('/assets/img/Cross_Grey.svg') center no-repeat
+  background-size: 12px 12px
+  transition: background-color .2s ease
+  cursor: pointer
+
+.btn-delete:hover
+  background-color: #444
+
+// div.form-group
+//   height: auto !important

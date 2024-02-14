@@ -1,0 +1,119 @@
+<div *ngIf='!isEditFlow' class='use-case-section'>
+  <popup-modal type="use case" [opener]="askToDelete" (handleConfirmClickEvent)="handleConfirmEvent($event)"></popup-modal>
+  <div class='title-section'>
+    <div id='titleUseCase' class='title-use-case' [title]="useCaseDetails?.useCaseName"> {{useCaseDetails?.useCaseName}}</div>
+    <div class='icon-cls'>
+      <button class='icon-btn' (click)='editUseCase()'>
+        <img src='assets/img/Edit_Icon_Green.svg' />
+      </button>
+      <button class='icon-btn' (click)='exportUseCase(useCaseDetails.useCaseId)'>
+        <img src='assets/img/import-export/Icon_Export_Green.svg' />
+      </button>
+      <button class='icon-btn' *ngIf="isUseCaseDeletable(useCaseDetails?.useCaseName)" (click)='askToUser(useCaseDetails.useCaseId)'>
+        <img src='assets/img/Del_Icon_Grey.svg' />
+      </button>
+    </div>
+  </div>
+  <div id='idUseCase' class='title-cls'>Use Case ID:</div>
+  <div class="txt-cls"> {{useCaseDetails?.useCaseId}}</div>
+  <div class='use-case-info'>
+    <div class='title-cls'>Channel(s)</div>
+    <div class='txt-cls'>{{channelsString}}</div>
+  </div>
+  <div class='use-case-info'>
+    <div class='title-cls'>{{'Description'}}</div>
+    <div class='txt-cls txt-description'>{{useCaseDetails?.useCaseDescription}}</div>
+  </div>
+  <div class='split-section'>
+    <div class='created'>
+      <div class='title-cls'> {{'Date Created'}}</div>
+      <div class='txt-cls'>{{useCaseDetails?.createdOn}}</div>
+      <div class='txt-cls txt-createdBy' [title]="useCaseDetails?.createdBy">{{useCaseDetails?.createdBy}}</div>
+    </div>
+    <div class='modified'>
+      <div class='title-cls'> {{'Date Modified'}}</div>
+      <div class='txt-cls'>{{useCaseDetails?.updatedOn}}</div>
+      <div class='txt-cls txt-updatedBy' [title]="useCaseDetails?.updatedBy">{{useCaseDetails?.updatedBy}}</div>
+    </div>
+  </div>
+  <div class='split-section'>
+    <div class='avg-handling-time'>
+      <div class='title-cls'>{{ 'Average Human Handling Time' }}</div>
+      <div class='handling-time-container switch-view txt-cls'>
+        {{averageHumanHandlingString}}
+      </div>
+    </div>
+    <span class='collect-feedback-view'>
+      <div class='title-cls'>{{ 'Collect Feedback' }}</div>
+      <label class="switch switch-view">
+        <input type="checkbox" [disabled]=true [checked]="useCaseDetails?.collectFeedback">
+        <span class="slider round"></span>
+      </label>
+    </span>
+  </div>
+  <div class='btn-container'>
+    <div class='button-converse' *ngIf="channelsString && channelsString!=='NA' && useCaseDetails.isEditable != false">
+      <converse-button [type]="'submit'" [val]="'Edit Flow'" [id]="'btnEditFlow'" [activateColors]="true" (click)='editFlow()'></converse-button>
+    </div>
+    <div class='button-converse' *ngIf="!channelsString || channelsString==='NA'">
+      <converse-button [type]="'submit'" [val]="'Create Flow'" [id]="'btnCreateFlow'" [activateColors]="true" (click)='createFlow()'></converse-button>
+    </div>
+  </div>
+</div>
+<form *ngIf='isEditFlow' class='edit-case-section' #editCaseForm="ngForm">
+  <div class='add-new-use-case'>
+    <div class='title-use-case'>
+      Edit Use Case
+    </div>
+    <div class='form-group'>
+      <label>Use Case Name</label>
+      <span>*</span>
+      <input type='text' [(ngModel)]='useCaseEditDetails.useCaseName' name="useCaseName" placeholder='Enter Use Case Name' (keyup)= "useCaseNameKeyUp()" maxlength="30"/>
+    </div>
+    <div class='form-group use-case-description'>
+      <label>Description</label>
+      <textarea placeholder='Enter Use Case description' [(ngModel)]='useCaseEditDetails.useCaseDescription' name="useCaseDescription" cols='50'
+        rows='10' maxlength="60"></textarea>
+    </div>
+    <div class='use-case-Time-Feedback'>
+      <div class='avg-handling-time-edit'>
+        <div class='form-group handling-time-container'>
+          <label>Average Human Handling Time</label>
+          <div class="averageTime">
+            <span>
+              <input [ngClass]="{'txt-handling-time': !daysError, 'txt-handling-time-error': daysError}" type='number' min="0" max="30" [(ngModel)]='averageHumanHandlingDays' name="averageHumanHandlingDays" placeholder='Days' />
+            </span>
+            <span>
+              <input [ngClass]="{'txt-handling-time': !hoursError, 'txt-handling-time-error': hoursError}" type='number' min="0" max="23" [(ngModel)]='averageHumanHandlingHours' name="averageHumanHandlingHours" placeholder='Hours' />
+            </span>
+            <span>
+              <input [ngClass]="{'txt-handling-time': !minsError, 'txt-handling-time-error': minsError}" type='number' min="0" max="59" [(ngModel)]='averageHumanHandlingMins' name="averageHumanHandlingMins" placeholder='Mins' />
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class='collect-feedback'>
+        <label class="form-group-label">Collect Feedback</label>
+        <div class='toggle-switch-container'>
+          <label class="switch">
+            <input type="checkbox" [checked]="useCaseEditDetails.collectFeedback" [(ngModel)]="useCaseEditDetails.collectFeedback" name="collectFeedback">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="AHHTErrorMsg" class="ahhtErrorMsg">
+      Max range allowed is Days:30, Hours:23, Mins:59
+      <img class="close-img" src="assets/img/Tertiary_Button_Disapprove_Active.png" (click)='closeToaster()'>
+    </div>
+    <div class='use-case-Buttons'>
+      <div class='btn-cancel'>
+        <converse-button [val]="'Cancel'" [id]="'useCaseCancel'" (click)="closeAddChannel()"></converse-button>
+      </div>
+      <div class='btn-save'>
+        <converse-button [type]="'submit'" [val]="'Save'" [id]="'useCaseSave'" [isDisabled]="!editCaseForm.dirty"
+          [boolGreen]="useCaseEditDetails.useCaseName && editCaseForm.dirty" (click)='saveUseCase(useCaseEditDetails)'></converse-button>
+      </div>
+    </div>
+  </div>
+</form>

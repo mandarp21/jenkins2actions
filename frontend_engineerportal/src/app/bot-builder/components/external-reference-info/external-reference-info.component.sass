@@ -1,0 +1,78 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.info-container
+  width: 400px
+  height: 370px
+  position: fixed
+  left: 110px
+  bottom: 50px
+  z-index: 5
+  background: $converse-white
+  @include boxshadowstyle
+  padding: 25px
+
+.info-title
+  font-size: 22px
+  font-weight: 600
+
+.ext-ref-info-container
+  margin-top: 20px
+
+.sub-title
+  font-size: 11px
+  line-height: 11px
+
+.info-value
+  font-weight: 600
+
+.info-id
+  font-size: 13px
+
+.info-buttons-container
+  height: 40px
+  display: flex
+  flex-direction: row-reverse
+  margin-top: 25px
+  position: relative
+
+  converse-button
+    margin-left: 15px
+
+.unsaved-confirmation-box
+  position: absolute
+  width: 340px
+  height: 150px
+  background: $converse-white
+  @include boxshadowstyle
+  visibility: hidden
+  opacity: 0
+  right: -400px
+  top: -83px
+  padding: 25px
+  transition: opacity ease .3s, transform ease .3s, visibility 0s linear .3s
+  transform: translate(-160px, 30px) scale(0.1)
+
+
+  &.show
+    visibility: visible
+    opacity: 1
+    transform: scale(1)
+    transition: opacity ease .3s, transform ease .3s
+
+  .info-buttons-container
+    margin-top: 20px
+
+  &:before
+    content: ''
+    border-style: solid
+    border-width: 16px 20px 16px 0
+    border-color: transparent $converse-white transparent transparent
+    position: absolute
+    left: -20px
+    bottom: 30px
+
+.unsaved-title
+  font-weight: 600
+  font-size: 16px
+  line-height: 18px

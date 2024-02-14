@@ -1,0 +1,43 @@
+<nav-bar [title]="useCaseName | titlecase" [prevpage]="prevPageTitle" (backclick)="navigateToWorkerBotConfig()"></nav-bar>
+
+<step-content
+  [title]="'Channels of choice'"
+  [subtitle]="'Which channel will the user be having this conversation?'"
+  [description]="
+    'Other channels can be added to this use case after the initial set up. The conversation flows can be copied into new channels.'
+  "
+  [placeholderText]="'e.g. Your account balance is [x]'"
+  [avatarImage]="'assets/img/Icon_Channels_Green.svg'"
+></step-content>
+
+<div class="select-channel-wrapper">
+  <div class="content">
+    <form #channelForm="ngForm" (ngSubmit)="handleSubmit(channelForm.value)">
+      <div class="radio-btn-container">
+        <label class="radio" *ngFor="let channel of channels">
+          <input
+            [(ngModel)]="selectedChannel"
+            type="radio"
+            name="channel"
+            value="{{ channel }}"
+            id="radio{{ channel }}"
+            (change)="onChangeSelection(channelForm.value)"
+            required
+          />
+          <div class="radio-container">
+            <div class="{{ channel }}"></div>
+          </div>
+        </label>
+      </div>
+      <section class="next-button-wrapper">
+        <converse-button
+          [type]="'submit'"
+          [val]="'Next'"
+          [id]="'btnNext'"
+          [activateColors]="true"
+          [isDisabled]="!enableButton"
+        ></converse-button>
+      </section>
+    </form>
+  </div>
+</div>

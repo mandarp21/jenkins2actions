@@ -1,0 +1,62 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.zoom-component
+  position: fixed
+  width: 40px
+  height: 120px
+  left: 35px
+  bottom: 50px
+  background-color: #fff
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.12)
+  z-index: 1
+
+.zoom-button
+  width: 40px
+  height: 40px
+  cursor: pointer
+
+.zoom-icon
+  width: 20px
+  height: 20px
+  margin: 0 auto
+  padding-top: 40px
+  position: relative
+
+.zoom-plus
+  background: url('/assets/img/Icon_Zoom_Plus.svg') center no-repeat
+  background-size: contain
+
+.zoom-minus
+  background: url('/assets/img/Icon_Zoom_Minus.svg') center no-repeat
+  background-size: contain
+
+.zoom-reset
+  background: url('/assets/img/Icon_Zoom_Reset_Green.svg') center no-repeat
+  background-size: contain
+
+
+// ========================================
+//       TOOLTIP - appears to the right
+// ========================================
+
+.tooltip
+  visibility: hidden
+  width: 90px
+  background-color: $converse-white
+  position: absolute
+  top: 6px
+  padding: 2px 0
+  text-align: center
+  display: inline
+  color: $converse-lightgray
+  left: 45px
+
+.zoom-icon:hover .tooltip
+  visibility: visible
+  opacity: 1
+
+// hide when mouseover on the tooltip
+.zoom-icon .tooltip:hover
+  opacity: 0
+  visibility: hidden

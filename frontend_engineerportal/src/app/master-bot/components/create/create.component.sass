@@ -1,0 +1,117 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.create-bot-root
+  flex: 1 1 100%
+  display: flex
+  flex-flow: column
+  position: relative
+
+fieldset
+  padding: 0
+
+.nav-bar-cls
+  background-color: $converse-snowwhite
+  height: 6.188em
+  margin: 0
+
+.title-cls
+  @include Converse-Title2
+  display: inline-block
+
+
+.content-cls
+  background-color: $converse-snowwhite
+  display: flex
+  margin: $vertical-spacing 0
+  @include decideFullWidth
+
+.bot-info-sans-tt-container
+  height: 47.500em
+  background-color: $converse-white
+  flex: 3
+  @include boxshadowstyle
+  @include small-desktop
+    flex: 2
+
+.bot-info-tt-container
+  height: 47.500em
+  background-color: $converse-overlay-tooltip
+  flex: 3
+  @include boxshadowstyle
+  @include small-desktop
+    flex: 2
+
+%ai-box-cls
+  height: 47.500em
+  margin-left: 15px
+  padding: $card-padding
+  flex: 8
+  @include boxshadowstyle
+  @include small-desktop
+    flex: 5
+
+.ai-box-cls-sans-overlay
+  @extend %ai-box-cls
+  @include background-section('close')
+
+.ai-box-cls-overlay
+  @extend %ai-box-cls
+  @include background-section('info')
+
+.submit-cls
+  margin: 30px 0
+  display: flex
+  justify-content: flex-end
+  @include decideFullWidth
+
+.cancel-cls
+  width: 8.6%
+  height: 2.500em
+  border-radius: 0.125em
+  background-color: $converse-lightgray
+  @include sqrboxshadowstyle
+
+.cancel-btn-cls
+  width: 100%
+  height: 100%
+  @include Converse-H2
+  color: $converse-white
+  background-color: $converse-lightgray
+
+.save-cls
+  width: 8.6%
+  height: 2.500em
+  margin-left: 0.83%
+  border-radius: 0.125em
+  background-color: $converse-seagreen
+  @include sqrboxshadowstyle
+
+.save-btn-cls
+  width: 100%
+  height: 100%
+  @include Converse-H2
+  color: $converse-white
+  background-color: $converse-seagreen
+
+.create-root-bot form:first-child
+  margin-top: $card-padding
+
+.ai-info-container
+  display: flex
+  justify-content: space-between
+
+.asterisk-msg
+  font-size: .7em
+
+.info-icon-title
+  @include info-icon('info')
+  margin: 0px 10px 0px 10px
+
+.info-icon-section
+  @include info-icon('info')
+  float: right
+
+.info-close-section
+  @include info-icon('close')
+  float: right

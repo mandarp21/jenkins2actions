@@ -1,0 +1,157 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.eval-condition-container
+  width: 170px
+  background-color: white
+  height: 50px
+  display: flex
+  align-items: center
+  background-color: $converse-white
+  border-top-left-radius: 30px
+  border-bottom-left-radius: 30px
+  position: relative
+  @include boxshadowstyle
+
+.card-condition-wrapper
+  width: 134px
+  text-align: center
+  position: absolute
+  left: 0
+  max-width: 110px
+  white-space: nowrap
+  background-color: $converse-seagreen
+  padding: 9px 15px
+  color: $converse-white
+  border-radius: 15px
+  margin-left: 20px
+
+.card-condition
+  max-width: 60px
+  position: relative
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  display: inline-block
+  vertical-align: middle
+
+.card-actions
+  position: absolute
+  right: 0
+  width: 36px
+  overflow: hidden
+
+.action-icon-container
+  cursor: pointer
+  width: 36px
+  height: calc(50px/2)
+  float: right
+  display: flex
+  justify-content: center
+  align-items: center
+
+.action-icon
+  width: 50%
+
+.eval-icon
+  top: -5px
+  left: -10px
+  position: absolute
+  background: white center no-repeat
+  background-size: 15px 15px
+  width: 25px
+  height: 25px
+  border-radius: 50%
+  @include boxshadowstyle
+
+.empty-condition
+  width: calc(100% - 36px)
+  margin-left: 8px
+
+.empty-condition img
+  width: 25px
+  height: auto
+
+.icon-variable
+  background-image: url('/assets/img/card-editor/At_Icon_Green.svg')
+
+.icon-options
+  background-image: url('/assets/img/card-editor/Rdo_Icon_Green.svg')
+
+.icon-decision
+  background-image: url('/assets/img/card-editor/Icon_IntBranch_Green.svg')
+
+.icon-crsl
+  background-image: url('/assets/img/card-editor/Crsl_Icon_Green.svg')
+
+.icon-dynamicButtons
+  background-image: url('/assets/img/card-editor/DynamicBtn_Icon_Green.svg')
+  background-size: 24px
+
+.show-icon
+  width: 85px
+
+.tooltips
+  position: absolute
+  top: -18px
+  right: -50px
+  height: 56px
+
+.tooltips div
+  width: 40px
+  height: 40px
+  background-color: $converse-white
+  border-radius: 50%
+  opacity: 0
+  box-shadow: 3px 2px 4px 0 rgba(0, 0, 0, 0.15)
+  cursor: pointer
+  z-index: 1
+  margin: 5px 0
+
+.tooltips .commentTooltip
+  background: $converse-white url('/assets/img/Icon_Cmnts_Green.png') center no-repeat
+  background-size: 20px auto
+
+.tooltips .linkTooltip
+  background: $converse-white url('/assets/img/Icon_Link_Green.svg') center no-repeat
+  background-size: 20px auto
+
+.tooltips.show div
+  @extend .showTooltip
+  animation: fade-in .3s ease
+
+.tooltips.hide div
+  @extend .hideTooltip
+  animation: fade-out .3s ease
+
+.showTooltip
+  opacity: 1
+  visibility: visible
+
+.hideTooltip
+  opacity: 0
+  visibility: hidden
+
+@keyframes fade-in
+  0%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+@keyframes fade-out
+  0%
+    opacity: 1
+    visibility: visible
+  100%
+    opacity: 0
+    visibility: hidden
+
+
+// .icon-api
+//   background-image: url('/assets/img/card-editor/Api_Icon_Green.svg')
+
+// .icon-options
+//   background-image: url('/assets/img/card-editor/Rdo_Icon_Green.svg')
+

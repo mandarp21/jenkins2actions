@@ -1,0 +1,154 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.use-case-section, .edit-case-section
+  @include boxshadowstyle
+  padding: 14px
+  margin: 6px
+  background-color: $converse-white
+  width: $use-cases-card-width
+  height: 460px
+  position: relative
+
+.title-section
+  display: flex
+
+.title-use-case
+  @include Converse-Title2
+  margin: 10px 0
+  width: 275px
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.icon-cls
+  width: 30px
+
+.icon-btn
+  margin-bottom: 5px
+  padding: 6px
+  background-color: $converse-white
+  border: none
+  cursor: pointer
+
+.switch-view
+  margin-top: 7px
+
+.collect-feedback-view, .modified
+  width: 130px
+
+.avg-handling-time
+  width: 140px
+
+.avg-handling-time-edit
+  width: 225px
+
+.collect-feedback .form-group
+  margin: 0
+
+.add-new-use-case .form-group
+  margin: 0
+
+  &.use-case-description
+    height: 125px
+    textarea
+      height: 80px
+
+.title-cls
+  @include Converse-H2
+
+.txt-cls
+  @include Converse-Copy
+  word-wrap: break-word
+
+.use-case-info
+  margin-top: 16px
+
+.split-section
+  display: flex
+  justify-content: space-between
+  margin-top: 22px
+
+.use-case-Buttons
+  display: flex
+
+.btn-cancel
+  width: 125px
+  height: 40px
+  @include sqrboxshadowstyle
+
+.btn-save
+  width: 125px
+  height: 40px
+  margin-left: 32px
+  @include sqrboxshadowstyle
+
+
+.use-case-Time-Feedback
+  display: flex
+  justify-content: space-between
+
+.txt-handling-time
+  @include txtBox
+  height: 32px
+  width: 35px
+  text-align: center
+  font-weight: 400
+
+.txt-handling-time-error
+  @include txtBox-error
+  height: 32px
+  width: 35px
+  text-align: center
+  font-weight: 400
+
+.txt-handling-time-error:focus
+  border-bottom-color: $converse-hotpink
+
+.handling-time-container
+  display: flex
+  flex-direction: column
+
+  label
+    margin-right: 0
+
+  span
+    padding: 16px 3px
+
+
+.btn-container
+  position: absolute
+  right: 16px
+  bottom: 16px
+  .button-converse
+    height: 32px
+    @include sqrboxshadowstyle
+
+.form-group-label
+  vertical-align: top
+  margin-right: 0
+
+.txt-description
+  height: 32px
+
+.txt-createdBy, .txt-updatedBy
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+  width: 126px
+
+.ahhtErrorMsg
+  font-size: .7em
+  margin-bottom: 5px
+  color: $converse-white
+  background-color: $converse-hotpink
+  width: 100%
+  height: 30px
+  padding: 5px
+
+.close-img
+  padding-left: 5px
+  height: 20px
+  width: 24px
+  padding-top: 2px
+  cursor: pointer

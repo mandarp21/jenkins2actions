@@ -1,0 +1,95 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+@mixin utterance-table
+  margin-bottom: 3em
+  height: 5.625em
+  border-radius: 0.063em
+  @include boxshadowstyle
+
+.train-nlp-container
+  display: flex
+  flex-flow: column
+
+.new-utterance-table
+  @include utterance-table
+  background-color: $converse-white
+
+.new-utterance-table-tt
+  @include utterance-table
+  background-color: $converse-overlay-tooltip
+
+
+.current-nlp-table
+  display: flex
+  flex-flow: column
+  margin-top: 2.5em
+  border-radius: 0.063em
+  background-color: $converse-white
+  @include boxshadowstyle
+
+.module-title
+  @include Converse-Title2
+  margin: 0.5em
+  display : inline-block
+
+.current-nlp-entry
+  height: 6em
+
+.train-nlp-filter-box
+  margin-left: 50%
+  position: absolute
+  margin-top: -3%
+
+.search-container
+  float: right
+  display: flex
+  width: 240px
+  height: 40px
+  position: relative
+
+.search-icon
+  position: absolute
+  right: 14px
+  img
+    width: 15px
+
+.search-field
+  font-size: 17px !important
+
+.txt-container
+  width: 240px
+
+.train-nlp-conversation-log
+  position: fixed
+  right: 100px
+  bottom: 100px
+  z-index: 3
+
+.nlp-container
+  @include decideFullWidth
+  display: flex
+  flex-wrap: wrap
+
+.overlay
+  position: fixed
+  width: 100%
+  height: 100%
+  background: #000000
+  opacity: 0.4
+  top: 0
+  left: 0
+  z-index: 10
+.info-icon-section
+  @include info-icon('info')
+  float: right
+  margin: 10px 10px 0px 0px
+
+.info-close-section
+  @include info-icon('close')
+  float: right
+  margin: 10px 10px 0px 0px
+
+.conversation-log-details-dialog
+  position: relative
+  z-index: 11

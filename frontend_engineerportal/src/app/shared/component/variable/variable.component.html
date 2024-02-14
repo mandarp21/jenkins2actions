@@ -1,0 +1,24 @@
+<div *ngIf="!isEditFlow" class="variable">
+  <popup-modal type="variable" [opener]="askToDelete" (handleConfirmClickEvent)="handleConfirmEvent($event)"></popup-modal>
+  <div class="title-section">
+    <div id="idUseCase" class="title-cls-name">Variable Name</div>
+    <div class="icon-cls">
+      <button class="icon-btn" (click)="editVariable()"><img src="assets/img/Edit_Icon_Green.svg" /></button>
+    </div>
+  </div>
+  <div class="title-section">
+    <div class="txt-cls-description">{{ variable.name }}</div>
+    <div class="icon-cls">
+      <button class="icon-btn" (click)="askToUser()"><img src="assets/img/Del_Icon_Grey.svg" /></button>
+    </div>
+  </div>
+  <div class="variable-info">
+    <div class="title-cls">{{ 'Description' }}</div>
+    <div class="txt-cls">{{ variable.description }}</div>
+  </div>
+
+  <div class="variable-info">
+    <div class="title-cls">{{ 'Type' }}</div>
+    <div class="txt-cls">{{ variable.type }}</div>
+  </div>
+</div>

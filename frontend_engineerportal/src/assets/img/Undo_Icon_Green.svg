@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Undo_Icon_Green</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Undo_Icon_Green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M6.82842712,4.53553391 L6.82842712,7.53553391 L5.82842712,7.53553391 L5.82842712,4.53553391 L2.82842712,4.53553391 L2.82842712,3.53553391 L6.82842712,3.53553391 L6.82842712,4.53553391 Z" id="Arrow-Head" fill="#01CCAA" transform="translate(4.828427, 5.535534) rotate(-135.000000) translate(-4.828427, -5.535534) "></path>
+        <path d="M5,11.5 C7.56209717,11.5 9.3954305,11.5 10.5,11.5 C12.1568542,11.5 13.5,10.1568542 13.5,8.5 C13.5,6.84314575 12.1568542,5.5 10.5,5.5 C9.3954305,5.5 6.8954305,5.5 3,5.5" id="Line" stroke="#01CCAA" fill-rule="nonzero"></path>
+        <rect id="Dot" fill="#01CCAA" fill-rule="nonzero" x="3" y="11" width="1" height="1"></rect>
+    </g>
+</svg>

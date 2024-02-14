@@ -1,0 +1,48 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.tiles-container
+  margin-top: 15px
+
+.tiles-row
+  width: 100%
+  display: flex
+  margin-top: 0px
+
+.tiles-row:nth-child(n+3)
+  margin-top: 10px
+
+.tiles-row img
+  background-size: 42px 42px
+
+.tiles-icon
+  width: 42px
+  height: 42px
+  margin-bottom: 9px
+
+.text-input
+  width: auto
+  max-width: 100px
+  flex-grow: 2
+  align-self: flex-start
+  margin-left: 15px
+  &:last-of-type
+    margin-bottom: 5px
+
+.btn-wrapper
+  width: 120px
+  height: 35px
+
+
+.addTiles
+  background-color: #01CCAA;
+  width: 40px;
+  height: 40px;
+  border: 2px solid seagreen;
+  border-radius: 24px;
+  color: white;
+  margin-right: 18px;
+
+.header
+  display: flex
+  flex-direction: row

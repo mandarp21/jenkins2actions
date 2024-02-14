@@ -1,0 +1,241 @@
+<form [formGroup]="stepForm" autocomplete="off" (ngSubmit)="handleSave(stepForm.value)">
+  <div class="form-group step-description">
+    <label for="stepDescription">Step Description</label>
+    <div class="input-wrapper">
+      <input formControlName="stepDescription" id="stepDescription" type="text" autocomplete="off" placeholder="What does this step do?" />
+    </div>
+  </div>
+
+  <!-------------------------------------------
+            Card owner radio buttons
+  -------------------------------------------->
+  <section class="owner-section">
+    <label class="form-group-label">Owner *</label>
+    <div class="radio-buttons">
+      <label *ngFor="let ownerOption of ownerOptions">
+        <div
+          class="radio-btn-container"
+          [ngClass]="{ disabled: isEdit || (isFirstCard() && ownerOption === 'bot'), active: owner === ownerOption }"
+          (click)="changeOwner(ownerOption)"
+        >
+          <div class="radio-styling {{ ownerOption }}-icon"></div>
+        </div>
+        <div class="tooltip">{{ ownerOption | titlecase }}</div>
+      </label>
+    </div>
+    <div *ngIf="ownerErrorMsg" class="error-msg">Please select owner</div>
+  </section>
+
+  <!-------------------------------------------
+          Bot response type radio buttons
+  -------------------------------------------->
+  <div class="bot-detail" *ngIf="owner === 'bot'">
+    <section class="type-section ">
+      <label>Type *</label>
+      <div class="radio-buttons">
+        <label *ngFor="let typeOption of typeOptions">
+          <div
+            class="radio-btn-container "
+            [ngClass]="{ disabled: isOptionDisabled(typeOption), active: type === typeOption.id }"
+            (click)="changeType(typeOption)"
+          >
+            <div class="radio-styling {{ typeOption.id }}-icon "></div>
+          </div>
+          <div class="tooltip ">{{ typeOption.tooltip }}</div>
+        </label>
+      </div>
+      <div *ngIf="typeErrorMsg" class="error-msg">Please select response type</div>
+    </section>
+  </div>
+
+  <!-------------------------------------------
+          Bot specific response fields
+  -------------------------------------------->
+  <section *ngIf="owner === 'bot'">
+    <ce-section-messages
+      [messages]="messages"
+      (messagesUpdate)="messagesUpdate($event)"
+    ></ce-section-messages>
+
+    <!-------------------------------------------
+                  Carousel response
+    -------------------------------------------->
+    <ce-section-carousel
+      *ngIf="type === 'crsl'"
+      [imageData]="carouselImages"
+      (filesListUpdate)="filesListUpdate($event)"
+    ></ce-section-carousel>
+
+    <!-------------------------------------------
+                Datepicker response
+    -------------------------------------------->
+    <div *ngIf="type === 'datepicker'" class="form-group type-section-specific">
+      <label>Date Restriction</label>
+      <converse-drop-down
+        id="date-restriction-drop-down"
+        [data]="dateRestrictionOptions"
+        (selchange)="onSelectChangeRestriction($event)"
+        [placeholder]="'Select Date Restriction'"
+        [selected]="selectedDateRestriction"
+      ></converse-drop-down>
+    </div>
+
+    <!-------------------------------------------
+                  Variable response
+    -------------------------------------------->
+    <div class="form-group type-section-specific" *ngIf="type === 'variable'">
+      <label>Variable</label>
+      <custom-values-list
+        type="variables"
+        [data]="variableOptions"
+        [selected]="variables"
+        (valueChange)="onVariablesChange($event)"
+      ></custom-values-list>
+    </div>
+
+    <!-------------------------------------------
+                Feedback response
+    -------------------------------------------->
+    <ce-section-feedback-tiles
+      *ngIf="type === 'feedbackTiles'"
+      [tiles]="feedbackTiles"
+      (feedbackTilesUpdate)="feedbackTilesUpdate($event)"
+    ></ce-section-feedback-tiles>
+
+    <ce-section-feedback-req-msg
+      *ngIf="type === 'feedbackReqMsg'"
+      [message]="feedbackReqMsg"
+      (feedbackMessageUpdate)="feedbackMessageUpdate($event)"
+    ></ce-section-feedback-req-msg>
+
+    <!-------------------------------------------
+              Dynamic buttons response
+    -------------------------------------------->
+    <div class="form-group type-section-specific" *ngIf="type === 'dynamicButtons'">
+      <label>API</label>
+      <converse-drop-down
+        id="api-drop-down"
+        [data]="variableOptions"
+        (selchange)="onSelectChangeAPI($event)"
+        [placeholder]="'Select API'"
+        [selected]="selectedApi"
+      ></converse-drop-down>
+    </div>
+
+    <div formGroupName="dynamicButtonsIterableProperty" *ngIf="type === 'dynamicButtons'">
+      <div class="form-group" *ngIf="type === 'dynamicButtons'">
+        <label for="parameters">Iterable Property as button</label>
+        <div class="input-wrapper">
+          <input
+            formControlName="key"
+            id="dynamicButtonsIterablePropertykey"
+            type="text"
+            autocomplete="off"
+            placeholder="E.g. streets.name"
+          />
+        </div>
+      </div>
+      <div class="form-group" formArrayName="values">
+        <label>Iterable Property as Value</label>
+        <converse-button class="add-btn" type="add" val="Add Value" id="save" (click)="addValue('')"></converse-button>
+
+        <div
+          *ngFor="let value of stepForm['controls']['dynamicButtonsIterableProperty']['controls']['values']['controls']; let i = index"
+          [formGroupName]="i"
+          class="removable-input-wrapper"
+        >
+          <div class="input-wrapper">
+            <input formControlName="fieldname" type="text" autocomplete="off" placeholder="E.g. streets.number" class="removable-input" />
+          </div>
+          <div
+            class="remove-btn"
+            (click)="removeValue(i)"
+            *ngIf="stepForm['controls']['dynamicButtonsIterableProperty']['controls']['values']['controls'].length > 1"
+          ></div>
+        </div>
+      </div>
+
+      <div class="form-group" formArrayName="staticbuttons">
+        <label>Static Buttons</label>
+        <converse-button class="add-btn" type="add" val="Add Value" id="save" (click)="addStaticButton('')"></converse-button>
+
+        <div
+          *ngFor="
+            let staticbutton of stepForm['controls']['dynamicButtonsIterableProperty']['controls']['staticbuttons']['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+          class="removable-input-wrapper"
+        >
+          <div class="input-wrapper">
+            <input formControlName="name" type="text" autocomplete="off" placeholder="Button Name" class="removable-input" />
+          </div>
+          <div class="input-wrapper">
+            <input formControlName="value" type="text" autocomplete="off" placeholder="Button Value" class="removable-input" />
+          </div>
+          <div class="remove-btn" (click)="removeStaticButton(i)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group regex-config">
+      <label>REGEX Variable Select</label>
+      <converse-drop-down
+        id="regex-selector"
+        [data]="variableOptions"
+        [selected]="regexVariable"
+        (selchange)="onRegexSelectChange($event)"
+        [placeholder]="'Please selected a variable'"
+        [hasEmptyOption]="true"
+      ></converse-drop-down>
+    </div>
+    <div class="form-group">
+      <label>Mask with REGEX variable Name</label>
+      <converse-switch-button (handleChangeEvent)="onRegexMaskValueToggle($event)" [checked]="regexBoolMask"></converse-switch-button>
+    </div>
+  </section>
+
+  <section class="user-detail" *ngIf="owner === 'user'">
+    <div class="form-group">
+      <label>Slot Filling</label>
+      <input
+        id="slot-filling"
+        type="checkbox"
+        formControlName="slotFilling"
+        [(ngModel)]="slotFilling"
+        [value]="slotFilling"
+        class="checkbox-hidden"
+      />
+      <div class="checkbox-div" [ngClass]="{ active: slotFilling }" (click)="slotFilling = !slotFilling">
+        <div class="checkbox-slider"></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Intent</label>
+      <converse-drop-down
+        id="intents-drop-down"
+        [hasEmptyOption]="true"
+        [data]="intentOptions"
+        [placeholder]="'Select Intent'"
+        [selected]="intent"
+        (selchange)="onSelChangeUser('intent', $event)"
+      ></converse-drop-down>
+    </div>
+
+    <div class="form-group">
+      <label>Entities</label>
+      <custom-values-list
+        type="entity"
+        [data]="entityOptions"
+        [selected]="entities"
+        (valueChange)="onSelChangeUser('entities', $event)"
+      ></custom-values-list>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <converse-button [val]="'Cancel'" [id]="'cancel'" (click)="handleCancel()"></converse-button>
+    <converse-button [type]="'submit'" [val]="'Save'" id="save" [boolGreen]="true"></converse-button>
+  </section>
+</form>

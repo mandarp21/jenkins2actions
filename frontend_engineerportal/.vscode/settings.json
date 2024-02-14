@@ -1,0 +1,14 @@
+{
+  "projectName": "Frontend_EngineeringPortal",
+  "editor.Ang4Flag": true,
+  "editor.useCustomTemplate": true,
+  "editor.newProjectSourcePath": "src/app",
+  "editor.Ang4styleUrls": ".scss",
+  "editor.generateTestCaseStubs": true,
+  "editor.ang4ProjectType": "Angular CLI",
+  "editor.testCaseDirectory": null,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.minimap.maxColumn": 100,
+  "editor.wordWrapColumn": 100
+}

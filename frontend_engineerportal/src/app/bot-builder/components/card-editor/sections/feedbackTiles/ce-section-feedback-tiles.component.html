@@ -1,0 +1,20 @@
+<section>
+  <div class="tiles-container form-group">
+    <label>Feedback Tiles</label>
+    <!-- <div class="tiles-row" *ngFor="let tile of tiles; let i = index">
+      <img class="tiles-icon" [src]="tile.image">
+      <input class="text-input" type="text" [(ngModel)]="tiles[i].name" placeholder="{{placeholders[i]}}" [value]="tile.name" (keyup)="tileChange(i, $event)"/> -->
+    <div class="header">
+      <label style="width:68px">Image</label><label style="width:112px">Title</label><label>URL</label>
+    </div>
+    <div class="tiles-row" *ngFor="let tile of tiles; let i = index">
+      <img class="tiles-icon" [src]="sanitizeUrl(tile.image)">
+      <input class="text-input" type="text" [(ngModel)]="tiles[i].name" placeholder="Img Title" [value]="tile.name"
+        (keyup)="tileChange(i, $event)" />
+      <input class="text-input" type="text" [(ngModel)]="tiles[i].image" placeholder="Img Url" [value]="tile.image"
+        (keyup)="tileChange(i, $event)" />
+    </div>
+    <button (click)="addTiles(true)" class="addTiles"><b>+</b></button>
+    <button (click)="addTiles(false)" class="addTiles"><b>-</b></button>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.add-channel-container
+  margin: 1em 0 1em 0
+  min-height: 2em
+
+.add-section
+  margin: 1em 0 1em 0
+  width: 14em
+  
+.title-channel
+  @include Converse-H2
+
+.input-field
+  height: 2em
+  border: 0.0625em solid $converse-seagreen
+  border-right-style: none
+  color: $converse-seagreen
+  text-align: center
+
+button
+  height: 2em
+  padding-top: 0.3em
+  border: 0.0625em solid $converse-seagreen
+  background-color: $converse-white
+  
+img
+  padding-bottom: 0.2em
+
+.remove-section
+  margin: 1em 0
+  button
+    outline: none
+    padding-top: 0.4em
+  img
+    transform: rotate(45deg)
+    padding: 0.1em 0 0.3em
+
+::-webkit-input-placeholder
+  @include Converse-Date
+  text-align: center
+  color: $converse-seagreen
+  font-size: 0.7em
+
+

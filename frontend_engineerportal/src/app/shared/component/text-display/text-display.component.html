@@ -1,0 +1,25 @@
+<div class="text-root-cls">
+
+  <div class="content">
+    <div class="title-text-cls">{{titletext}}</div>
+    <div class="stats-text-cls" *ngIf="statstext!==undefined && statstext !== '%'">
+      <div class='rating-txt'>{{statstext}}</div>
+      <div class='rating-bar'>
+        <converse-rating *ngIf="titletext==='Customer Satisfaction' " [ngStyle]="{'width':ratingwidth}" [ratingtext]="statstext"
+          [chartdata]="barchartdata"></converse-rating>
+      </div>
+    </div>
+
+    <div class="last-row-cls">
+      <div class="min-title-cls" *ngIf="titletext==='Customer Satisfaction'">{{'Rating Average'}}</div>
+      <div class="min-title-cls" *ngIf="titletext!=='Customer Satisfaction'">{{'Total Volume'}}</div>
+      <div class="min-cls " *ngIf="unittext!==undefined">
+        <div class="min-cls-title" *ngIf="titletext==='Customer Satisfaction'">Total Audience: <span>{{unittext}}</span></div>
+        <div class="min-cls-title" *ngIf="titletext!=='Customer Satisfaction'"><span>{{unittext}}</span></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

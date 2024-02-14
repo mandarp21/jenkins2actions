@@ -1,0 +1,26 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+
+.pageCls
+    background-color: $converse-snowwhite
+    margin-left: 0%
+    margin-right: 0%
+    padding: 0%
+    padding-top: 65px
+
+
+/**
+    * @internal
+    * This scss class gives the styling of BO dashboard page.
+    */
+
+.dash-root
+    background-color: $converse-snowwhite
+    margin: 0 auto
+    padding: $page-padding
+    @include decideFullWidthWithPadding
+
+// @media (max-width: #{$tablet-width})
+//   .dash-root
+//     min-width: 700px

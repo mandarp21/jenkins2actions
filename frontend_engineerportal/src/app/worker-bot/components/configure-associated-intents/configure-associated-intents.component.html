@@ -1,0 +1,17 @@
+<div class='associated-intents-container'>
+  <div class='title-container'>
+    <div class="title-intent">
+      <div class="intent-label"> {{'Associated Intents'}} </div>
+      <div class="info-icon-title" [activateToolTip]="toolTipFlag" placement="top" (click)="toolTipFlag = !toolTipFlag" mode="click" converse-tooltip="ASSOCIATED_INTENTS"></div>
+    </div>
+    <div class="sort-dropdown-wrapper">
+      <converse-drop-down id='ddlRecordList' [data]='reOrderList' placeholder="Sort" (selchange)='onSelchange($event)'></converse-drop-down>
+    </div>
+  </div>
+  <div class='intents-items-container'>
+    <div class='intent-item' *ngFor='let intent of intentsList' (click)='intentSelection(intent)'>
+      <img [src]="intent.selected ? 'assets/img/Tertiary_Button_Approve_Hover.svg' : 'assets/img/Tertiary_Button_Approve_Active.svg'">
+      <span class="item-text">{{intent.intentName}}</span>
+    </div>
+  </div>
+</div>

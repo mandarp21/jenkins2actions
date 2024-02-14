@@ -1,0 +1,112 @@
+<div [formGroup]='ttsAIForm' class="new-ai-info-root">
+  <div id='lblTts' class="lbl-cls">{{'Text-To-Speech provider (optional)'}}</div>
+  <div class="opt-cls">
+    <converse-drop-down id='ddlTts' placement="none" [tooltipKey]="tooltipKey" [activateToolTip]="toggleToolTip" [data]="ttsArray" [placeholder]='ttsName' (selchange)="onSelchange($event)"></converse-drop-down>
+    <input type="hidden" name="TTSProvider" formControlName="TTSProvider">
+  </div>
+  <div *ngIf="ttsNameKey && ttsAIForm.controls.ttsConfig" formGroupName="ttsConfig">
+    <ng-container *ngIf="ttsNameKey === 'watson'">
+      <div class="form-group">
+        <label for="ttsWatsonUsername">Username</label>
+        <span>*</span>
+        <input id='ttsWatsonUsername' autocomplete="off" name="username" type="text" emptySpaceTrimDirective placeholder="Enter Username"
+          formControlName="username" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+         <label for="ttsWatsonPassword">Password</label>
+         <span>*</span>
+        <input id='ttsWatsonPassword' autocomplete="off" name="password" type="password" emptySpaceTrimDirective placeholder="Enter Password"
+          formControlName="password" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+         <label for="ttsWatsonVoice">Voice</label>
+         <span>*</span>
+        <input id='ttsWatsonVoice' autocomplete="off" name="voice" type="text" emptySpaceTrimDirective placeholder="Enter Voice"
+          formControlName="voice" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+    </ng-container>
+    <ng-container *ngIf="ttsNameKey === 'bingspeech'">
+      <div class="form-group">
+        <label for="ttsSubscriptionKey">Subscription Key</label>
+        <span>*</span>
+        <input id='ttsSubscriptionKey' autocomplete="off" name="subscription_key" type="text" emptySpaceTrimDirective placeholder="Enter Subscription Key"
+          formControlName="subscription_key" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="ttsDefaultLocale">Default Locale</label>
+        <span>*</span>
+        <input id='ttsDefaultLocale' autocomplete="off" name="default_locale" type="text" emptySpaceTrimDirective placeholder="Enter Default Locale"
+          formControlName="default_locale" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="ttsBingVoice">Voice</label>
+        <span>*</span>
+        <input id='ttsBingVoice' autocomplete="off" name="voice" type="text" emptySpaceTrimDirective placeholder="Enter Voice" formControlName="voice" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+    </ng-container>
+    <ng-container *ngIf="ttsNameKey === 'polly'">
+      <div class="form-group">
+         <label for="ttsAWSAccessKey">AWS Access Key ID</label>
+         <span>*</span>
+        <input id='ttsAWSAccessKey' autocomplete="off" name="aws_access_key_id" type="text" emptySpaceTrimDirective placeholder="Enter AWS Access Key ID"
+          formControlName="aws_access_key_id" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="ttsAWSSecretAccessKey">AWS Secret Access Key</label>
+        <span>*</span>
+        <input id='ttsAWSSecretAccessKey' autocomplete="off" name="aws_secret_access_key" type="password" emptySpaceTrimDirective placeholder="Enter AWS Secret Access Key"
+          formControlName="aws_secret_access_key" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="ttsPollyVoice">Voice</label>
+        <span>*</span>
+        <input id='ttsPollyVoice' autocomplete="off" name="voice" type="text" emptySpaceTrimDirective placeholder="Enter Voice" formControlName="voice" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+    </ng-container>
+    <ng-container *ngIf="ttsNameKey === 'google'">
+      <div class="form-group">
+        <label for="ttsGoogleProjectId">Project ID</label>
+        <span>*</span>
+        <input id='ttsGoogleProjectId' autocomplete="off" type="text" emptySpaceTrimDirective placeholder="Enter Project ID" name="project_id"
+          formControlName="project_id" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+      <div class="form-group">
+        <label for="ttsGooglePrivateKey">Private Key</label>
+        <span>*</span>
+        <input id='ttsGooglePrivateKey' autocomplete="off" type="password" emptySpaceTrimDirective placeholder="Enter Private Key" name="private_key"
+          formControlName="private_key" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="ttsGoogleClientEmail">Client Email</label>
+        <span>*</span>
+        <input id='ttsGoogleClientEmail' autocomplete="off" type="text" emptySpaceTrimDirective placeholder="Enter Client Email" name="client_email"
+          formControlName="client_email" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="ttsGoogleLanguage">Language</label>
+        <span>*</span>
+        <input id='ttsGoogleLanguage' autocomplete="off" type="text" emptySpaceTrimDirective placeholder="Enter Language" name="language"
+          formControlName="language" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+      <div class="form-group">
+        <label for="ttsGoogleVoice">Voice</label>
+        <span>*</span>
+        <input id='ttsGoogleVoice' autocomplete="off" name="voice" type="text" emptySpaceTrimDirective placeholder="Enter Voice"
+          formControlName="voice" [attr.disabled]="toggleToolTip ? '' : null">
+      </div>
+
+    </ng-container>
+  </div>
+</div>

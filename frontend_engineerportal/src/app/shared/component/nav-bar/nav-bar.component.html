@@ -1,0 +1,15 @@
+<div class="nav-bar-cls">
+  <div class="last-page-cls">
+    <div class="button-pointer" (click)='back()'>
+      <img class="arrow-cls" src="assets/img/grey_down.png">
+      <span class="back-txt-cls">{{ prevpage }}</span>
+    </div>
+  </div>
+  <div class="page-title-cls">
+    {{ title }}
+  </div>
+
+  <div *ngIf="selectedChannel" class="selected-channel">
+    <p>{{ selectedChannel|titlecase }}</p>
+  </div>
+</div>

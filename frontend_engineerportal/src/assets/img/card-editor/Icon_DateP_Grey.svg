@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_DateP_Grey</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon_DateP_Grey" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="12" font-family="Graphik-Bold, Graphik" font-size="6" font-weight="bold" letter-spacing="-0.01333333" fill="#CCCCCC">
+            <tspan x="4.77033333" y="12">12</tspan>
+        </text>
+        <path d="M4,3 L5,3 L5,2 L6,2 L6,4 L5,4 L5,5 L4,5 L4,12 L13,12 L13,13 L3,13 L3,12 L3,3 L4,3 Z M11,3 L12,3 L12,5 L11,5 L11,4 L10,4 L10,2 L11,2 L11,3 Z" id="Bracket_Left" fill="#CCCCCC" fill-rule="nonzero"></path>
+        <path d="M12,12 L12,3 L13,3 L13,12 L13,13 L10,13 L10,12 L12,12 Z" id="Bracket_Right" fill="#CCCCCC" fill-rule="nonzero"></path>
+        <rect id="Rectangle" fill="#CCCCCC" fill-rule="nonzero" x="6" y="3" width="4" height="2"></rect>
+        <rect id="Rectangle" fill="#CCCCCC" fill-rule="nonzero" x="4" y="5" width="8" height="1"></rect>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_IntBranch_Grey</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon_IntBranch_Grey" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="?" font-family="Graphik-Bold, Graphik" font-size="6" font-weight="bold" letter-spacing="-0.01333333" fill="#CCCCCC">
+            <tspan x="6.31466666" y="10">?</tspan>
+        </text>
+        <path d="M5,5 L5,11 L7,11 L7,12 L4,12 L4,11 L4,5 L4,4 L7,4 L7,5 L5,5 Z" id="Bracket_Left" fill="#CCCCCC" fill-rule="nonzero"></path>
+        <path d="M12,5 L12,11 L12,14 L10,12 L9,12 L9,11 L11,11 L11,5 L9,5 L9,4 L12,4 L12,5 Z" id="Bracket_Right" fill="#CCCCCC" fill-rule="nonzero"></path>
+    </g>
+</svg>

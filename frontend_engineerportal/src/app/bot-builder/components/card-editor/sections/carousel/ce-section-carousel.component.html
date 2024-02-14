@@ -1,0 +1,23 @@
+<section>
+  <div class="crsl-container form-group">
+    <label>Carousel Images</label>
+    <div class="carousel-input-wrapper">
+      <input class="img-data-input" type="text" [(ngModel)]="imgTitle" [value]="imgTitle" placeholder="Enter Image Title" />
+    </div>
+    <div class="carousel-input-wrapper">
+      <input class="img-data-input" type="text" [(ngModel)]="imgUrl" [value]="imgUrl" placeholder="Enter Image URL" />
+    </div>
+    <div class="btn-wrapper-img">
+      <converse-button [val]="'Add Image'" [boolGreen]="true" [rounded]="true" (click)="addImage()"></converse-button>
+    </div>
+  </div>
+  <div class="carousel-gallery">
+    <div class="carousel-image-wrapper" *ngFor="let imgItem of imageData">
+      <div class="carousel-content">
+        <div class="carousel-image" [ngStyle]="{'background-image': 'url(' + imgItem.url + ')'}"></div>
+        <span>{{ imgItem.title }}</span>
+      </div>
+      <div class="btn-delete" (click)="removeImg(imgItem)"></div>
+    </div>
+  </div>
+</section>

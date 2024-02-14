@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="main">
+
+    <img [src]="converselogo" />
+
+    <form [formGroup]="loginForm" class="admin-login-form" (ngSubmit)="onLogin() ">
+      <div class="form-group email-field">
+        <input id='email' autocomplete="off" class="form-control" type="text" placeholder="User Name" formControlName="adminEmail"
+          (focus)="onChange($event)" />
+      </div>
+
+      <div class="form-group password-field ">
+        <input id='password' class="form-control" autocomplete="off" type="password" placeholder="Password"
+          formControlName="adminPassword" (focus)="onChange($event)" />
+      </div>
+      <div class="error-cls">
+        {{errorString}}
+      </div>
+
+      <div class="login-button ">
+        <converse-button class="button" [type]="'submit'" [boolGreen]="true" [activateColors]="true" [val]="'Log In'"
+          [id]="'btnNext'"></converse-button>
+      </div>
+
+    </form>
+
+    <div class="links">
+      <!-- <a class="link-button" href="register">Create Account</a> -->
+      <a class="link-button" href="# ">Forgotten account details</a>
+    </div>
+
+  </div>
+
+</div>

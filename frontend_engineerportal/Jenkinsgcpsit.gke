@@ -1,0 +1,65 @@
+#!/usr/bin/env groovy
+@Library('ConverseJenkinsLibrary') _
+pipeline
+{
+  agent { label 'nodejs14-medium' }
+
+  environment
+  {
+    // Name of the Service
+    SERVICE_NAME = 'frontend-engineerportal'
+  //SIT GKE cluster and Namespace
+    SIT_GKE_CLUSTER_NAME = 'devops-gke'
+    SIT_CLUSTER_NAMESPACE = 'sit'
+
+  }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10', daysToKeepStr: '14'))
+    //timestamps()
+    skipDefaultCheckout(true)
+  }
+  stages {
+  stage('Cloning Project') {
+   // agent { label 'nodejs14-medium' }
+    steps {
+        CloningProject()
+    }
+  }
+  // Automatic Step to Build project
+stage('Building Project in  Production Namespace') {
+   // agent { label 'nodejs14-medium' }
+    steps {
+      ansiColor('xterm') {
+        git poll: true, credentialsId: 'adopssh', url: 'ssh://git@innersource.accenture.com/ndollpcp/frontend_engineerportal.git'
+        sh '''#!/bin/bash
+        export COMMIT_ID=$(git rev-parse HEAD | cut -c 1-8)
+        echo "$COMMIT_ID" > commit.properties
+        npm install -g n
+        n 10.15.3
+        npm i
+        npm run build-sit
+        cd server
+        npm install
+        '''
+        stash includes: '**/**', name: 'build-artefacts'
+      }
+    }
+}
+
+stage('Pushing Image to Registry') {
+    agent { label 'docker-python3' }
+    steps {
+        PushingImageToGCPSIT("$SERVICE_NAME")
+    }
+  }
+
+
+// Automatic Step to deploy to EKS Cluster
+stage('Helm Deploying to GKE Cluster test Namespace') {
+  agent { label 'docker' }
+  steps {
+          DeployToGCPSIT("$SERVICE_NAME", "$SIT_CLUSTER_NAMESPACE")
+      }
+    } 
+  }
+}

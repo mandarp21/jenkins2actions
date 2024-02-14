@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Bot_Green</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,8 C12.418278,8 16,4.418278 16,0 L0,0 C0,4.418278 3.581722,8 8,8 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon_Bot_Green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Face" transform="translate(6.000000, 16.000000)">
+            <rect id="Face---Base" fill="#01CCAA" x="0" y="0" width="36" height="24" rx="2"></rect>
+            <path d="M18,0 L34,0 C35.1045695,-2.02906125e-16 36,0.8954305 36,2 L36,22 C36,23.1045695 35.1045695,24 34,24 L18,24 L18,0 Z" id="Face---Colour" fill="#00BEA8"></path>
+        </g>
+        <g id="Ears" transform="translate(2.000000, 24.000000)">
+            <g id="Ear---Left" fill="#01CCAA">
+                <rect id="Ear---Base" transform="translate(2.000000, 4.000000) rotate(90.000000) translate(-2.000000, -4.000000) " x="-2" y="2" width="8" height="4"></rect>
+            </g>
+            <g id="Ear---Right" transform="translate(40.000000, 0.000000)">
+                <rect id="Ear---Base" fill="#00BEA8" transform="translate(2.000000, 4.000000) rotate(90.000000) translate(-2.000000, -4.000000) " x="-2" y="2" width="8" height="4"></rect>
+                <polygon id="Ear---Shade" fill="#292F32" opacity="0.0399999991" transform="translate(1.000000, 4.000000) scale(1, -1) rotate(90.000000) translate(-1.000000, -4.000000) " points="-3 3 5 5 -3 5"></polygon>
+            </g>
+        </g>
+        <g id="Neck" transform="translate(15.000000, 40.000000)">
+            <rect id="Neck---Base" fill="#01CCAA" x="0" y="0" width="18" height="4"></rect>
+            <rect id="Neck---Colour" fill="#00BEA8" x="9" y="0" width="9" height="4"></rect>
+            <rect id="Neck---Shade" stroke="#292F32" fill="#D8D8D8" opacity="0.0399999991" x="0.5" y="0.5" width="17" height="1"></rect>
+        </g>
+        <g id="Eyes" transform="translate(8.000000, 18.000000)">
+            <g id="Eye---Right" transform="translate(20.000000, 0.000000)">
+                <circle id="Eye---Base" fill="#F7F7F7" cx="6" cy="6" r="4"></circle>
+                <path d="M6.25084196,9.17582857 C3.65004515,4.93519251 10.0518672,1.97242433 6.25084196,1.17582857 C4.04170296,1.17582857 2.25084196,2.96668957 2.25084196,5.17582857 C2.25084196,7.38496757 4.04170296,9.17582857 6.25084196,9.17582857 Z" id="Eye---Shade" fill="#FEFFFE" transform="translate(4.870440, 5.175829) rotate(36.000000) translate(-4.870440, -5.175829) "></path>
+            </g>
+            <g id="Eye---Left">
+                <circle id="Eye---Base" fill="#F7F7F7" cx="6" cy="6" r="4"></circle>
+                <path d="M6.25084196,9.17582857 C3.65004515,4.93519251 10.0518672,1.97242433 6.25084196,1.17582857 C4.04170296,1.17582857 2.25084196,2.96668957 2.25084196,5.17582857 C2.25084196,7.38496757 4.04170296,9.17582857 6.25084196,9.17582857 Z" id="Eye---Shade" fill="#FEFFFE" transform="translate(4.870440, 5.175829) rotate(36.000000) translate(-4.870440, -5.175829) "></path>
+            </g>
+        </g>
+        <g id="Mouth" transform="translate(16.000000, 30.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mouth---Base" fill="#F7F7F7" xlink:href="#path-1"></use>
+            <rect id="Teeth---Top" fill="#D2E3E0" mask="url(#mask-2)" x="0" y="0" width="16" height="2"></rect>
+            <rect id="Teeth---Bottom" fill="#D2E3E0" mask="url(#mask-2)" x="0" y="6" width="16" height="2"></rect>
+        </g>
+        <g id="Antenna" transform="translate(21.000000, 4.000000)">
+            <rect id="Stalk" fill="#01CCAA" x="2" y="4" width="2" height="8"></rect>
+            <polygon id="Stalk---Shade" fill="#000000" opacity="0.0399999991" points="4 4 4 12 3 12 3 4"></polygon>
+            <circle id="Bobble" fill="#01CCAA" cx="3" cy="3" r="3"></circle>
+            <path d="M3,6 C4.65685425,6 6,4.65685425 6,3 C6,1.34314575 4.65685425,0 3,0 C3.66666667,0.8954305 4,1.8954305 4,3 C4,4.1045695 3.66666667,5.1045695 3,6 Z" id="Bobble---Shade" fill="#292F32" opacity="0.0399999991"></path>
+        </g>
+    </g>
+</svg>

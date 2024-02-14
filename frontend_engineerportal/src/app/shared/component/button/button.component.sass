@@ -1,0 +1,108 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+\:host
+  position: relative
+
+@mixin iconExportImport
+  border-left: 1px solid #01CCAA
+  position: absolute
+  height: 33px
+  right: 0px
+  top: 0px
+  color: $converse-seagreen
+  width: 33px
+
+.button-converse
+  height: 100%
+  width: 100%
+  font-size: 14px
+  color: $converse-white
+  border: none
+  border-radius: 1px
+  transition: background-color .3s ease
+  @include boxshadowstyle
+
+.btnWhite
+  color: $converse-seagreen
+  background-color: $converse-white
+
+.btnGreen
+  background-color: $converse-seagreen
+
+.btnHotPink
+  background-color: $converse-white
+  color:  $converse-seagreen
+  border: 1px solid $converse-seagreen
+
+.btnDelete
+  color: $converse-seagreen
+  border: 1px solid $converse-seagreen
+  background-color: $converse-white
+
+.btnGray
+  background-color: $converse-lightgray
+
+.button-converse:hover
+  cursor: pointer
+
+.button-converse:active
+  transform: translateY(2px)
+  border: 0
+
+.btnDisabled
+  color: $converse-transwhite
+  background-color: $converse-seagreen
+
+.roundBtn
+  border-radius: 55px
+
+.roundBtn-error
+  color: $converse-hotpink
+
+.add
+  height: 40px
+  color: $converse-seagreen
+  border: 1px solid $converse-seagreen
+  background: transparent
+  cursor: pointer
+  padding-right: 50px
+  text-align: center
+
+  &:focus
+    outline: none
+
+.add-button-plus
+  position: absolute
+  width: 40px
+  height: 40px
+  top: -11px
+  right: 0
+  border-left: 1px solid $converse-seagreen
+  background: url('/assets/img/Icon_Plus_Pos.png') center no-repeat
+  background-size: 20px
+  cursor: pointer
+
+button.btnExportImport
+  color: $converse-seagreen
+  height: 98%
+  background-color: $converse-white
+  border: 1px solid $converse-seagreen
+  width: 190px
+  margin-right: 5px
+  position: relative
+  padding: 9px 30px 9px 0px
+  outline: none
+
+button.btnExportImport:active
+  transform: translateY(2px)
+  border: 1px solid $converse-seagreen
+  outline: none
+
+.iconExport
+  background: $converse-white $export-button-icon center no-repeat
+  @include iconExportImport
+
+.iconImport
+  background: $converse-white $import-button-icon center no-repeat
+  @include iconExportImport

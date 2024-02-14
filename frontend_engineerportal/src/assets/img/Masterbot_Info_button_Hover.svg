@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Masterbot_Info_button_Hover</title>
+    <desc>Created with Sketch.</desc>
+    <g id="🔩-Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Button/Info/Hover">
+            <g id="Masterbot_Info_button_Hover">
+                <circle id="Oval" fill="#01CCAA" cx="8" cy="8" r="8"></circle>
+                <text id="i" font-family="Graphik-Regular, Graphik" font-size="12" font-weight="normal" letter-spacing="-0.2400001" fill="#FEFFFE">
+                    <tspan x="6.51800005" y="10">i</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,47 @@
+<a *ngIf="type === 'flow-card'">
+  <flow-card
+    (eventClick)="handleEventClicked($event)"
+    [botType]="botType"
+    [unconnectedNode]="unconnectedNode"
+    [title]="title"
+    [description]="description"
+    [responseType]="responseType"
+    [user]="user"
+    [messages]="messages"
+    [firstNode]="firstNode"
+  ></flow-card>
+</a>
+
+<a *ngIf="type === 'add-card'" class="node-add-card">
+  <add-card
+    [showLink]="showLink"
+    [endFlow]="endFlow"
+    [parentType]="parentType"
+    [id]="id"
+    [firstNode]="firstNode"
+    (eventClick)="handleEventClicked($event)"
+    (switchEndFlow)="handleEndFlowSwitch($event)"
+  ></add-card>
+</a>
+
+<a *ngIf="type === 'reference-card'" class="node-reference-card">
+  <reference-card
+    (eventClick)="handleEventClicked($event)"
+    parentID="idParent"
+    [refId]="refId"
+    [title]="title"
+    [description]="description"
+    [useCaseId]="useCaseId"
+    [workerBotId]="workerBotId"
+    [nextStepName]="nextStepName"
+    [nextStep]="nextStep"
+  ></reference-card>
+</a>
+
+<a *ngIf="type === 'diverging-add-card'" class="diverging-add">
+  <diverging-add-card [conditionType]="conditionType" (eventClick)="handleEventClicked($event)"></diverging-add-card>
+</a>
+
+<a *ngIf="type === 'eval-condition-card'">
+  <eval-condition-card [title]="title" [conditionType]="conditionType" (eventClick)="handleEventClicked($event)"></eval-condition-card>
+</a>

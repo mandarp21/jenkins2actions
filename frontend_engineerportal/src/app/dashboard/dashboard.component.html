@@ -1,0 +1,91 @@
+<div>
+  <!--first row of title bar-->
+  <div class="title-div-cls">
+    <div id="title" class="title-cls">
+      <span id="masterTitle">{{ 'Overall Performance' }}</span>
+    </div>
+  </div>
+  <!-- second row with date picker filters-->
+  <div class="filter-div-cls">
+    <div id="fromLabel" class="from-txt-cls">{{ 'From' }}</div>
+    <div class="dt-pick-one-cls">
+      <converse-date-picker
+        id="fromDate"
+        type="fromDate"
+        [date]="fromDate"
+        [maxDate]="fromMaxDate"
+        (dateChanged)="onDateChanged($event)"
+      ></converse-date-picker>
+    </div>
+    <div id="toLabel" class="to-txt-cls">{{ 'to' }}</div>
+    <div class="dt-pick-two-cls">
+      <converse-date-picker
+        id="toDate"
+        type="toDate"
+        [date]="toDate"
+        [minDate]="toMinDate"
+        [maxDate]="toMaxDate"
+        (dateChanged)="onDateChanged($event)"
+      ></converse-date-picker>
+    </div>
+    <div class="go-btn-cls">
+      <converse-button [val]="'Go'" [id]="'btnGoLanding'" (click)="handleClick('Go')" [boolGreen]="true"></converse-button>
+    </div>
+  </div>
+
+  <!-- analytics widget row-->
+  <div class="analytics-cls">
+    <converse-text-display
+      id="intentsText"
+      titletext="{{ intentAnalytics.title }}"
+      statstext="{{ intentAnalytics?.units }}"
+      [unittext]="intentAnalytics?.totalUnits"
+      (refresh)="refreshData($event)"
+    >
+    </converse-text-display>
+
+    <converse-text-display
+      id="convText"
+      titletext="{{ automationAnalytics.title }}"
+      statstext="{{ automationAnalytics?.units }}"
+      [unittext]="automationAnalytics?.totalUnits"
+      (refresh)="refreshData($event)"
+    ></converse-text-display>
+
+    <converse-text-display
+      id="esclText"
+      titletext="{{ escalationAnalytics.title }}"
+      statstext="{{ escalationAnalytics?.units }}"
+      [unittext]="escalationAnalytics?.totalUnits"
+      (refresh)="refreshData($event)"
+    ></converse-text-display>
+
+    <converse-text-display
+      id="ctsText"
+      titletext="{{ custSatifactionAnalytics.title }}"
+      [statstext]="custSatifactionAnalytics?.units"
+      [barchartdata]="custSatifactionAnalytics?.barChartData"
+      [unittext]="custSatifactionAnalytics?.totalUnits"
+      (refresh)="refreshData($event)"
+    ></converse-text-display>
+  </div>
+  <!-- master bot title  row-->
+  <div class="master-title-cls">
+    <div id="botManageTitle" class="title-master-cls">
+      <span class="master-span-cls">{{ botType }}{{ " Bot List" }}</span>
+    </div>
+    <div class="add-master-cls" id="createBotButton" (click)="navigateToCreate()">
+      <converse-button [boolWhite]="true" [val]="'New Master Bot'"></converse-button>
+    </div>
+  </div>
+  <!-- data table  row-->
+  <div class="data-tbl-cls">
+    <converse-data-table
+      id="dataTable"
+      [itemheaders]="botHeaders"
+      [itemlist]="botData"
+      (clickEventEmitter)="redirectTo($event)"
+      (convEventEmitter)="showConv($event)"
+    ></converse-data-table>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="card-container" [ngClass]="{ 'external-ref': useCaseId }">
+  <div class="card-details" (click)="handleClick('referenceClick')">
+    <div class="card-heading">{{ title }}</div>
+    <div class="card-description">{{ description }}</div>
+    <div *ngIf="nextStepName" class="card-description">{{ nextStepName }}</div>
+  </div>
+  <div class="action-icon-container" (click)="handleClick('deleteRef')"><img src="assets/img/Icon_Del_Grey.png" class="action-icon" /></div>
+
+  <img src="assets/img/Link_Icon_Grey.svg" class="link-icon" />
+</div>

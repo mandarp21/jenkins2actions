@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Tertiary_Button_Approve_Active</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Tertiary_Button_Approve_Active" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Button_BG" stroke="#01CCAA" fill="#FEFFFE" x="0.5" y="0.5" width="23" height="23" rx="11.5"></rect>
+            <g id="Tick_Green" transform="translate(5.500000, 7.000000)" fill="#01CCAA">
+                <rect id="Main-Stem" transform="translate(7.546145, 4.646182) rotate(45.000000) translate(-7.546145, -4.646182) " x="7.04614525" y="-1.35381813" width="1" height="12"></rect>
+                <rect id="Small-Stem" transform="translate(2.221418, 7.121320) rotate(-45.000000) translate(-2.221418, -7.121320) " x="1.721418" y="4.62132034" width="1" height="5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

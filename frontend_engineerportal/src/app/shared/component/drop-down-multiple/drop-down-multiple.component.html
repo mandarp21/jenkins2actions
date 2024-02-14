@@ -1,0 +1,20 @@
+<div *ngFor="let dataArray of data; let i = index">
+  <div class="converse-dropdown-multiple">
+    <div class="dropdown-main" tabindex="-1" (clickOutside)="toggleDropdownMenu(i, false)">
+      <div (click)="toggleDropdownMenu(i)" class="dropdown-title">
+        {{ selected[i] && selected[i].entityName ? selected[i].entityName : showtitle }}
+      </div>
+      <div
+        class="dropdown-icon"
+        (click)="onButtonClick(i)"
+        [ngClass]="{ 'caret-cls': icondisplay[i] === 'caret', 'plus-cls': icondisplay[i] === 'plus', 'del-cls': icondisplay[i] === 'del' }"
+      ></div>
+    </div>
+    <ul class="dropdown-list">
+      <li *ngIf="selected.length < 2" (click)="onSelChange(0, 0)" class="dropdown-list-item">{{ showtitle }}</li>
+      <li *ngFor="let item of dataArray" [hidden]="isItemSelected(item.key)" (click)="onSelChange(item, i)" class="dropdown-list-item">
+        {{ item.key }}
+      </li>
+    </ul>
+  </div>
+</div>

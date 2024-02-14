@@ -1,0 +1,168 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.add-new-usecase-container
+    border: $node-connection-line
+    width: $use-cases-card-width
+    height: 460px
+    margin: 6px
+
+.add-new-usecase-container .add-text
+  height: inherit
+  flex-direction: column
+  display: flex
+  align-items: center
+  justify-content: center
+
+.add-new-use-case
+  padding: 14px
+
+.add-new-use-case .form-group
+  margin: 0
+
+  &.use-case-description
+    height: 125px
+    textarea
+      height: 80px
+
+
+.add-text
+  @include Converse-Title
+  color: $converse-lightgray
+
+.add-bg-color
+  background-color: white
+
+.title-use-case
+  @include Converse-Title2
+  max-width: 9em
+  margin: 10px 0
+
+.lbl-use-case
+  @include Converse-H2
+
+.avg-handling-time
+  flex: 1
+
+.handling-time-container
+  display: flex
+  flex-direction: column
+
+  label
+    margin-right: 0
+
+  span
+    padding: 16px 3px
+
+
+.lbl-handling-time
+  @include Converse-H5
+  font-size: 0.750em
+  font-weight: 500
+
+.use-case-description
+  height: 8em
+
+  textarea
+    height: 100px
+
+.text-desc-area
+    @include txtBox
+    max-height: 6em
+    width: 100%
+    margin-bottom: 0.5em
+    overflow-y: hidden
+    resize: none
+
+.use-case-Buttons
+  display: flex
+  position: relative
+
+.btn-cancel
+  width: 45%
+  height: 2.500em
+  border-radius: 0.125em
+  background-color: $converse-lightgray
+  @include sqrboxshadowstyle
+
+.input-button
+  align-self: center
+  width: 2em
+  height: 2em
+  padding: 0
+  background-color: $converse-seagreen
+  cursor: pointer
+
+  img
+    width: 32px
+    height: 32px
+
+.btn-save
+  width: 45%
+  height: 2.500em
+  margin-left: 2em
+  border-radius: 0.125em
+  background-color: $converse-seagreen
+  @include sqrboxshadowstyle
+
+.use-case-Time-Feedback
+  display: flex
+
+.txt-handling-time
+  @include txtBox
+  height: 2em
+  width: 3em
+  text-align: center
+  padding-left: 0
+  padding-right: 0
+  font-weight: 400
+
+.txt-handling-time-error
+  @include txtBox-error
+  height: 2em
+  width: 3em
+  text-align: center
+  padding-left: 0
+  padding-right: 0
+  font-weight: 400
+
+.txt-handling-time-error:focus
+  border-bottom-color: $converse-hotpink
+
+.toggle-switch-container
+  padding-top: 1em
+
+.form-group.handling-time-container
+  margin: 0
+
+.btn-new-use-case
+  width: 30px
+  height: 30px
+  margin: 10px auto
+  background: url('/assets/img/Plus_Button.svg') center no-repeat
+  background-size: contain
+  cursor: pointer
+
+.form-group-label
+  vertical-align: top
+  margin-right: 0
+
+.txt-handling-time
+  ::placeholder
+    font-size: 5px
+
+.ahhtErrorMsg
+  font-size: .7em
+  margin-bottom: 5px
+  color: $converse-white
+  background-color: $converse-hotpink
+  width: 100%
+  height: 30px
+  padding: 5px
+
+.close-img
+  padding-left: 5px
+  height: 20px
+  width: 24px
+  padding-top: 2px
+  cursor: pointer

@@ -1,0 +1,118 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+\:host
+  width: 100%
+
+.bar-chart-wrapper
+  padding: 20px
+  position: relative
+
+.title-cls
+  @include Converse-Title2
+  text-align: left
+  font-size: 18px
+
+.bar-root-cls
+  flex: 1 1 100%
+  flex-flow: column
+  display: flex
+
+.breakdown-cls
+  @include Converse-H3
+  display: flex
+  justify-content: flex-start
+  font-weight: 500
+  color: $converse-darkgray
+  font-size: 9px
+  margin-top: 10px
+  margin-bottom: 5px
+
+.cust-sat-box
+  width: 100%
+  clear: both
+  margin: 5px 0
+  height: 15px
+  display: flex
+  align-items: center
+
+.cust-sat-box .cust-sat-title
+  @include Converse-H3
+  width: 20%
+  color: $converse-gray
+  font-size: 9px
+  float: left
+  text-align: left
+
+.cust-sat-box .cust-sat-progress
+  @include sqrboxshadowstyle
+  width: 80%
+  height: 0.5em
+  border-radius: 0.063em
+  background-color: transparent
+  display: inline-block
+  float: left
+
+.prog-cls
+  backgound-color: $converse-seagreen
+  height: 0.500em
+  border-radius: 0.063em
+
+.cust-sat-box .cust-sat-count
+  @include Converse-H3
+  width: 12%
+  height: 0.750em
+  color: $converse-gray
+  justify-content: flex-end
+  margin-left: 86%
+
+
+.refBlkCls
+  width: 8em
+  height: 2em
+  float: right
+  margin-right: 5%
+
+
+.refresh-small
+  font-size: 0.75em
+  color: $converse-seagreen
+
+/**
+ * @internal
+ * This sass class is setting the position of refresh text.
+ */
+.refreshTextCls
+  width: 50%
+  position: absolute
+  margin-left: 10%
+
+
+/**
+ * @internal
+ * This sass class is setting the position of refresh image.
+ */
+.refresh-img-class
+  display: flex
+  justify-content: flex-end
+
+@keyframes spinner-cls
+  0%
+    top: 1.750em
+    left: 1.750em
+    width: 0
+    height: 0
+    opacity: 1
+
+  100%
+    top: -0.063em
+    left: -0.063em
+    width: 3.625em
+    height: 3.625em
+    opacity: 0
+
+.error-cls
+  text-align: right
+  @include Converse-H1
+  color: $converse-seagreen
+

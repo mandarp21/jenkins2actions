@@ -1,0 +1,204 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+\:host
+  display: flex
+
+.data-table-wrapper
+  @include boxshadowstyle
+  background-color: $converse-white
+
+.dat-table-cls-tt
+  word-wrap: break-word
+  border-collapse: collapse
+  @include decideFullWidth
+  background-color: $converse-overlay-tooltip
+
+.rating-span
+  align-items: center
+  justify-content: left
+  display: flex
+  position: relative
+
+.rating-bar
+  flex: 2
+  margin-left: 0.5em
+
+.rating-col-class
+  height: 100%
+  display: flex
+  align-self: flex-start
+
+.dat-table-cls
+  word-wrap: break-word
+  border-collapse: collapse
+  @include decideFullWidth
+  background-color: $converse-white
+
+table
+    border-collapse: collapse
+    border-spacing: 0
+    width: 100%
+    border: 1px
+
+thead, tbody tr
+    display: table
+    width: 100%
+    table-layout: fixed
+    word-wrap: break-word
+    margin: 0.4em 0
+
+.table-header
+  display: flex
+  @include Converse-H2
+
+
+.table-head
+  display: flex
+  word-wrap: break-word
+  max-width: 7.5em
+
+.filter-img
+  padding-left: 2em
+
+
+.filter-on-img
+  transform: rotate(180deg)
+
+.arrow-img
+  display: flex
+  padding: 0.5em 1em 1em 1em
+  img
+    width: 0.8em
+    height: 0.4em
+    cursor: pointer
+
+tbody
+    display: block
+    height: auto
+    max-height: none
+
+
+th, td
+    text-align: left
+    padding: 0.5em 0.5em 0.5em 3.45em
+    word-wrap: break-word
+
+.add-utterances
+  display: flex
+  margin-top: 8px
+  //padding-right: 5em
+  input
+    outline: none
+    padding: 1em 45px 1.5em 1em
+  img
+    margin-left: -31px
+    cursor: pointer
+
+tr
+  .approve-img
+    padding-left: 1.5em
+    width: 100%
+    height: none
+  .disapprove-img
+    padding-left: 1em
+  .info-img
+    align-items: center
+    justify-content: left
+    display: flex
+    padding-left: 0em !important
+    img
+      width: 2em
+      height: 2em
+  .approve-img, .disapprove-img
+    img
+      cursor: pointer
+
+td
+  @include Converse-Copy
+  height: 2.813em
+  word-wrap: break-word
+  padding-left: 4.6em
+
+.txt-cls
+  width: 100%
+  @include txtBox
+  height: 2em
+  font-size: 1em
+
+.bot-logo-cls
+  float: left
+  margin-left: 29%
+
+.green-cls
+  @include Converse-Date
+  font-size: 0.875em
+
+.is-escalated
+  color: $converse-lightorange
+
+.is-abandoned
+  color: $converse-fusia
+
+.is-completed
+  color: $converse-darkgray
+
+::-webkit-scrollbar
+    width: 0.3em
+
+/* Track */
+::-webkit-scrollbar-track
+    background: $converse-dullwhite
+
+
+/* Handle */
+::-webkit-scrollbar-thumb
+    background: $converse-lightgray
+
+.tooltip
+  position: relative
+
+.tooltiptext
+  visibility: hidden
+  width: 300px
+  color: #fff
+  text-align: center
+  border-radius: 6px
+  padding: 1em 0
+  position: absolute
+  z-index: 1
+  top: -5px
+  right: 110%
+  background-color: $converse-white
+  @include full-box-shadow-style
+
+.rating-bar:hover .tooltiptext
+  visibility: visible
+
+.tooltiptext::after
+  content: ""
+  position: absolute
+  top: 5%
+  left: 100%
+  margin-top: -10px
+  border-width: 15px
+  border-style: solid
+  border-color: transparent transparent transparent $converse-dullwhite
+
+.loadMore-cls
+  width: 8.6%
+  height: 2.500em
+  margin-left: 43.83%
+  margin-bottom: 15px
+  margin-top: 2.5em
+  border-radius: 0.125em
+  background-color: $converse-seagreen
+  @include sqrboxshadowstyle
+
+.intent-filter
+  color: $converse-seagreen
+  font-size: 8px
+  cursor: pointer
+
+.rating-txt
+  width: 25px

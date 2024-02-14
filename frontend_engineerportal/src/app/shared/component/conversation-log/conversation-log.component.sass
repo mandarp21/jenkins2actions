@@ -1,0 +1,51 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+
+.btnNextPage
+  width: 20%
+  margin-left: 78%
+  padding-bottom: 2%
+
+.btnPrevPage
+  width: 20%
+  margin-left: 2%
+  padding-bottom: 2%
+  float: left
+
+.conversation-log-table
+  width: 590px
+  background: $converse-white
+  @include boxshadowstyle
+  height: 100%
+
+.conversation-log-details-dialog
+  width: 773px
+
+.filter-div-cls
+  display: flex
+  align-items: center
+
+.from-txt-cls
+  @include Converse-H5
+  font-size: 16px
+
+.dt-pick-one-cls, .dt-pick-two-cls
+  margin: 0 12px
+  width: 200px
+
+.to-txt-cls
+  @include Converse-H5
+  font-size: 16px
+
+.go-btn-cls
+  @include Converse-H5
+  width: 40px
+  height: 40px
+  font-size: 16px
+
+.conversation-logs-main-wrapper
+  padding-top: 32px
+  display: flex
+  justify-content: space-between
+  @include decideFullWidth

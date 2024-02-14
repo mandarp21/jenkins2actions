@@ -1,0 +1,81 @@
+@import "./src/assets/sass/_variables"
+@import "./src/assets/sass/_mixins"
+
+.conf-bot-root
+  flex: 1 1 100%
+  display: flex
+  flex-flow: column
+  position: relative
+
+.nav-bar-cls
+  background-color: $converse-snowwhite
+  height: 6.188em
+  margin: 0
+
+.last-page-cls
+  height: 1em
+  margin-top: 2.313em
+  cursor: pointer
+
+
+.arrow-cls
+  width: 0.5em
+  height: 0.281em
+  transform: rotate(90deg)
+
+
+.back-txt-cls
+  width: 92.5%
+  height: 1em
+  @include Converse-H3
+  color: $converse-darkgray
+  margin-left: 0.375em
+
+
+.page-title-cls
+  width: 92.5%
+  height: 1.750em
+  margin-top: 1%
+  margin-left: 3%
+  padding-top: 0.5em
+  display: flex
+  justify-content: space-between
+  .bot-config
+    display: flex
+    justify-content: flex-start
+    @include Converse-Title2
+
+.bot-performance
+  @include Converse-Title
+  font-weight: 300
+  display: flex
+  margin-top: 0.1em
+  justify-content: flex-end
+  cursor: pointer
+  .performance-text
+    padding-right: 1em
+
+.carat-container
+  @include sqrboxshadowstyle
+  width: 1.75em
+  height: 1.75em
+  border: 0.0625em solid $converse-seagreen
+  background-color: $converse-seagreen
+  border-radius: 0.125em
+  position: relative
+
+.caret-img
+  transform: rotate(270deg)
+  position: absolute
+  top: 0.55em
+  left: 0.3em
+
+
+.content-cls
+  background-color: $converse-snowwhite
+  height: 33.188em
+  margin-left: 2.5%
+  margin-right: 0%
+  margin-top: 1.813em
+  display: flex
+  justify-content: flex-start

@@ -1,0 +1,202 @@
+<div [ngClass]="{ 'form-group': !variableNameError, 'form-group-error': variableNameError }">
+  <label for="name">Variable Name*</label>
+  <div class="input-wrapper">
+    <input
+      [(ngModel)]="name"
+      [value]="name"
+      id="name"
+      type="text"
+      autocomplete="off"
+      placeholder="Name of the Variable identified in bot response"
+    />
+  </div>
+  <div class="error-msg">{{ variableNameErrorMessage }}</div>
+</div>
+
+<div class="form-group">
+  <label for="description">Description</label>
+  <div class="input-wrapper">
+    <input
+      [(ngModel)]="description"
+      [value]="description"
+      id="description"
+      type="text"
+      autocomplete="off"
+      placeholder="A brief description to give context"
+    />
+  </div>
+</div>
+
+<section class="form-group">
+  <label>Variable Type</label>
+  <converse-drop-down
+    (selchange)="changeType($event)"
+    [selected]="selectedType ? selectedType.colName : null"
+    id="type"
+    [data]="variableTypes"
+    [placeholder]="'Select Variable Type'"
+    [ceFormVariableTypeError]="ceFormVariableTypeError"
+  ></converse-drop-down>
+</section>
+
+<!-------------------------------------------
+        Fields specific to API type
+-------------------------------------------->
+<section class="variable-type-section" [ngClass]="{ hidden: apiClass() }">
+  <div [ngClass]="{ 'form-group': !apiUriError, 'form-group-error': apiUriError }">
+    <label for="config.apiUri">API URI *</label>
+    <div class="input-wrapper">
+      <input
+        [(ngModel)]="config.apiUri"
+        [value]="config.apiUri"
+        id="config.apiUri"
+        type="text"
+        autocomplete="off"
+        placeholder="URI of the API to be reached"
+      />
+    </div>
+  </div>
+
+  <section class="form-group">
+    <label>Method *</label>
+    <converse-drop-down
+      (selchange)="selChangeConfig($event, 'method')"
+      [selected]="config.method"
+      id="config.method"
+      [data]="methodOptions"
+      placeholder="Select Method"
+      [ceFormMethodError]="ceFormMethodError"
+    ></converse-drop-down>
+  </section>
+
+  <div [ngClass]="{ 'form-group': !headersError, 'form-group-error': headersError }">
+    <label for="config.headers">Headers</label>
+    <input-autocomplete
+      id="headers"
+      [message]="config.headers"
+      type="textarea"
+      (inputChange)="changeInput($event, 'headers')"
+    ></input-autocomplete>
+    <div class="error-msg">{{ header_invalidJSONValuesErrorMessage }}</div>
+  </div>
+
+  <div [ngClass]="{ 'form-group': !parametersError, 'form-group-error': parametersError }">
+    <label for="config.parameters">Parameters</label>
+    <input-autocomplete
+      id="parameters"
+      [message]="config.parameters"
+      type="textarea"
+      (inputChange)="changeInput($event, 'parameters')"
+    ></input-autocomplete>
+    <div class="error-msg">{{ parameters_invalidJSONValuesErrorMessage }}</div>
+  </div>
+
+  <div [ngClass]="{ 'form-group': !bodyError, 'form-group-error': bodyError }">
+    <label for="config.body">Body</label>
+    <input-autocomplete id="body" [message]="config.body" type="textarea" (inputChange)="changeInput($event, 'body')"></input-autocomplete>
+    <div class="error-msg">{{ body_invalidJSONValuesErrorMessage }}</div>
+  </div>
+
+  <div class="form-group">
+    <label>Success *</label>
+    <custom-values-list
+      type="apiSuccess"
+      [selected]="varData"
+      [ceFormSuccessError]="ceFormSuccessError"
+      (valueChange)="updateSuccessValues($event)"
+    ></custom-values-list>
+  </div>
+
+  <div class="form-group">
+    <label for="exception">Exception</label>
+    <div class="input-wrapper">
+      <input
+        id="exception"
+        [(ngModel)]="config.exception"
+        [value]="config.exception"
+        type="text"
+        autocomplete="off"
+        placeholder="Value on exception"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Reset API Response</label>
+    <converse-switch-button
+      (handleChangeEvent)="changeInput($event, 'resetApiCall')"
+      [checked]="config.resetApiCall"
+    ></converse-switch-button>
+  </div>
+</section>
+
+<!-------------------------------------------
+        Fields specific to Static Value type
+-------------------------------------------->
+<section class="variable-type-section" [ngClass]="{ hidden: !selectedType || selectedType.key !== 'StaticValue' }">
+  <section class="form-group">
+    <label>Value Type*</label>
+    <converse-drop-down
+      (selchange)="selChangeConfig($event, 'valueType')"
+      [selected]="config.valueType"
+      id="config.valueType"
+      [data]="staticValueTypes"
+      [placeholder]="'Select Value Type'"
+      [ceFormValueType]="ceFormValueType"
+    ></converse-drop-down>
+  </section>
+  <div [ngClass]="{ 'form-group': !valueError, 'form-group-error': valueError }">
+    <label for="value">Value*</label>
+    <div class="input-wrapper">
+      <input
+        id="value"
+        [(ngModel)]="config.value"
+        [value]="config.value"
+        [type]="config.valueType === 'Number' ? 'number' : 'text'"
+        autocomplete="off"
+        placeholder="Enter static value"
+      />
+    </div>
+  </div>
+
+  <div class="form-group" *ngIf="config.valueType === 'RegEx'">
+    <label>Case Sensitive RegEx</label>
+    <converse-switch-button [checked]="boolCaseSensitive" (handleChangeEvent)="onChangeBoolCaseSensitive($event, 'boolCaseSensitive')">
+    </converse-switch-button>
+  </div>
+</section>
+
+<!-------------------------------------------
+        Fields specific to Context Object type
+-------------------------------------------->
+<section class="variable-type-section" [ngClass]="{ hidden: !selectedType || selectedType.key !== 'ContextObject' }">
+  <div [ngClass]="{ 'form-group': !valueError, 'form-group-error': valueError }">
+    <label for="value">Value*</label>
+    <div class="input-wrapper">
+      <input
+        id="value"
+        [(ngModel)]="config.value"
+        [value]="config.value"
+        [type]="config.valueType === 'number' ? 'number' : 'text'"
+        autocomplete="off"
+        placeholder="Enter value"
+      />
+    </div>
+  </div>
+</section>
+<div *ngIf="formError" class="form-error">
+  Form has errors
+  <img class="close-img" src="assets/img/Tertiary_Button_Disapprove_Active.png" (click)="closeToaster()" />
+</div>
+<section class="button-section">
+  <converse-button [val]="'Cancel'" [id]="'cancel'" (click)="handleCancel()"></converse-button>
+  <converse-button
+    [type]="'submit'"
+    [val]="'Save'"
+    id="save"
+    [boolGreen]="true"
+    [activateColors]="true"
+    [isDisabled]="isFormSubmitted"
+    (click)="handleSave()"
+  ></converse-button>
+</section>

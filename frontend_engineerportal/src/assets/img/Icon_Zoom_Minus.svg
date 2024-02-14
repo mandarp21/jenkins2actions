@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Zoom_Icon_Minus</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Flow_Controls" transform="translate(-10.000000, -50.000000)">
+            <g id="Zoom_Icon_Minus" transform="translate(10.000000, 50.000000)">
+                <g>
+                    <g id="Icon_Search_Green">
+                        <g id="Search_Icon">
+                            <rect id="Handle" fill="#01CCAA" transform="translate(4.000000, 16.181981) rotate(-45.000000) translate(-4.000000, -16.181981) " x="0" y="15.6819805" width="8" height="1"></rect>
+                            <circle id="Lens" stroke="#01CCAA" cx="12" cy="8" r="7.5"></circle>
+                        </g>
+                    </g>
+                    <g id="Icon_Minus_Pos" transform="translate(8.000000, 4.000000)" stroke="#01CCAA" stroke-linecap="square">
+                        <path d="M7.25,4 L0.75,4" id="Line-Copy"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

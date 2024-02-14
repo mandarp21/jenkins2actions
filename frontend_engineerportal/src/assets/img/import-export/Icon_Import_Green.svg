@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Icon_Import_Green</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon_Import_Green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-9-Copy" fill="#01CCAA" x="2" y="13" width="12" height="1"></rect>
+        <polygon id="Rectangle-10-Copy" fill="#01CCAA" points="13 8 14 8 14 14 13 14"></polygon>
+        <polygon id="Rectangle-10-Copy-8" fill="#01CCAA" points="2 8 3 8 3 14 2 14"></polygon>
+        <polygon id="Rectangle-10-Copy-5" fill="#01CCAA" points="7.5 2 8.5 2 8.5 10 7.5 10"></polygon>
+        <g id="Group" transform="translate(8.021320, 9.121320) scale(1, -1) rotate(135.000000) translate(-8.021320, -9.121320) translate(6.521320, 7.621320)" fill="#01CCAA">
+            <rect id="Rectangle-10-Copy-2" x="0" y="0" width="1" height="3"></rect>
+            <rect id="Rectangle-10-Copy-3" transform="translate(1.500000, 2.500000) rotate(90.000000) translate(-1.500000, -2.500000) " x="1" y="1" width="1" height="3"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+<section class="reference-dropdowns">
+  <div class="form-group">
+    <label>Worker Bot</label>
+    <converse-drop-down
+      id="workerbot-dropdown"
+      [data]="workerBotOptions"
+      placeholder="Select Worker Bot"
+      (selchange)="onSelChangeWorkerBot($event)"
+    ></converse-drop-down>
+  </div>
+
+  <div class="form-group">
+    <label>Use Case</label>
+    <converse-drop-down
+      id="usecase-dropdown"
+      [data]="useCaseOptions"
+      placeholder="Select Use Case"
+      [selected]="useCaseName"
+      (selchange)="onSelChangeUseCase($event)"
+    ></converse-drop-down>
+  </div>
+
+  <div class="form-group">
+    <label>Response Node</label>
+    <converse-drop-down
+      id="response-dropdown"
+      [data]="responseOptions"
+      placeholder="Select Response Node"
+      [selected]="responseNodeName"
+      (selchange)="onSelChangeResponseNode($event)"
+    ></converse-drop-down>
+  </div>
+</section>
+
+<section class="button-section">
+  <converse-button [val]="'Cancel'" [id]="'cancel'" (click)="handleCancel()"></converse-button>
+  <converse-button [val]="'Save'" id="save" [boolGreen]="true" (click)="handleSave()"></converse-button>
+</section>

@@ -1,0 +1,47 @@
+@mixin title
+  font-family: 'Graphik Medium', sans-serif
+  font-style: normal
+  font-stretch: normal
+  color: #292F32
+
+.tooltip-container
+  font-family: "Graphik Regular", sans-serif
+  font-size: 16px
+  margin-top: 10px
+  background: #FEFFFE
+  position: absolute
+  width: 240px
+  display: inline-block
+  padding: 1em
+  z-index: 9
+  letter-spacing: -0.8px
+
+.p-b-1
+  padding-bottom: 1em
+
+.title-cls
+  @include title
+  font-size: 24px
+  font-weight: 500
+  line-height: 24px
+  letter-spacing: -1.6px
+
+
+.lbl-cls
+  @include title
+  font-size: 0.7em
+  font-weight: bold
+  line-height: 16px
+  letter-spacing: -0.5px
+
+/* scrollbar styling */
+::-webkit-scrollbar
+  width: 4px
+
+::-webkit-scrollbar-track
+  border-radius: 2px
+  background: #f7f7f7
+
+::-webkit-scrollbar-thumb
+  background: #cccccc
+  border-radius: 2px
